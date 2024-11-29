@@ -1,32 +1,45 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnwq4qbexyx0i"]
+[gd_scene load_steps=7 format=3 uid="uid://dnwq4qbexyx0i"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_ed7pr"]
-[ext_resource type="PackedScene" uid="uid://d4m0lti4ef8bb" path="res://scenes/cursor_object.tscn" id="2_mu0xy"]
-[ext_resource type="Texture2D" uid="uid://ddd710yrelm3m" path="res://assets/1px.JPG" id="2_v13wn"]
-[ext_resource type="Script" path="res://scripts/temp_rectangle.gd" id="4_a8f3u"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_nak3d"]
+[ext_resource type="PackedScene" uid="uid://d4m0lti4ef8bb" path="res://scenes/cursor_object.tscn" id="2_2qcdd"]
+[ext_resource type="Script" path="res://scripts/temp_rectangle.gd" id="3_jrw66"]
+[ext_resource type="Texture2D" uid="uid://ddd710yrelm3m" path="res://assets/1px.JPG" id="4_0trmw"]
+[ext_resource type="Script" path="res://scenes/text_display.gd" id="5_y5d77"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ddp3"]
 size = Vector2(0.99, 1)
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_ed7pr")
+script = ExtResource("1_nak3d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="CursorObject" parent="." instance=ExtResource("2_mu0xy")]
+[node name="CursorObject" parent="." instance=ExtResource("2_2qcdd")]
 
 [node name="Random rect" type="Area2D" parent="."]
-script = ExtResource("4_a8f3u")
+script = ExtResource("3_jrw66")
 
 [node name="rectangle" type="Sprite2D" parent="Random rect"]
 position = Vector2(422, -135)
 scale = Vector2(100, 100)
-texture = ExtResource("2_v13wn")
+texture = ExtResource("4_0trmw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Random rect"]
 position = Vector2(421.5, -134)
 scale = Vector2(100, 100)
 shape = SubResource("RectangleShape2D_2ddp3")
 
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("5_y5d77")
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Sample text"
+
+[node name="Next_letter_timer" type="Timer" parent="Node2D"]
+wait_time = 0.05
+
 [connection signal="area_entered" from="Random rect" to="Random rect" method="_on_area_entered"]
 [connection signal="area_exited" from="Random rect" to="Random rect" method="_on_area_exited"]
+[connection signal="timeout" from="Node2D/Next_letter_timer" to="Node2D" method="_on_next_letter_timer_timeout"]

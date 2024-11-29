@@ -4,9 +4,9 @@ class_name Cursor_object
 
 var is_keyboard_mode: bool = false
 var velocity: Vector2 = Vector2.ZERO
-var keyboard_max_speed: float = 10
-var keyboard_acceleration: float = 4
-var keyboard_decceleration: float = 10
+@export var keyboard_max_speed: float = 10
+@export var keyboard_acceleration: float = 4
+@export var keyboard_decceleration: float = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

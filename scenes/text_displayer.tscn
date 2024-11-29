@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccv4uqgxpmmnx"]
+
+[ext_resource type="Script" path="res://scripts/text_display.gd" id="1_85cyt"]
+
+[node name="Text_displayer" type="Node2D"]
+script = ExtResource("1_85cyt")
+text = "Tonda je frajer"
+time_between_letters = 0.5
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Next_letter_timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="Next_letter_timer" to="." method="_on_next_letter_timer_timeout"]

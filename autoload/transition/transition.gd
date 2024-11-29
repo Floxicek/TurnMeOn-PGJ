@@ -3,20 +3,30 @@ extends Control
 signal clear_scene_done
 signal show_scene_done
 
+func _ready() -> void:
+	$AnimatedSprite2D.hide()
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+
+var _started = false
+func _on_animated_sprite_2d_animation_finished() -> void:
 	mouse_filter = MouseFilter.MOUSE_FILTER_IGNORE
-	if anim_name == "clear_scene":
+	print("Finished")
+	#$AnimatedSprite2D.hide()
+	if _started:
 		clear_scene_done.emit()
-	elif anim_name == "show_scene":
+	else:
 		show_scene_done.emit()
 
 func clear_scene():
 	print("Transition started")
+	_started = true
+	$AnimatedSprite2D.show()
 	mouse_filter = MouseFilter.MOUSE_FILTER_STOP
-	$AnimationPlayer.play("clear_scene")
+	$AnimatedSprite2D.play("transition")
 
 func show_scene():
 	print("Transition stoped")
+	_started = false
+	$AnimatedSprite2D.show()
 	mouse_filter = MouseFilter.MOUSE_FILTER_STOP
-	$AnimationPlayer.play("show_scene")
+	$AnimatedSprite2D.play_backwards("transition")

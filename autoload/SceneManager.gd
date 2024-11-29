@@ -23,6 +23,7 @@ func change_scene(target_scene_path) -> void:
 func _clear_scene_done() -> void:
 	# Clear scene animation done
 	ResourceLoader.load_threaded_request(_target_scene_path)
+	print("loading scene")
 
 func _show_scene_done() -> void:
 	# Show scene animation done

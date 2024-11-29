@@ -1,17 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4m0lti4ef8bb"]
+[gd_scene load_steps=7 format=3 uid="uid://bjcotyn3r2w3o"]
 
 [ext_resource type="Script" path="res://scripts/cursor_object_script.gd" id="1_5webd"]
-[ext_resource type="Texture2D" uid="uid://ddd710yrelm3m" path="res://assets/1px.JPG" id="2_x6ekf"]
+[ext_resource type="Texture2D" uid="uid://ckcleebe6kscg" path="res://import_pngs/cursor/IMG_2261.PNG" id="2_oct5m"]
+[ext_resource type="Texture2D" uid="uid://dpe0myavvlkvd" path="res://import_pngs/cursor/IMG_2262.PNG" id="3_l2bmr"]
+[ext_resource type="Texture2D" uid="uid://dlluqqbio3n7u" path="res://import_pngs/cursor/IMG_2263.PNG" id="4_1rbk3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uy2w"]
 size = Vector2(10, 10)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_oad18"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oct5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l2bmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1rbk3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="CursorObject" type="Area2D"]
 script = ExtResource("1_5webd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(10, 10)
-texture = ExtResource("2_x6ekf")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3uy2w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-400, -2)
+sprite_frames = SubResource("SpriteFrames_oad18")

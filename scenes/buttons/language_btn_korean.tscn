@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cguwqv4xmawl2"]
+
+[ext_resource type="Texture2D" uid="uid://dqsjf55s6mgrq" path="res://import_pngs/language_btn_kor/IMG_2252.PNG" id="1_8i7m0"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="1_tgokk"]
+[ext_resource type="Texture2D" uid="uid://cekslfd56t1aj" path="res://import_pngs/language_btn_kor/IMG_2253.PNG" id="2_ecw53"]
+[ext_resource type="Texture2D" uid="uid://dcm7ysotl5isv" path="res://import_pngs/language_btn_kor/IMG_2254.PNG" id="3_1di78"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pt3y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8i7m0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ecw53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1di78")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jc4yk"]
+size = Vector2(325, 228)
+
+[node name="LanguageBtnKorean" type="Node2D"]
+script = ExtResource("1_tgokk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1055, 529)
+sprite_frames = SubResource("SpriteFrames_3pt3y")
+frame_progress = 0.174294
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_jc4yk")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

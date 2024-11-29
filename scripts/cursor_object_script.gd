@@ -2,15 +2,18 @@ extends Node2D
 
 class_name Cursor_object
 
-var is_keyboard_mode: bool = false
+@export var is_keyboard_mode: bool = false
 var velocity: Vector2 = Vector2.ZERO
-var keyboard_max_speed: float = 10
-var keyboard_acceleration: float = 4
-var keyboard_decceleration: float = 10
+@export var keyboard_max_speed: float = 10
+@export var keyboard_acceleration: float = 4
+@export var keyboard_decceleration: float = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$AnimatedSprite2D.play()
+	
+	if(is_keyboard_mode):
+		position = Vector2(1280, 720)
 
 func _physics_process(delta: float) -> void:
 	if(not is_keyboard_mode):

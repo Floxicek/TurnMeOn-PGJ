@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjk7cpjagkpp6"]
+
+[ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="1_y53kq"]
+[ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="2_x6i1g"]
+[ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="3_7ynlh"]
+[ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="4_jvtjn"]
+[ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="5_vvkfu"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CursorObject" parent="." instance=ExtResource("1_y53kq")]
+is_keyboard_mode = true
+keyboard_max_speed = 40.0
+keyboard_acceleration = 10.0
+keyboard_decceleration = 25.0
+
+[node name="Node2D" parent="." instance=ExtResource("2_x6i1g")]
+
+[node name="LanguageBtnKorean" parent="." instance=ExtResource("3_7ynlh")]
+position = Vector2(2363, 134)
+
+[node name="PlayButton" parent="." instance=ExtResource("4_jvtjn")]
+position = Vector2(1263, 716)
+
+[node name="SettingsButton" parent="." instance=ExtResource("5_vvkfu")]
+position = Vector2(2400, 1282)

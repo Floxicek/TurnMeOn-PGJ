@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://f0k535wjbhob"]
 
-[ext_resource type="Texture2D" uid="uid://dampxihajfa4s" path="res://import_pngs/escape_button/IMG_2238.PNG" id="1_cvipl"]
-[ext_resource type="Script" path="res://scenes/button.gd" id="1_tbv2q"]
-[ext_resource type="Texture2D" uid="uid://b1l3ux3yt747s" path="res://import_pngs/escape_button/IMG_2241.PNG" id="2_x1nht"]
-[ext_resource type="Texture2D" uid="uid://cxaptvjbtihlv" path="res://import_pngs/escape_button/IMG_2242.PNG" id="3_euqvu"]
-[ext_resource type="Texture2D" uid="uid://gf3hsglx3o3u" path="res://import_pngs/escape_button/IMG_2243.PNG" id="4_nbrvm"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="1_3vhhv"]
+[ext_resource type="Texture2D" uid="uid://dampxihajfa4s" path="res://import_pngs/escape_button/IMG_2238.PNG" id="2_8lrjm"]
+[ext_resource type="Texture2D" uid="uid://b1l3ux3yt747s" path="res://import_pngs/escape_button/IMG_2241.PNG" id="3_rt02j"]
+[ext_resource type="Texture2D" uid="uid://cxaptvjbtihlv" path="res://import_pngs/escape_button/IMG_2242.PNG" id="4_h7js8"]
+[ext_resource type="Texture2D" uid="uid://gf3hsglx3o3u" path="res://import_pngs/escape_button/IMG_2243.PNG" id="5_8xavi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88n0f"]
 size = Vector2(228, 232)
@@ -13,16 +13,16 @@ size = Vector2(228, 232)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_cvipl")
+"texture": ExtResource("2_8lrjm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_x1nht")
+"texture": ExtResource("3_rt02j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_euqvu")
+"texture": ExtResource("4_h7js8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_nbrvm")
+"texture": ExtResource("5_8xavi")
 }],
 "loop": true,
 "name": &"default",
@@ -31,7 +31,7 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(144, 152)
-script = ExtResource("1_tbv2q")
+script = ExtResource("1_3vhhv")
 
 [node name="Area2D" type="Area2D" parent="."]
 

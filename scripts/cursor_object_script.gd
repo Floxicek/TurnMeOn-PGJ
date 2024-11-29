@@ -1,0 +1,48 @@
+extends Node2D
+
+class_name Cursor_object
+
+var is_keyboard_mode: bool = false
+var velocity: Vector2 = Vector2.ZERO
+var keyboard_max_speed: float = 10
+var keyboard_acceleration: float = 4
+var keyboard_decceleration: float = 10
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+func _physics_process(delta: float) -> void:
+	if(not is_keyboard_mode):
+		velocity = Vector2.ZERO
+		position = get_global_mouse_position()
+	else:
+		if Input.is_action_pressed("UP"):
+			velocity += keyboard_acceleration*Vector2.UP
+		if Input.is_action_pressed("LEFT"):
+			velocity += keyboard_acceleration*Vector2.LEFT
+		if Input.is_action_pressed("DOWN"):
+			velocity += keyboard_acceleration*Vector2.DOWN
+		if Input.is_action_pressed("RIGHT"):
+			velocity += keyboard_acceleration*Vector2.RIGHT
+		
+		
+		velocity -= velocity*(keyboard_decceleration)*delta
+
+		if velocity.length() > keyboard_max_speed:
+			velocity = velocity.normalized()*keyboard_max_speed
+		
+		position += velocity
+		
+		
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("START_KEYBOARD_CONTROL"):
+		stop_controlling_mouse_with_keyboard() if is_keyboard_mode else start_controlling_mouse_with_keyboard()
+
+func start_controlling_mouse_with_keyboard():
+	is_keyboard_mode = true
+
+func stop_controlling_mouse_with_keyboard():
+	is_keyboard_mode = false

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnwq4qbexyx0i"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ed7pr"]
+[ext_resource type="PackedScene" uid="uid://d4m0lti4ef8bb" path="res://scenes/cursor_object.tscn" id="2_mu0xy"]
+[ext_resource type="Texture2D" uid="uid://ddd710yrelm3m" path="res://assets/1px.JPG" id="2_v13wn"]
+[ext_resource type="Script" path="res://scripts/temp_rectangle.gd" id="4_a8f3u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ddp3"]
+size = Vector2(0.99, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ed7pr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CursorObject" parent="." instance=ExtResource("2_mu0xy")]
+
+[node name="Random rect" type="Area2D" parent="."]
+script = ExtResource("4_a8f3u")
+
+[node name="rectangle" type="Sprite2D" parent="Random rect"]
+position = Vector2(422, -135)
+scale = Vector2(100, 100)
+texture = ExtResource("2_v13wn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Random rect"]
+position = Vector2(421.5, -134)
+scale = Vector2(100, 100)
+shape = SubResource("RectangleShape2D_2ddp3")
+
+[connection signal="area_entered" from="Random rect" to="Random rect" method="_on_area_entered"]
+[connection signal="area_exited" from="Random rect" to="Random rect" method="_on_area_exited"]

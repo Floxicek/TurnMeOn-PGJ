@@ -1,6 +1,6 @@
 extends Node
 
-const transition_scene = preload("res://autoload/transition.tscn")
+const transition_scene = preload("res://autoload/transition/transition.tscn")
 
 var _target_scene_path
 var _transition

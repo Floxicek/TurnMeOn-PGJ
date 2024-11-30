@@ -1,19 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://bulxjtd0x81uh"]
+[gd_scene load_steps=16 format=3 uid="uid://bulxjtd0x81uh"]
 
 [ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="1_2ffcf"]
+[ext_resource type="Script" path="res://scripts/level_periodic.gd" id="1_id5kj"]
 [ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="2_wkeyi"]
 [ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="3_8avng"]
 [ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="4_sqvtb"]
 [ext_resource type="PackedScene" uid="uid://dr3t7x5prtdu3" path="res://scenes/buttons/mute_button.tscn" id="5_kbppw"]
 [ext_resource type="Texture2D" uid="uid://dd5rgrvksadx4" path="res://import_pngs/periodic_table/IMG_2357.PNG" id="6_5m5ah"]
+[ext_resource type="Script" path="res://scripts/periodic_element.gd" id="8_kto2j"]
+[ext_resource type="Texture2D" uid="uid://ddd710yrelm3m" path="res://assets/1px.JPG" id="9_y05ia"]
+[ext_resource type="Script" path="res://scripts/table_wrong.gd" id="10_36kdx"]
+[ext_resource type="PackedScene" uid="uid://ccv4uqgxpmmnx" path="res://scenes/text_displayer.tscn" id="11_bukld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlxrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aw4f1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npelu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cb4hw"]
+size = Vector2(66, 64)
 
 [node name="LevelPeriodic" type="Node2D"]
+script = ExtResource("1_id5kj")
 
 [node name="CursorObject" parent="." instance=ExtResource("1_2ffcf")]
 position = Vector2(0, 2)
 keyboard_max_speed = 40.0
 keyboard_acceleration = 10.0
 keyboard_decceleration = 25.0
+
+[node name="CollisionShape2D" parent="CursorObject" index="0"]
+scale = Vector2(1.02601, 0.97428)
 
 [node name="EscapeButton" parent="." instance=ExtResource("2_wkeyi")]
 
@@ -24,10 +42,89 @@ position = Vector2(2365, 148)
 position = Vector2(2410, 1290)
 
 [node name="MuteButton" parent="." instance=ExtResource("5_kbppw")]
-position = Vector2(2144, 1293)
+position = Vector2(2142, 1289)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Text_displayer" parent="." instance=ExtResource("11_bukld")]
+position = Vector2(1280, 193)
+scale = Vector2(0.3, 0.3)
+wait_before_hide = 2.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+[node name="PeriodicTable" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="PeriodicTable"]
 position = Vector2(1276, 702)
 texture = ExtResource("6_5m5ah")
+
+[node name="P_element" type="Area2D" parent="PeriodicTable" groups=["Button"]]
+position = Vector2(1973, 600)
+script = ExtResource("8_kto2j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PeriodicTable/P_element"]
+scale = Vector2(5.76161, 5.52065)
+shape = SubResource("RectangleShape2D_qlxrn")
+
+[node name="Sprite2D" type="Sprite2D" parent="PeriodicTable/P_element"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(2, 0)
+scale = Vector2(113.55, 110.22)
+texture = ExtResource("9_y05ia")
+
+[node name="L_element" type="Area2D" parent="PeriodicTable" groups=["Button"]]
+position = Vector2(238, 476)
+script = ExtResource("8_kto2j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PeriodicTable/L_element"]
+scale = Vector2(5.84579, 5.70551)
+shape = SubResource("RectangleShape2D_aw4f1")
+
+[node name="Sprite2D" type="Sprite2D" parent="PeriodicTable/L_element"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(2, 0)
+scale = Vector2(113.55, 110.22)
+texture = ExtResource("9_y05ia")
+
+[node name="A_element" type="Area2D" parent="PeriodicTable" groups=["Button"]]
+position = Vector2(1492, 952)
+script = ExtResource("8_kto2j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PeriodicTable/A_element"]
+position = Vector2(2, 2)
+scale = Vector2(5.36121, 5.67132)
+shape = SubResource("RectangleShape2D_npelu")
+
+[node name="Sprite2D" type="Sprite2D" parent="PeriodicTable/A_element"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(2, 3)
+scale = Vector2(113.55, 110.22)
+texture = ExtResource("9_y05ia")
+
+[node name="Y_element" type="Area2D" parent="PeriodicTable" groups=["Button"]]
+position = Vector2(475, 844)
+script = ExtResource("8_kto2j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PeriodicTable/Y_element"]
+position = Vector2(2, -5)
+scale = Vector2(1.69454, 1.80865)
+shape = SubResource("RectangleShape2D_cb4hw")
+
+[node name="Sprite2D" type="Sprite2D" parent="PeriodicTable/Y_element"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(2, -7)
+scale = Vector2(113.55, 110.22)
+texture = ExtResource("9_y05ia")
+
+[node name="Table_wrong" type="Area2D" parent="PeriodicTable" groups=["Button"]]
+script = ExtResource("10_36kdx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PeriodicTable/Table_wrong"]
+position = Vector2(1478, 778)
+scale = Vector2(1.32705, 1.25231)
+polygon = PackedVector2Array(-981.125, -384.889, -979.618, -299.447, -895.22, -298.648, -880.149, -280.282, -880.149, -186.855, -980.371, -185.258, -981.125, 285.073, 695.529, 289.865, 691.007, -381.695, 591.538, -383.292, 596.06, -287.469, 421.236, -286.671, 424.25, -194.042, 425.003, -88.6363, 323.274, -89.4348, 323.274, -198.034, 415.961, -201.228, 413.7, -287.469, 147.696, -284.275, 144.682, -93.4274, 58.777, -94.226, 63.2983, 88.6363, 64.0519, 197.236, -39.9384, 195.639, -37.6776, 85.4422, 51.995, 81.4496, 48.2273, -96.6216, -703.064, -91.8304, -705.325, 106.204, -802.533, 103.808, -803.287, -4.79114, -710.6, -6.38818, -712.107, -94.226, -794.998, -97.4201, -794.998, -289.066, -883.917, -293.059, -886.177, -384.091)
+
+[connection signal="pressed" from="PeriodicTable/P_element" to="." method="_on_p_element_pressed"]
+[connection signal="pressed" from="PeriodicTable/L_element" to="." method="_on_l_element_pressed"]
+[connection signal="pressed" from="PeriodicTable/A_element" to="." method="_on_a_element_pressed"]
+[connection signal="pressed" from="PeriodicTable/Y_element" to="." method="_on_y_element_pressed"]
+[connection signal="pressed" from="PeriodicTable/Table_wrong" to="." method="_on_table_wrong_pressed"]
+
+[editable path="CursorObject"]

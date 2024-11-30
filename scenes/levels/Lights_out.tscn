@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://dnce5lgxx8duv"]
+[gd_scene load_steps=19 format=3 uid="uid://j02uu0636cvy"]
 
 [ext_resource type="Script" path="res://scripts/level_scripts/lights_out/lights_out_lvl.gd" id="1_6nqhs"]
-[ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="2_ax7ef"]
+[ext_resource type="PackedScene" uid="uid://d4m0lti4ef8bb" path="res://scenes/cursor_object.tscn" id="2_ax7ef"]
 [ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="3_owa30"]
 [ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="4_418jh"]
 [ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="5_3drx0"]

@@ -63,7 +63,7 @@ func _process(_delta: float) -> void:
 
 
 var _current_level_index := 0
-@export var levels = ["res://scenes/levels/level1.tscn", "res://scenes/levels/level2.tscn", "res://scenes/levels/level_break_tiles.tscn"]
+@export var levels : Array = ["res://scenes/levels/level1.tscn", "res://scenes/levels/level_falling.tscn", "res://scenes/levels/level_fireboy_and_watergirl.tscn", "res://scenes/levels/Lights_out.tscn"]
 
 func next_level(message: String = ""):
 	if not _in_progress:

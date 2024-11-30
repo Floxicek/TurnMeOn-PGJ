@@ -73,7 +73,7 @@ func write_wrong_button():
 	write(_wrong_button_dialogue[rng.randi_range(0, len(_wrong_button_dialogue) - 1)])
 
 func _next_letter():
-	print("Next letter call")
+	#print("Next letter call")
 	if _target_text_index == 0:
 		hide_text_timer.stop()
 		hide_text_timer.start()
@@ -96,7 +96,7 @@ func _next_letter():
 
 func _on_hide_text_timer_timeout() -> void:
 #	Check if we have more dialogs
-	print("Hide text timer call")
+	#print("Hide text timer call")
 	_reset_label()
 	if dialogue.size() > 0:
 		_dialogue_next()

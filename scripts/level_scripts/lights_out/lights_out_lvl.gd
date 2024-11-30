@@ -17,6 +17,7 @@ func turn_the_lights_out():
 		if (child.is_in_group("Button")):
 			child.find_child("AnimatedSprite2D").hide()
 			child.process_mode= Node.PROCESS_MODE_DISABLED
+	$Text_displayer._reset_label()
 	RenderingServer.set_default_clear_color(Color.BLACK)
 	
 func turn_the_lights_on():

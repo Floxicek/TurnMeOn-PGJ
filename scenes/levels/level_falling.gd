@@ -57,6 +57,7 @@ func spawn_button():
 
 func push_play_button():
 	SceneManager.next_level()
+	$Hand/CollisionShape2D.disabled = true
 	
 func push_wrong_button():
 	SceneManager.reload_level("Wrong")

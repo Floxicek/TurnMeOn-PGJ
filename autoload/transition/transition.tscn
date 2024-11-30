@@ -276,7 +276,6 @@ clear_sounds = Array[AudioStream]([ExtResource("2_tf0ll"), ExtResource("3_5oogi"
 z_index = 15
 position = Vector2(1280, 300)
 time_between_letters = 0.2
-wait_before_hide = 3.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.129559, 0.129558, 0.129558, 1)

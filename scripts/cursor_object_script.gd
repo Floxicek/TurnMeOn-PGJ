@@ -10,6 +10,7 @@ var velocity: Vector2 = Vector2.ZERO
 @export var keyboard_decceleration: float = 10
 @export_category("Cursor specific")
 @export var hide_os_cursor := true
+var inverted_mouse:bool = false
 
 
 var buttons = []
@@ -31,7 +32,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if(not is_keyboard_mode):
 		velocity = Vector2.ZERO
-		position = get_global_mouse_position()
+		if inverted_mouse:
+			position = Vector2(2560,1440) - get_global_mouse_position()
+		else:
+			position = get_global_mouse_position()
 	else:
 		if Input.is_action_pressed("UP"):
 			velocity += keyboard_acceleration*Vector2.UP

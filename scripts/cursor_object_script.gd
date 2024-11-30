@@ -10,6 +10,8 @@ var velocity: Vector2 = Vector2.ZERO
 
 
 var buttons = []
+var is_in_button: bool = false
+var current_button: Area2D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,7 +33,10 @@ func _physics_process(delta: float) -> void:
 			velocity += keyboard_acceleration*Vector2.DOWN
 		if Input.is_action_pressed("RIGHT"):
 			velocity += keyboard_acceleration*Vector2.RIGHT
-		
+	
+	if Input.is_action_just_pressed("CLICK") and is_in_button:
+		current_button.push(test_func)
+
 		
 		velocity -= velocity*(keyboard_decceleration)*delta
 

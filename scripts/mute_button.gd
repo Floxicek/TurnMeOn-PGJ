@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Mute_Button
+
 var is_on: bool = true
 
 # Called when the node enters the scene tree for the first time.

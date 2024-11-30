@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://0wrw6557kcdf"]
+
+[ext_resource type="Script" path="res://scripts/level_korean.gd" id="1_2a22v"]
+[ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="1_e4mj2"]
+[ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="2_at841"]
+[ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="3_c5n3h"]
+[ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="4_bpg7v"]
+[ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="5_gdfdk"]
+[ext_resource type="PackedScene" uid="uid://dr3t7x5prtdu3" path="res://scenes/buttons/mute_button.tscn" id="6_0oqty"]
+[ext_resource type="PackedScene" uid="uid://bq58ywmehf0i4" path="res://scenes/buttons/play_btn_korean.tscn" id="6_i7l3q"]
+
+[node name="level_korean" type="Node2D"]
+script = ExtResource("1_2a22v")
+
+[node name="CursorObject" parent="." instance=ExtResource("1_e4mj2")]
+keyboard_max_speed = 40.0
+keyboard_acceleration = 10.0
+keyboard_decceleration = 25.0
+
+[node name="Node2D" parent="." instance=ExtResource("2_at841")]
+
+[node name="LanguageBtnKorean" parent="." instance=ExtResource("3_c5n3h")]
+position = Vector2(2363, 144)
+
+[node name="PlayButton" parent="." instance=ExtResource("4_bpg7v")]
+position = Vector2(1263, 716)
+
+[node name="PlayBtnKorean" parent="." instance=ExtResource("6_i7l3q")]
+position = Vector2(1263, 716)
+
+[node name="SettingsButton" parent="." instance=ExtResource("5_gdfdk")]
+position = Vector2(2400, 1282)
+
+[node name="MuteButton" parent="." instance=ExtResource("6_0oqty")]
+position = Vector2(2114, 1284)
+hover_scale = 1.1
+
+[connection signal="pressed" from="LanguageBtnKorean" to="." method="_on_language_btn_korean_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

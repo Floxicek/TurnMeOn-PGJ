@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bib8fvtq6o5oy"]
+
+[ext_resource type="AudioStream" uid="uid://dp6gn7qqkwemf" path="res://assets/soundtrack.mp3" id="1_1k355"]
+[ext_resource type="Script" path="res://autoload/audio_player.gd" id="1_r820l"]
+
+[node name="AudioPlayer" type="Node2D"]
+script = ExtResource("1_r820l")
+
+[node name="SoundtrackPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_1k355")
+volume_db = -20.0

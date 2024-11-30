@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="4_t1c6i"]
 [ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="5_5wj74"]
 [ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="6_iptoi"]
-[ext_resource type="Theme" uid="uid://73qrmdmoxyfa" path="res://theme.tres" id="7_ngyyr"]
+[ext_resource type="Theme" path="res://theme.tres" id="7_ngyyr"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_16p03")

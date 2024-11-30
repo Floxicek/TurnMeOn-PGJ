@@ -14,6 +14,7 @@ var levels : Array = [
 	"res://scenes/levels/level_fireboy_and_watergirl.tscn", 
 	"res://scenes/levels/level_falling.tscn",
 	"res://scenes/levels/Random_Buttons.tscn",
+	"res://scenes/credits.tscn"
 ]
 
 

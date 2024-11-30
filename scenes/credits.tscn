@@ -13,18 +13,16 @@ theme = ExtResource("1_6gfop")
 
 [node name="RichTextLabel" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 381.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 111
-text = "orginaljun.deviantart.com - erasing sound
+grow_vertical = 2
+theme_override_font_sizes/font_size = 49
+text = "CREDITS
 
-Kenney godot logo
-
-https://freesound.org/people/Sheyvan/
-mouse clicks
-
-"
+orginaljun.deviantart.com - erasing sound
+Kenney - godot logo
+Sheyvan from freesound.org - click sound"
 horizontal_alignment = 1
 vertical_alignment = 1

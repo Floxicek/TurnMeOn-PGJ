@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="5_3drx0"]
 [ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="6_udvh3"]
 [ext_resource type="Script" path="res://scripts/level_scripts/lights_out/light_string.gd" id="7_tqxsg"]
-[ext_resource type="Texture2D" uid="uid://r16cd1l8qa3e" path="res://import_pngs/lightbulb/IMG_2352.PNG" id="8_44poa"]
-[ext_resource type="Texture2D" uid="uid://ddle6ci7wdc8d" path="res://import_pngs/lightbulb/IMG_2353.PNG" id="10_6p6v8"]
-[ext_resource type="Texture2D" uid="uid://hxbde1kqgy2y" path="res://import_pngs/lightbulb/IMG_2354.PNG" id="11_6m72f"]
-[ext_resource type="Texture2D" uid="uid://d10ri8d445anx" path="res://import_pngs/lightbulb/IMG_2355.PNG" id="12_8ga55"]
+[ext_resource type="Texture2D" uid="uid://ctuj1co1r5g2i" path="res://import_pngs/lightbulb/IMG_2352.PNG" id="8_44poa"]
+[ext_resource type="Texture2D" uid="uid://dyfinbjv6bq17" path="res://import_pngs/lightbulb/IMG_2353.PNG" id="10_6p6v8"]
+[ext_resource type="Texture2D" uid="uid://cta2umxyp4h74" path="res://import_pngs/lightbulb/IMG_2354.PNG" id="11_6m72f"]
+[ext_resource type="Texture2D" uid="uid://bc33ruhttl7xc" path="res://import_pngs/lightbulb/IMG_2355.PNG" id="12_8ga55"]
 [ext_resource type="PackedScene" uid="uid://ccv4uqgxpmmnx" path="res://scenes/text_displayer.tscn" id="13_7a8hx"]
 [ext_resource type="Script" path="res://scripts/level_scripts/lights_out/hidden_lightbulb.gd" id="15_b5fla"]
 
@@ -99,3 +99,7 @@ wait_before_hide = 1.0
 hide_afterwards = true
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pulled_signal" from="LightString" to="." method="_on_light_string_pulled_signal"]
+[connection signal="area_entered" from="HiddenLightbulb" to="HiddenLightbulb" method="_on_area_entered"]
+[connection signal="area_exited" from="HiddenLightbulb" to="HiddenLightbulb" method="_on_area_exited"]
+[connection signal="pressed" from="HiddenLightbulb" to="." method="_on_hidden_lightbulb_pressed"]

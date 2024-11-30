@@ -7,6 +7,7 @@ var play_button_on = false
 func _ready() -> void:
 	$HiddenLightbulb.process_mode = Node.PROCESS_MODE_DISABLED
 	original_background_color = RenderingServer.get_default_clear_color()
+	await SceneManager.transition_done
 	$Text_displayer.start_printing()
 
 func turn_the_lights_out():

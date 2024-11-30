@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckc1uttiveq7u"]
+[gd_scene load_steps=9 format=3 uid="uid://ckc1uttiveq7u"]
 
 [ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="1_ca830"]
 [ext_resource type="Script" path="res://scripts/level_scripts/random_buttons/random_buttons.gd" id="1_kio3q"]
@@ -7,9 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="4_fi2mo"]
 [ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="5_vldd0"]
 [ext_resource type="PackedScene" uid="uid://dr3t7x5prtdu3" path="res://scenes/buttons/mute_button.tscn" id="7_qch6s"]
+[ext_resource type="PackedScene" uid="uid://ccv4uqgxpmmnx" path="res://scenes/text_displayer.tscn" id="8_s21r4"]
 
-[node name="RandomButtons" type="Node2D"]
+[node name="RandomButtons" type="Node2D" node_paths=PackedStringArray("all_buttons", "play_button")]
 script = ExtResource("1_kio3q")
+all_buttons = [NodePath("EscapeButton"), NodePath("LanguageBtnKorean"), NodePath("PlayButton"), NodePath("SettingsButton"), NodePath("MuteButton")]
+play_button = NodePath("PlayButton")
 
 [node name="CursorObject" parent="." instance=ExtResource("1_ca830")]
 
@@ -27,7 +30,10 @@ position = Vector2(2400, 1282)
 [node name="MuteButton" parent="." instance=ExtResource("7_qch6s")]
 position = Vector2(2140, 1283)
 
-[connection signal="pressed" from="EscapeButton" to="." method="_on_escape_button_pressed"]
-[connection signal="pressed" from="LanguageBtnKorean" to="." method="_on_language_btn_korean_pressed"]
-[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[node name="Wrong_button_text_dis" parent="." instance=ExtResource("8_s21r4")]
+position = Vector2(791, 345)
+scale = Vector2(0.5, 0.5)
+dialogue = Array[String](["Not it!"])
+time_between_letters = 0.05
+wait_before_hide = 1.0
+hide_afterwards = true

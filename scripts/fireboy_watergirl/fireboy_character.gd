@@ -39,8 +39,8 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_axis("LEFT", "RIGHT") if fireboy else Input.get_axis("arrow_left", "arrow_right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 
 	move_and_slide()

@@ -12,7 +12,6 @@ signal show_scene_done
 
 func _ready() -> void:
 	$AnimatedSprite2D.hide()
-	rng.randomize()
 
 
 var _started = false

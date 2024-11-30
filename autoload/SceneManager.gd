@@ -79,3 +79,7 @@ func next_level(message: String = ""):
 func reload_level(message:String = ""):
 	print("Reloading the level ", levels[_current_level_index])
 	change_scene(levels[_current_level_index])
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("restart"):
+		reload_level()

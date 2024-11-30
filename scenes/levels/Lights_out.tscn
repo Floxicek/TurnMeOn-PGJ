@@ -95,9 +95,9 @@ sprite_frames = SubResource("SpriteFrames_27f04")
 offset = Vector2(50, 0)
 
 [node name="Text_displayer" parent="." instance=ExtResource("13_7a8hx")]
-position = Vector2(805, 426)
+position = Vector2(961, 470)
+scale = Vector2(0.3, 0.3)
 dialogue = Array[String](["Money is tight", "Turn off the lights!"])
-time_between_letters = 0.05
 wait_before_hide = 1.0
 
 [connection signal="pressed" from="EscapeButton" to="." method="_on_escape_button_pressed"]

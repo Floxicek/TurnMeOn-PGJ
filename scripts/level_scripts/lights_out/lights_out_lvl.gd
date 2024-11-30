@@ -14,12 +14,15 @@ func turn_the_lights_out():
 	for child in get_children():
 		if (child.is_in_group("Button")):
 			child.find_child("AnimatedSprite2D").hide()
+			child.process_mode= Node.PROCESS_MODE_DISABLED
 	RenderingServer.set_default_clear_color(Color.BLACK)
 	
 func turn_the_lights_on():
 	for child in get_children():
 		if (child.is_in_group("Button")):
 			child.find_child("AnimatedSprite2D").show()
+			child.process_mode= Node.PROCESS_MODE_PAUSABLE
+
 	RenderingServer.set_default_clear_color(original_background_color)
 	play_button_on = true
 

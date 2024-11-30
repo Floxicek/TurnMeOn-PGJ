@@ -26,5 +26,7 @@ wait_time = 0.05
 
 [node name="Next_word_timer" type="Timer" parent="."]
 
+[node name="Hide_word_timer" type="Timer" parent="."]
+
 [connection signal="timeout" from="Next_letter_timer" to="." method="_on_next_letter_timer_timeout"]
 [connection signal="timeout" from="Next_word_timer" to="." method="_on_next_word_timer_timeout"]

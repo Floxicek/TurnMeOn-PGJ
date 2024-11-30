@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://exy7jj4nb5t0"]
+[gd_scene load_steps=8 format=3 uid="uid://exy7jj4nb5t0"]
 
 [ext_resource type="Script" path="res://scenes/levels/level_1.gd" id="1_jo5db"]
 [ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="1_p2dli"]
@@ -6,11 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="3_60q7a"]
 [ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="4_et1lr"]
 [ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="5_w1lfe"]
+[ext_resource type="Script" path="res://scripts/scale_down_on_load.gd" id="6_3cc78"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_jo5db")
 
 [node name="CursorObject" parent="." instance=ExtResource("1_p2dli")]
+position = Vector2(0, 2)
 keyboard_max_speed = 40.0
 keyboard_acceleration = 10.0
 keyboard_decceleration = 25.0
@@ -22,6 +24,10 @@ position = Vector2(2363, 134)
 
 [node name="PlayButton" parent="." instance=ExtResource("4_et1lr")]
 position = Vector2(1263, 716)
+
+[node name="ScaleDownOnLoad" type="Node" parent="PlayButton"]
+script = ExtResource("6_3cc78")
+scale_to = 0.8
 
 [node name="SettingsButton" parent="." instance=ExtResource("5_w1lfe")]
 position = Vector2(2400, 1282)

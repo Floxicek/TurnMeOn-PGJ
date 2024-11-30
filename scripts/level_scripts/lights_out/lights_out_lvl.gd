@@ -8,6 +8,7 @@ var play_button_on = false
 func _ready() -> void:
 	$HiddenLightbulb.process_mode = Node.PROCESS_MODE_DISABLED
 	original_background_color = RenderingServer.get_default_clear_color()
+	$Text_displayer.start_printing()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

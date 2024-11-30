@@ -13,6 +13,8 @@ offset_bottom = 23.0
 theme = ExtResource("2_3a0ts")
 theme_override_font_sizes/font_size = 361
 text = "Sample text"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Next_letter_timer" type="Timer" parent="."]
 wait_time = 0.05

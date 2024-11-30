@@ -49,21 +49,9 @@ func _physics_process(delta: float) -> void:
 		
 		position += velocity
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("START_KEYBOARD_CONTROL"):
-		stop_controlling_mouse_with_keyboard() if is_keyboard_mode else start_controlling_mouse_with_keyboard()
-
-func start_controlling_mouse_with_keyboard():
-	is_keyboard_mode = true
-
-func stop_controlling_mouse_with_keyboard():
-	is_keyboard_mode = false
-
-
 func _input(event: InputEvent) -> void:
 	if event.is_action("START_KEYBOARD_CONTROL"):
-		stop_controlling_mouse_with_keyboard() if is_keyboard_mode else start_controlling_mouse_with_keyboard()
+		is_keyboard_mode = not is_keyboard_mode
 	elif event.is_action_pressed("click"):
 		for b in buttons:
 			b.pressed.emit()

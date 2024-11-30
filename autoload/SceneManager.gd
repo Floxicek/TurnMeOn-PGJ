@@ -5,7 +5,7 @@ const transition_scene = preload("res://autoload/transition/transition.tscn")
 
 var _current_level_index := -1
 var levels : Array = [
-	"res://scenes/levels/level1.tscn",
+	#"res://scenes/levels/level1.tscn", #Already default
 	"res://scenes/levels/level_fireboy_and_watergirl.tscn", 
 	"res://scenes/levels/level_falling.tscn",
 	"res://scenes/levels/Lights_out.tscn",
@@ -39,6 +39,7 @@ func _ready() -> void:
 
 
 func change_scene(target_scene_path) -> void:
+	_in_progress = true
 	_target_scene_path = target_scene_path
 	_transition.clear_scene()
 
@@ -47,7 +48,6 @@ func _clear_scene_done() -> void:
 	# Clear scene animation done
 	ResourceLoader.load_threaded_request(_target_scene_path)
 	_request_timer = get_tree().create_timer(min_wait_time)
-	_in_progress = true
 	print("loading scene")
 
 func _show_scene_done() -> void:
@@ -91,3 +91,5 @@ func reload_level(message:String = ""):
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("restart"):
 		reload_level()
+	elif event.is_action_pressed("next_level"):
+		next_level()

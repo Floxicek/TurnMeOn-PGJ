@@ -2,6 +2,7 @@ extends Node2D
 
 signal hover_start
 signal hover_stopped
+@warning_ignore("unused_signal")
 signal pressed
 
 @export var react_on_cursor = true

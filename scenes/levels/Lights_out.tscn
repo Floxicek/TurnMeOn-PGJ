@@ -97,7 +97,7 @@ offset = Vector2(50, 0)
 [node name="Text_displayer" parent="." instance=ExtResource("13_7a8hx")]
 position = Vector2(961, 470)
 scale = Vector2(0.3, 0.3)
-dialogue = Array[String](["Money is tight", "Turn off the lights!"])
+dialogue = ["Money is tight", "Turn off the lights!"]
 wait_before_hide = 1.0
 
 [connection signal="pressed" from="EscapeButton" to="." method="_on_escape_button_pressed"]

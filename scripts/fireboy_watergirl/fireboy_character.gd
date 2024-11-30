@@ -10,6 +10,11 @@ func _ready() -> void:
 		add_to_group("Fireboy")
 	else:
 		add_to_group("Watergirl")
+	set_physics_process(false)
+	await SceneManager.transition_done
+	await get_tree().create_timer(1).timeout
+	set_physics_process(true)
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -31,6 +36,3 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
-func die():
-	hide()

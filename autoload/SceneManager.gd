@@ -64,8 +64,8 @@ func _process(_delta: float) -> void:
 				push_error("Error changing scenes")
 
 
-var _current_level_index := 0
-@export var levels : Array = ["res://scenes/levels/level1.tscn", "res://scenes/levels/level_falling.tscn", "res://scenes/levels/level_fireboy_and_watergirl.tscn", "res://scenes/levels/Lights_out.tscn"]
+var _current_level_index := -1
+@export var levels : Array = ["res://scenes/levels/level_fireboy_and_watergirl.tscn", "res://scenes/levels/level1.tscn"]
 
 func next_level(message: String = ""):
 	if not _in_progress:

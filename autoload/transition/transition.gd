@@ -22,6 +22,12 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	#$AnimatedSprite2D.hide()
 	if _started:
 		clear_scene_done.emit()
+		if SceneManager.transition_message:
+			print(SceneManager.transition_message)
+			$Text_displayer.dialogue = [str(SceneManager.transition_message)]
+			$Text_displayer.start_printing()
+		else:
+			$Text_displayer.text_complete = true
 	else:
 		show_scene_done.emit()
 
@@ -35,6 +41,9 @@ func clear_scene():
 
 func show_scene():
 	#print("Transition stoped")
+	if not $Text_displayer.text_complete:
+		await $Text_displayer.finished
+	
 	_started = false
 	$AnimatedSprite2D.show()
 	mouse_filter = MouseFilter.MOUSE_FILTER_STOP
@@ -43,6 +52,6 @@ func show_scene():
 
 
 func start_random_sound():
-	var index = rng.randi_range(0, clear_sounds.size()-1)
+	var index = rng.randi_range(0, clear_sounds.size() - 1)
 	audio.stream = clear_sounds[index]
 	audio.play()

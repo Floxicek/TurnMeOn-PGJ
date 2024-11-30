@@ -27,6 +27,7 @@ var _in_progress = false
 
 signal transition_done
 
+var transition_message = ""
 
 func _ready() -> void:
 	_transition = transition_scene.instantiate()
@@ -79,6 +80,7 @@ func _process(_delta: float) -> void:
 func next_level(message: String = ""):
 	if not _in_progress:
 		#print(_in_progress, "in progress")
+		transition_message = message
 		_current_level_index = (_current_level_index + 1) % levels.size()
 		print("Changing to level ", levels[_current_level_index])
 		change_scene(levels[_current_level_index])
@@ -86,6 +88,7 @@ func next_level(message: String = ""):
 
 
 func reload_level(message:String = ""):
+	transition_message = message
 	print("Reloading the level ", levels[_current_level_index])
 	change_scene(levels[_current_level_index])
 

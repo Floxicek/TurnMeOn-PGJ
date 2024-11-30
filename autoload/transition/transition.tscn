@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://baoekoka5qn0"]
+[gd_scene load_steps=69 format=3 uid="uid://baoekoka5qn0"]
 
 [ext_resource type="Script" path="res://autoload/transition/transition.gd" id="1_rsv86"]
 [ext_resource type="AudioStream" uid="uid://cqyoagte5iyey" path="res://assets/sounds/clear01.mp3" id="2_tf0ll"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://nsyc1nanqs8j" path="res://assets/transition_animation/0003.png" id="5_d3abs"]
 [ext_resource type="AudioStream" uid="uid://bk1wcickamquk" path="res://assets/sounds/clear05.mp3" id="6_3qhqt"]
 [ext_resource type="Texture2D" uid="uid://bwi6gnix1gmjw" path="res://assets/transition_animation/0004.png" id="6_88msq"]
+[ext_resource type="PackedScene" uid="uid://ccv4uqgxpmmnx" path="res://scenes/text_displayer.tscn" id="7_lm7vp"]
 [ext_resource type="Texture2D" uid="uid://dcxmcwqpc25rc" path="res://assets/transition_animation/0005.png" id="7_xs6id"]
 [ext_resource type="Texture2D" uid="uid://cco851mjri8f3" path="res://assets/transition_animation/0006.png" id="8_6kwdt"]
 [ext_resource type="Texture2D" uid="uid://bqml3ensvj6hu" path="res://assets/transition_animation/0007.png" id="9_yrdb0"]
@@ -270,6 +271,13 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_rsv86")
 clear_sounds = Array[AudioStream]([ExtResource("2_tf0ll"), ExtResource("3_5oogi"), ExtResource("4_o2nsq"), ExtResource("5_4urlc"), ExtResource("6_3qhqt")])
+
+[node name="Text_displayer" parent="." instance=ExtResource("7_lm7vp")]
+z_index = 15
+position = Vector2(1280, 300)
+time_between_letters = 0.2
+wait_before_hide = 2.0
+hide_afterwards = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.0646965, 0.0646965, 0.0646965, 1)

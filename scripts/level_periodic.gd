@@ -2,10 +2,25 @@ extends Node2D
 
 var state: int = 0
 
-# Called when the node enters the scene tree for the first time.
+var quote_index := 0
+var quotes = [
+	"You think theese ARe GONna work?", 
+	"Wrong! Are you eleMENTAL?!", 
+	"Still no reaction", 
+	"Knock Knock, Who's There? Beryl. Beryl who? Beryl and Lium", 
+	"Guys, stop it with the puns. We've all sulfured enough.", 
+	"HeHeHe, no.",
+	"Can you show me chemical formula for nitrogen monoxide?",
+	"NO",
+	"Okay, then what about sodium hydrade?",
+	"Nah",
+	"Not even sodium hypobromite?",
+	"NaBrO",
+	]
+
 func _ready() -> void:
 	await SceneManager.transition_done
-	$Text_displayer.start_printing_single_word("Do you feel the chemistry?", 1.5)
+	$Text_displayer.write("Do you feel the chemistry?")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,5 +56,6 @@ func _on_y_element_pressed() -> void:
 
 
 func _on_table_wrong_pressed() -> void:
-	$Text_displayer.start_printing_single_word("Wrong! Are you eleMENTAL?!")
+	$Text_displayer.write(quotes[quote_index])
+	quote_index = (quote_index + 1) % quotes.size()
 	state = 0

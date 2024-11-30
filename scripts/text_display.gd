@@ -8,6 +8,7 @@ var rng = RandomNumberGenerator.new()
 @export var wait_before_hide: float = 3
 #@export var hide_afterwards:bool = false
 #@export var loop_dialogue:bool = false
+@export var font_size := 361
 
 
 @onready var label = $Label
@@ -40,7 +41,9 @@ func _ready() -> void:
 	$NextLetterTimer.wait_time = time_between_letters
 	#$NextWordTimer.wait_time = time_between_dialogues
 	$HideTextTimer.wait_time = wait_before_hide
-	label.text = ""
+	label.add_theme_font_size_override("font_size", font_size)
+	_reset_label()
+	 #"theme_override_font_sizes/font_size"
 
 func _reset_label(new_string = false):
 	label.text = ""

@@ -10,10 +10,11 @@ var levels : Array = [
 	"res://scenes/levels/Lights_out.tscn",
 	"res://scenes/levels/inverted_mouse.tscn",
 	"res://scenes/levels/level2.tscn", #WASD normal
-#	WASD reverse
+	"res://scenes/levels/level_invert_wasd.tscn",
 	"res://scenes/levels/level_fireboy_and_watergirl.tscn", 
 	"res://scenes/levels/level_falling.tscn",
 	"res://scenes/levels/Random_Buttons.tscn",
+	"res://scenes/levels/level_periodic.tscn",
 	"res://scenes/credits.tscn"
 ]
 

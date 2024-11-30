@@ -24,7 +24,6 @@ SceneManager="*res://autoload/SceneManager.gd"
 window/size/viewport_width=2560
 window/size/viewport_height=1440
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [input]
 
@@ -58,3 +57,4 @@ START_KEYBOARD_CONTROL={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.141176, 0.141176, 0.141176, 1)

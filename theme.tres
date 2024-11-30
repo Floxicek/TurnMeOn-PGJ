@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://73qrmdmoxyfa"]
+
+[ext_resource type="FontFile" uid="uid://b0mqrvh2k3iw5" path="res://assets/fonts/Julinkafont-Regular.ttf" id="1_3k6cl"]
+
+[resource]
+default_font = ExtResource("1_3k6cl")

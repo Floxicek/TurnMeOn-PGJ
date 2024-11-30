@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnwq4qbexyx0i"]
+[gd_scene load_steps=3 format=3 uid="uid://dnwq4qbexyx0i"]
 
 [ext_resource type="Script" path="res://example/from.gd" id="1_1elyj"]
+[ext_resource type="FontFile" uid="uid://b0mqrvh2k3iw5" path="res://assets/fonts/Julinkafont-Regular.ttf" id="2_4s1ei"]
 
 [node name="From" type="Node2D"]
 script = ExtResource("1_1elyj")
@@ -17,6 +18,8 @@ offset_right = 1674.0
 offset_bottom = 1007.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_4s1ei")
+theme_override_font_sizes/font_size = 101
 text = "Change scene"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

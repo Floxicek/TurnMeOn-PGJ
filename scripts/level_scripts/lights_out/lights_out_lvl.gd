@@ -6,7 +6,6 @@ var play_button_on = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Timer.start()
 	$HiddenLightbulb.process_mode = Node.PROCESS_MODE_DISABLED
 	original_background_color = RenderingServer.get_default_clear_color()
 
@@ -28,13 +27,11 @@ func turn_the_lights_on():
 	RenderingServer.set_default_clear_color(original_background_color)
 	play_button_on = true
 
-func _on_timer_timeout() -> void:
-	$Timer.stop()
-	turn_the_lights_out()
-	$Lightbulb.hide()
-	$HiddenLightbulb.process_mode = Node.PROCESS_MODE_PAUSABLE
-	pass # Replace with function body.
 
+func _on_light_string_pulled_signal() -> void:
+	turn_the_lights_out()
+	$LightString.hide()
+	$HiddenLightbulb.process_mode = Node.PROCESS_MODE_PAUSABLE
 
 func _on_hidden_lightbulb_pressed() -> void:
 	turn_the_lights_on()
@@ -42,7 +39,6 @@ func _on_hidden_lightbulb_pressed() -> void:
 
 
 func _on_play_button_pressed() -> void:
-	#TODO: change level
-	#if play_button_on:
-	#	next_level()	
+	if play_button_on:
+		SceneManager.next_level()	
 	pass # Replace with function body.

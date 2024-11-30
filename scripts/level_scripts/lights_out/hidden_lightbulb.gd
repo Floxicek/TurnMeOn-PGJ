@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area) -> void:
 	$AnimatedSprite2D.show()
+	$AnimatedSprite2D.play("default")
 	if area is Cursor_object:
 		hover_start.emit(area)
 		var tween = get_tree().create_tween()

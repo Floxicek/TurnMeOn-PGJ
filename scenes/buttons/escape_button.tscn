@@ -6,9 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cxaptvjbtihlv" path="res://import_pngs/escape_button/IMG_2242.PNG" id="4_h7js8"]
 [ext_resource type="Texture2D" uid="uid://gf3hsglx3o3u" path="res://import_pngs/escape_button/IMG_2243.PNG" id="5_8xavi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_88n0f"]
-size = Vector2(228, 232)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_115l6"]
 animations = [{
 "frames": [{
@@ -29,14 +26,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88n0f"]
+size = Vector2(228, 232)
+
+[node name="EscapeButton" type="Area2D" groups=["Button"]]
 position = Vector2(144, 152)
 script = ExtResource("1_3vhhv")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_88n0f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1109, 535)
@@ -44,5 +39,8 @@ sprite_frames = SubResource("SpriteFrames_115l6")
 frame = 1
 frame_progress = 0.503897
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_88n0f")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

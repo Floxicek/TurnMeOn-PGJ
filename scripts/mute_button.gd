@@ -10,16 +10,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func push(callable: Callable):
+	$AnimatedSprite2D.play("on_state") if is_on else $AnimatedSprite2D.play("off_state")
 
-func _on_area_2d_area_entered(area):
-	if area is Cursor_object:
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Button"):
 		scale = Vector2(1.2, 1.2)
 
 
-func _on_area_2d_area_exited(area):
-	if area is Cursor_object:
+func _on_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Button"):
 		scale = Vector2(1, 1)
-
-
-func push(callable: Callable):
-	$AnimatedSprite2D.play("on_state") if is_on else $AnimatedSprite2D.play("off_state")

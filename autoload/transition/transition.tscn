@@ -277,7 +277,6 @@ z_index = 15
 position = Vector2(1280, 300)
 time_between_letters = 0.2
 wait_before_hide = 2.0
-hide_afterwards = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.0646965, 0.0646965, 0.0646965, 1)

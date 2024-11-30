@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="TurnMeOn"
-run/main_scene="res://scenes/levels/level1.tscn"
+run/main_scene="res://scenes/intro.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]

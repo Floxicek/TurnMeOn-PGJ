@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bib8fvtq6o5oy"]
+[gd_scene load_steps=8 format=3 uid="uid://bib8fvtq6o5oy"]
 
 [ext_resource type="AudioStream" uid="uid://dp6gn7qqkwemf" path="res://assets/soundtrack.mp3" id="1_1k355"]
 [ext_resource type="Script" path="res://autoload/audio_player.gd" id="1_r820l"]
+[ext_resource type="AudioStream" uid="uid://cbuimk48tu05l" path="res://assets/sounds/mouseclicks1.mp3" id="2_ybm2k"]
+[ext_resource type="AudioStream" uid="uid://ywe3qet7ynww" path="res://assets/sounds/mouseclicks2.mp3" id="3_3phai"]
+[ext_resource type="AudioStream" uid="uid://dq8j6mm6tepfl" path="res://assets/sounds/mouseclicks3.mp3" id="4_qfqin"]
+[ext_resource type="AudioStream" uid="uid://d20w54w54lgdi" path="res://assets/sounds/mouseclicks5.mp3" id="5_ek8wq"]
+[ext_resource type="AudioStream" uid="uid://b8g2xbn7t4q1i" path="res://assets/sounds/mouseclicks6.mp3" id="6_nbqk4"]
 
 [node name="AudioPlayer" type="Node2D"]
 script = ExtResource("1_r820l")
-sound_effects = [[], null]
+click = Array[AudioStream]([ExtResource("2_ybm2k"), ExtResource("3_3phai"), ExtResource("4_qfqin"), ExtResource("5_ek8wq"), ExtResource("6_nbqk4")])
 
 [node name="SoundtrackPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_1k355")

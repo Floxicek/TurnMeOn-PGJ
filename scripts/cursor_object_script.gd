@@ -10,7 +10,9 @@ var velocity: Vector2 = Vector2.ZERO
 @export var keyboard_decceleration: float = 10
 @export_category("Cursor specific")
 @export var hide_os_cursor := true
-var inverted_mouse:bool = false
+@export var invert_wasd: = false
+var inverted_wasd_const: int
+var inverted_mouse: bool = false
 
 
 var buttons = []
@@ -23,6 +25,11 @@ func _ready() -> void:
 		
 	if is_keyboard_mode:
 		position = Vector2(206, 1214)
+		
+	if invert_wasd:
+		inverted_wasd_const = -1
+	else:
+		inverted_wasd_const = 1
 	
 	$AnimatedSprite2D.play()
 	#if(is_keyboard_mode):
@@ -38,13 +45,13 @@ func _physics_process(delta: float) -> void:
 			position = get_global_mouse_position()
 	else:
 		if Input.is_action_pressed("UP"):
-			velocity += keyboard_acceleration*Vector2.UP
+			velocity += keyboard_acceleration*Vector2.UP*inverted_wasd_const
 		if Input.is_action_pressed("LEFT"):
-			velocity += keyboard_acceleration*Vector2.LEFT
+			velocity += keyboard_acceleration*Vector2.LEFT*inverted_wasd_const
 		if Input.is_action_pressed("DOWN"):
-			velocity += keyboard_acceleration*Vector2.DOWN
+			velocity += keyboard_acceleration*Vector2.DOWN*inverted_wasd_const
 		if Input.is_action_pressed("RIGHT"):
-			velocity += keyboard_acceleration*Vector2.RIGHT
+			velocity += keyboard_acceleration*Vector2.RIGHT*inverted_wasd_const
 		
 		velocity -= velocity*(keyboard_decceleration)*delta
 

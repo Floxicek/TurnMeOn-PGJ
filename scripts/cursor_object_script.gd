@@ -54,12 +54,12 @@ func _input(event: InputEvent) -> void:
 		stop_controlling_mouse_with_keyboard() if is_keyboard_mode else start_controlling_mouse_with_keyboard()
 	elif event.is_action("click"):
 		for b in buttons:
-			if b.is_in_group("Button"):
-				b.pressed.emit()
+			b.pressed.emit()
 				#current_button.push(test_func)
 
 func _on_area_entered(area: Area2D) -> void:
-	buttons.append(area)
+	if area.is_in_group("Button"):
+		buttons.append(area)
 
 
 func _on_area_exited(area: Area2D) -> void:

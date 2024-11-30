@@ -1,0 +1,16 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjxuo1v5sgje"]
+
+[ext_resource type="Script" path="res://scenes/levels/level_falling.gd" id="1_703ih"]
+[ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="2_nlwer"]
+[ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="3_dtl77"]
+[ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="4_c0be5"]
+[ext_resource type="PackedScene" uid="uid://dr3t7x5prtdu3" path="res://scenes/buttons/mute_button.tscn" id="5_rkgef"]
+[ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="6_4m18o"]
+
+[node name="LevelFalling" type="Node2D" groups=["SpawnedButtons"]]
+script = ExtResource("1_703ih")
+escape_button = ExtResource("2_nlwer")
+settings_button = ExtResource("3_dtl77")
+play_button = ExtResource("4_c0be5")
+mute_button = ExtResource("5_rkgef")
+language_button = ExtResource("6_4m18o")

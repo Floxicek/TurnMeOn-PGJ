@@ -91,7 +91,7 @@ sprite_frames = SubResource("SpriteFrames_27f04")
 offset = Vector2(50, 0)
 
 [node name="Text_displayer" parent="." instance=ExtResource("13_7a8hx")]
-position = Vector2(93, 326)
+position = Vector2(805, 426)
 scale = Vector2(0.5, 0.5)
 dialogue = Array[String](["Money is tight", "Turn off the lights!"])
 time_between_letters = 0.05

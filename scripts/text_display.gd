@@ -10,6 +10,8 @@ var shown_text = ""
 @export var hide_afterwards:bool = false
 @export var loop_dialogue:bool = false
 
+# TODO fix
+
 var text_complete:bool = false
 
 var cur_text:String = "Sample text"

@@ -44,6 +44,7 @@ size = Vector2(231, 236)
 
 [node name="MuteButton" type="Area2D" groups=["Button"]]
 script = ExtResource("1_tsddd")
+hover_scale = 1.1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-826, -552)

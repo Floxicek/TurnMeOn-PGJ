@@ -65,9 +65,15 @@ func _process(_delta: float) -> void:
 var _current_level_index := 0
 @export var levels = ["res://scenes/levels/level1.tscn", "res://scenes/levels/level2.tscn", "res://scenes/levels/level_break_tiles.tscn"]
 
-func next_level():
+func next_level(message: String = ""):
 	if not _in_progress:
 		#print(_in_progress, "in progress")
 		_current_level_index = (_current_level_index + 1) % levels.size()
-		print("Changing to level",_current_level_index)
+		print("Changing to level ", levels[_current_level_index])
 		change_scene(levels[_current_level_index])
+# TODO display message
+
+
+func reload_level(message:String = ""):
+	print("Reloading the level ", levels[_current_level_index])
+	change_scene(levels[_current_level_index])

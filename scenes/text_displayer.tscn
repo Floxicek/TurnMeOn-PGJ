@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4jp3dqn5jrbi"]
+[gd_scene load_steps=3 format=3 uid="uid://ccv4uqgxpmmnx"]
 
 [ext_resource type="Script" path="res://scripts/text_display.gd" id="1_85cyt"]
-[ext_resource type="Theme" uid="uid://73qrmdmoxyfa" path="res://theme.tres" id="2_3a0ts"]
+[ext_resource type="Theme" path="res://theme.tres" id="2_3a0ts"]
 
 [node name="Text_displayer" type="Node2D"]
 script = ExtResource("1_85cyt")
@@ -13,7 +13,6 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme = ExtResource("2_3a0ts")
 theme_override_font_sizes/font_size = 361
-text = "asda"
 
 [node name="Next_letter_timer" type="Timer" parent="."]
 wait_time = 0.05

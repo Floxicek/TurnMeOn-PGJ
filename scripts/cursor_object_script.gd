@@ -58,7 +58,7 @@ func _input(event: InputEvent) -> void:
 				#current_button.push(test_func)
 
 func _on_area_entered(area: Area2D) -> void:
-	if b.is_in_group("Button"):
+	if area.is_in_group("Button"):
 		buttons.append(area)
 
 

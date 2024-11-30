@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://e60ne01pkfcq"]
+
+[ext_resource type="Script" path="res://scenes/levels/level_1.gd" id="1_ow5tb"]
+[ext_resource type="PackedScene" uid="uid://d4m0lti4ef8bb" path="res://scenes/cursor_object.tscn" id="2_2pj2o"]
+[ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="3_xx7sp"]
+[ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="4_t1c6i"]
+[ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="5_5wj74"]
+[ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="6_iptoi"]
+[ext_resource type="Theme" uid="uid://73qrmdmoxyfa" path="res://theme.tres" id="7_ngyyr"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_ow5tb")
+
+[node name="CursorObject" parent="." instance=ExtResource("2_2pj2o")]
+is_keyboard_mode = true
+keyboard_max_speed = 40.0
+keyboard_acceleration = 10.0
+keyboard_decceleration = 25.0
+
+[node name="EscapeButton" parent="." instance=ExtResource("3_xx7sp")]
+
+[node name="LanguageBtnKorean" parent="." instance=ExtResource("4_t1c6i")]
+position = Vector2(2363, 134)
+
+[node name="PlayButton" parent="." instance=ExtResource("5_5wj74")]
+position = Vector2(1263, 716)
+
+[node name="SettingsButton" parent="." instance=ExtResource("6_iptoi")]
+position = Vector2(2400, 1282)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 975.0
+offset_top = 348.0
+offset_right = 1610.0
+offset_bottom = 553.0
+theme = ExtResource("7_ngyyr")
+theme_override_font_sizes/font_size = 136
+text = "LEVEL two"
+horizontal_alignment = 1
+vertical_alignment = 1

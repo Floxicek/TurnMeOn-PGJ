@@ -1,20 +1,24 @@
 extends Node2D
 
+signal hover_start
+signal hover_stopped
+signal pressed
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	$AnimatedSprite2D.play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
-
-func _on_area_2d_area_entered(area):
+func _on_area_entered(area):
 	if area is Cursor_object:
-		scale = Vector2(1.2, 1.2)
+		hover_start.emit(area)
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "scale", Vector2(1.2, 1.2), .05)
+		tween.set_trans(Tween.TRANS_CUBIC)
 
-
-func _on_area_2d_area_exited(area):
+func _on_area_exited(area) -> void:
 	if area is Cursor_object:
-		scale = Vector2(1, 1)
+		hover_stopped.emit(area)
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "scale", Vector2(1, 1), .05)
+		tween.set_trans(Tween.TRANS_CUBIC)

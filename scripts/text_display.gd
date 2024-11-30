@@ -3,7 +3,7 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 
 var shown_text = ""
-@export var dialogue: Array[String] = ["Sample text"]
+@export var dialogue = ["Sample text"]
 @export var time_between_letters = 0.2
 @export var time_between_dialogues = 1
 @export var wait_before_hide:float = 3
@@ -17,6 +17,7 @@ var cur_text:String = "Sample text"
 var single_word:bool = false
 
 var cur_text_index:int = 0
+signal finished
 
 var wrong_button_dialogue:Array[String] = ["Nope, not this one.",
 "Nope, nope, nopity, nope.",
@@ -73,8 +74,9 @@ func finished_word():
 	
 	if(single_word):
 		single_word=false
+		await get_tree().create_timer(wait_before_hide).timeout
+		finished.emit()
 		if(hide_afterwards):
-			await get_tree().create_timer(wait_before_hide).timeout
 			hide_text()
 		return
 	
@@ -88,6 +90,7 @@ func finished_word():
 		if(hide_afterwards):
 			$Hide_word_timer.start()
 			await $Hide_word_timer.timeout
+			finished.emit()
 			hide_text()
 			return
 	

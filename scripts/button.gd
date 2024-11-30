@@ -10,6 +10,11 @@ signal pressed
 
 func _ready():
 	$AnimatedSprite2D.play()
+	pressed.connect(_pressed)
+
+func _pressed():
+	if react_on_cursor:
+		AudioPlayer.play_sound_effect(AudioPlayer.SFX_Type.CLICK)
 
 var default_scale = 1.0
 @export_range(.8,1.4) var hover_scale = 1.1

@@ -31,8 +31,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ibfvc"]
-radius = 59.0
-height = 196.0
+radius = 184.0
+height = 368.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_27f04"]
 animations = [{
@@ -81,7 +81,7 @@ position = Vector2(317, 1029)
 script = ExtResource("15_b5fla")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HiddenLightbulb"]
-position = Vector2(111, 34)
+position = Vector2(114, 21)
 shape = SubResource("CapsuleShape2D_ibfvc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HiddenLightbulb"]

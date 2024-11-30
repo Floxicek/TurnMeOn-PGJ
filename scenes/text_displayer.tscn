@@ -4,8 +4,10 @@
 [ext_resource type="Theme" uid="uid://73qrmdmoxyfa" path="res://theme.tres" id="2_3a0ts"]
 
 [node name="Text_displayer" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_85cyt")
-time_between_letters = 0.5
+time_between_letters = 0.05
+hide_afterwards = true
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 15

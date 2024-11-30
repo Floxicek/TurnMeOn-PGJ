@@ -30,10 +30,11 @@ position = Vector2(2400, 1282)
 [node name="MuteButton" parent="." instance=ExtResource("7_qch6s")]
 position = Vector2(2140, 1283)
 
-[node name="Wrong_button_text_dis" parent="." instance=ExtResource("8_s21r4")]
-position = Vector2(791, 345)
-scale = Vector2(0.5, 0.5)
-dialogue = Array[String](["Not it!"])
-time_between_letters = 0.05
-wait_before_hide = 1.0
-hide_afterwards = true
+[node name="Text_displayer" parent="." instance=ExtResource("8_s21r4")]
+position = Vector2(1247, 491)
+
+[connection signal="pressed" from="EscapeButton" to="." method="_on_escape_button_pressed"]
+[connection signal="pressed" from="LanguageBtnKorean" to="." method="_on_language_btn_korean_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MuteButton" to="." method="_on_mute_button_pressed"]

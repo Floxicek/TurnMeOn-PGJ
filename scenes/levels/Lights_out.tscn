@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://j02uu0636cvy"]
+[gd_scene load_steps=18 format=3 uid="uid://j02uu0636cvy"]
 
 [ext_resource type="Script" path="res://scripts/level_scripts/lights_out/lights_out_lvl.gd" id="1_6nqhs"]
 [ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="2_ax7ef"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="4_418jh"]
 [ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="5_3drx0"]
 [ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="6_udvh3"]
+[ext_resource type="PackedScene" uid="uid://dr3t7x5prtdu3" path="res://scenes/buttons/mute_button.tscn" id="7_oo7pj"]
 [ext_resource type="Script" path="res://scripts/level_scripts/lights_out/light_string.gd" id="7_tqxsg"]
 [ext_resource type="Texture2D" uid="uid://ctuj1co1r5g2i" path="res://import_pngs/lightbulb/IMG_2352.PNG" id="8_44poa"]
 [ext_resource type="Texture2D" uid="uid://dyfinbjv6bq17" path="res://import_pngs/lightbulb/IMG_2353.PNG" id="10_6p6v8"]
@@ -67,6 +68,9 @@ position = Vector2(1263, 716)
 [node name="SettingsButton" parent="." instance=ExtResource("6_udvh3")]
 position = Vector2(2400, 1282)
 
+[node name="MuteButton" parent="." instance=ExtResource("7_oo7pj")]
+position = Vector2(2159, 1286)
+
 [node name="LightString" type="Node2D" parent="."]
 position = Vector2(1922, -73)
 script = ExtResource("7_tqxsg")
@@ -92,13 +96,15 @@ offset = Vector2(50, 0)
 
 [node name="Text_displayer" parent="." instance=ExtResource("13_7a8hx")]
 position = Vector2(805, 426)
-scale = Vector2(0.5, 0.5)
 dialogue = Array[String](["Money is tight", "Turn off the lights!"])
 time_between_letters = 0.05
 wait_before_hide = 1.0
-hide_afterwards = true
 
+[connection signal="pressed" from="EscapeButton" to="." method="_on_escape_button_pressed"]
+[connection signal="pressed" from="LanguageBtnKorean" to="." method="_on_language_btn_korean_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MuteButton" to="." method="_on_mute_button_pressed"]
 [connection signal="pulled_signal" from="LightString" to="." method="_on_light_string_pulled_signal"]
 [connection signal="area_entered" from="HiddenLightbulb" to="HiddenLightbulb" method="_on_area_entered"]
 [connection signal="area_exited" from="HiddenLightbulb" to="HiddenLightbulb" method="_on_area_exited"]

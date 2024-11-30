@@ -31,3 +31,23 @@ func _on_language_btn_korean_pressed() -> void:
 		
 		$PlayBtnKorean.process_mode = Node.PROCESS_MODE_PAUSABLE
 		$PlayBtnKorean.show()
+
+
+func _on_esc_btn_pressed() -> void:
+	$Text_displayer.show_rand_bad_button_dialog()
+	pass # Replace with function body.
+
+
+func _on_play_btn_korean_pressed() -> void:
+	$Text_displayer.show_rand_bad_button_dialog()
+	pass # Replace with function body.
+
+
+func _on_settings_button_pressed() -> void:
+	$Text_displayer.show_rand_bad_button_dialog()
+	pass # Replace with function body.
+
+
+func _on_mute_button_pressed() -> void:
+	$Text_displayer.show_rand_bad_button_dialog()
+	pass # Replace with function body.

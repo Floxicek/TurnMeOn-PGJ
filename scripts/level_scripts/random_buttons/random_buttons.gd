@@ -31,4 +31,4 @@ func _process(delta: float) -> void:
 	pass
 
 func show_wrong_button_quote():
-	$Wrong_button_text_dis.start_printing()
+	$Text_displayer.show_rand_bad_button_dialog()

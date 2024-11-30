@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://e60ne01pkfcq"]
+[gd_scene load_steps=9 format=3 uid="uid://e60ne01pkfcq"]
 
 [ext_resource type="Script" path="res://scenes/levels/level_2.gd" id="1_16p03"]
 [ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="2_2pj2o"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="5_5wj74"]
 [ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="6_iptoi"]
 [ext_resource type="PackedScene" uid="uid://dr3t7x5prtdu3" path="res://scenes/buttons/mute_button.tscn" id="7_wfq7o"]
+[ext_resource type="PackedScene" uid="uid://ccv4uqgxpmmnx" path="res://scenes/text_displayer.tscn" id="8_0bkwm"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_16p03")
@@ -31,4 +32,11 @@ position = Vector2(2400, 1282)
 [node name="MuteButton" parent="." instance=ExtResource("7_wfq7o")]
 position = Vector2(2128, 1285)
 
+[node name="Text_displayer" parent="." instance=ExtResource("8_0bkwm")]
+position = Vector2(1272, 502)
+
+[connection signal="pressed" from="EscapeButton" to="." method="_on_escape_button_pressed"]
+[connection signal="pressed" from="LanguageBtnKorean" to="." method="_on_language_btn_korean_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MuteButton" to="." method="_on_mute_button_pressed"]

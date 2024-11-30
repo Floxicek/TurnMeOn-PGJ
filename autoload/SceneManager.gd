@@ -61,8 +61,8 @@ var _current_level_index := 0
 var levels = ["res://scenes/levels/level1.tscn", "res://scenes/levels/level2.tscn"]
 
 func next_level():
-	print(_in_progress, "in progress")
 	if not _in_progress:
+		#print(_in_progress, "in progress")
 		_current_level_index = (_current_level_index + 1) % levels.size()
-		print("Level",_current_level_index)
+		print("Changing to level",_current_level_index)
 		change_scene(levels[_current_level_index])

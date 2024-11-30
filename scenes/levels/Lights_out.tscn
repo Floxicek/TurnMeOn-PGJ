@@ -1,0 +1,121 @@
+[gd_scene load_steps=19 format=3 uid="uid://j02uu0636cvy"]
+
+[ext_resource type="Script" path="res://scripts/level_scripts/lights_out/lights_out_lvl.gd" id="1_6nqhs"]
+[ext_resource type="PackedScene" uid="uid://d4m0lti4ef8bb" path="res://scenes/cursor_object.tscn" id="2_ax7ef"]
+[ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="3_owa30"]
+[ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="4_418jh"]
+[ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="5_3drx0"]
+[ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="6_udvh3"]
+[ext_resource type="Texture2D" uid="uid://dampxihajfa4s" path="res://import_pngs/escape_button/IMG_2238.PNG" id="7_nb3r0"]
+[ext_resource type="Script" path="res://scripts/level_scripts/lights_out/lightbulb.gd" id="7_tqxsg"]
+[ext_resource type="Texture2D" uid="uid://b1l3ux3yt747s" path="res://import_pngs/escape_button/IMG_2241.PNG" id="8_gkrgf"]
+[ext_resource type="Texture2D" uid="uid://cxaptvjbtihlv" path="res://import_pngs/escape_button/IMG_2242.PNG" id="9_1a0y4"]
+[ext_resource type="Texture2D" uid="uid://gf3hsglx3o3u" path="res://import_pngs/escape_button/IMG_2243.PNG" id="10_h8q4a"]
+[ext_resource type="Texture2D" uid="uid://b7jqor3qygplh" path="res://import_pngs/settings_button/IMG_2249.PNG" id="12_c26wd"]
+[ext_resource type="Texture2D" uid="uid://dgvdv8j32tcvs" path="res://import_pngs/settings_button/IMG_2250.PNG" id="13_fqtlx"]
+[ext_resource type="Texture2D" uid="uid://rhm3q27h3yym" path="res://import_pngs/settings_button/IMG_2251.PNG" id="14_kki4i"]
+[ext_resource type="Script" path="res://scripts/level_scripts/lights_out/hidden_lightbulb.gd" id="15_b5fla"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_juwcy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_nb3r0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gkrgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1a0y4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h8q4a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_c26wd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fqtlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kki4i")
+}],
+"loop": true,
+"name": &"pull_string",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62jq3"]
+size = Vector2(241, 242)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_27f04"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_c26wd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fqtlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kki4i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LightsOut" type="Node2D"]
+script = ExtResource("1_6nqhs")
+
+[node name="CursorObject" parent="." instance=ExtResource("2_ax7ef")]
+
+[node name="EscapeButton" parent="." instance=ExtResource("3_owa30")]
+
+[node name="LanguageBtnKorean" parent="." instance=ExtResource("4_418jh")]
+position = Vector2(2363, 134)
+
+[node name="PlayButton" parent="." instance=ExtResource("5_3drx0")]
+position = Vector2(1263, 716)
+
+[node name="SettingsButton" parent="." instance=ExtResource("6_udvh3")]
+position = Vector2(2400, 1282)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Lightbulb" type="Node2D" parent="."]
+position = Vector2(2826, 648)
+script = ExtResource("7_tqxsg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Lightbulb"]
+sprite_frames = SubResource("SpriteFrames_juwcy")
+animation = &"pull_string"
+
+[node name="Timer" type="Timer" parent="Lightbulb"]
+wait_time = 3.0
+
+[node name="HiddenLightbulb" type="Area2D" parent="." groups=["Button"]]
+position = Vector2(317, 1029)
+script = ExtResource("15_b5fla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HiddenLightbulb"]
+position = Vector2(-6.5, -5)
+shape = SubResource("RectangleShape2D_62jq3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HiddenLightbulb"]
+position = Vector2(-1168, -555)
+sprite_frames = SubResource("SpriteFrames_27f04")
+offset = Vector2(50, 0)
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Lightbulb/Timer" to="Lightbulb" method="_on_timer_timeout"]
+[connection signal="area_entered" from="HiddenLightbulb" to="HiddenLightbulb" method="_on_area_entered"]
+[connection signal="area_exited" from="HiddenLightbulb" to="HiddenLightbulb" method="_on_area_exited"]
+[connection signal="pressed" from="HiddenLightbulb" to="." method="_on_hidden_lightbulb_pressed"]

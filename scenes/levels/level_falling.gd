@@ -18,6 +18,7 @@ var play_spawning: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	rng.randomize()
 	await SceneManager.transition_done
 	button_prefabs = [escape_button, settings_button, mute_button, language_button]
 	$PlayTimer.wait_time = play_delay

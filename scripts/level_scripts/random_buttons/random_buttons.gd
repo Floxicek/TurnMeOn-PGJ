@@ -9,6 +9,7 @@ var button_with_play_func: Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	rng.randomize()
 	assign_play_func()
 
 func assign_play_func():

@@ -36,6 +36,7 @@ func _ready() -> void:
 	$Next_letter_timer.wait_time = time_between_letters
 	$Next_word_timer.wait_time = time_between_dialogues
 	shown_text = ""
+	rng.randomize()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://dr3t7x5prtdu3"]
+
+[ext_resource type="Script" path="res://scripts/mute_button.gd" id="1_tsddd"]
+[ext_resource type="Texture2D" uid="uid://2crcmgqgxc2m" path="res://import_pngs/mute_button_off/IMG_2331.PNG" id="2_7ex84"]
+[ext_resource type="Texture2D" uid="uid://cpsvcq00bmqx" path="res://import_pngs/mute_button_off/IMG_2332.PNG" id="3_78vmb"]
+[ext_resource type="Texture2D" uid="uid://de67s7m4trj3q" path="res://import_pngs/mute_button_off/IMG_2333.PNG" id="4_qyykn"]
+[ext_resource type="Texture2D" uid="uid://cy468onx22dow" path="res://import_pngs/mute_button_on/IMG_2325.PNG" id="5_uik2h"]
+[ext_resource type="Texture2D" uid="uid://dlew1jwjp4jk6" path="res://import_pngs/mute_button_on/IMG_2326.PNG" id="6_whdps"]
+[ext_resource type="Texture2D" uid="uid://bcc5d63c7xodq" path="res://import_pngs/mute_button_on/IMG_2327.PNG" id="7_te2rd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xp4ok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7ex84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_78vmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qyykn")
+}],
+"loop": true,
+"name": &"off_state",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_uik2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_whdps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_te2rd")
+}],
+"loop": true,
+"name": &"on_state",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2a11u"]
+size = Vector2(231, 236)
+
+[node name="MuteButton" type="Node2D"]
+script = ExtResource("1_tsddd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-826, -552)
+sprite_frames = SubResource("SpriteFrames_xp4ok")
+animation = &"on_state"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_2a11u")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

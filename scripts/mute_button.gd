@@ -1,12 +1,13 @@
 extends Node2D
 
+var is_on: bool = true
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	$AnimatedSprite2D.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta: float) -> void:
 	pass
 
 
@@ -18,3 +19,7 @@ func _on_area_2d_area_entered(area):
 func _on_area_2d_area_exited(area):
 	if area is Cursor_object:
 		scale = Vector2(1, 1)
+
+
+func push():
+	$AnimatedSprite2D.play("on_state") if is_on else $AnimatedSprite2D.play("off_state")

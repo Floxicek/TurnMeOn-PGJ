@@ -3,11 +3,10 @@
 [ext_resource type="Script" path="res://scripts/text_display.gd" id="1_85cyt"]
 [ext_resource type="Theme" uid="uid://73qrmdmoxyfa" path="res://theme.tres" id="2_3a0ts"]
 
-[node name="Text_displayer" type="Node2D"]
+[node name="TextDisplayer" type="Node2D"]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_85cyt")
 time_between_letters = 0.05
-hide_afterwards = true
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 15
@@ -21,12 +20,12 @@ text = "Sample text"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Next_letter_timer" type="Timer" parent="."]
+[node name="NextLetterTimer" type="Timer" parent="."]
 wait_time = 0.05
 
-[node name="Next_word_timer" type="Timer" parent="."]
+[node name="NextWordTimer" type="Timer" parent="."]
 
-[node name="Hide_word_timer" type="Timer" parent="."]
+[node name="HideTextTimer" type="Timer" parent="."]
 
-[connection signal="timeout" from="Next_letter_timer" to="." method="_on_next_letter_timer_timeout"]
-[connection signal="timeout" from="Next_word_timer" to="." method="_on_next_word_timer_timeout"]
+[connection signal="timeout" from="NextLetterTimer" to="." method="_next_letter"]
+[connection signal="timeout" from="HideTextTimer" to="." method="_on_hide_text_timer_timeout"]

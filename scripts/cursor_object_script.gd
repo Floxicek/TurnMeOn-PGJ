@@ -13,8 +13,8 @@ var buttons = []
 
 func _ready() -> void:
 	$AnimatedSprite2D.play()
-	if(is_keyboard_mode):
-		position = Vector2(1280, 720)
+	#if(is_keyboard_mode):
+		#position = Vector2(1280, 720)
 
 func _physics_process(delta: float) -> void:
 	if(not is_keyboard_mode):

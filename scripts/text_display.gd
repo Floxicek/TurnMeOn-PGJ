@@ -58,6 +58,7 @@ func start_printing_single_word(text:String, custom_time_to_print:float = -1):
 	
 
 func start_printing(custom_time_to_print:float = -1):
+	single_word = false
 	$Next_word_timer.stop()
 	hide_text()
 	cur_text = dialogue[cur_text_index]

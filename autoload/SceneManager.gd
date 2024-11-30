@@ -9,7 +9,7 @@ var _loading_status: int
 var _progress: Array[float] = []
 
 var _request_timer: SceneTreeTimer
-var min_wait_time = 1
+@export var min_wait_time = 1
 var _in_progress = false
 
 signal transition_done
@@ -63,7 +63,7 @@ func _process(_delta: float) -> void:
 
 
 var _current_level_index := 0
-var levels = ["res://scenes/levels/level1.tscn", "res://scenes/levels/level2.tscn", "res://scenes/levels/level_break_tiles.tscn"]
+@export var levels = ["res://scenes/levels/level1.tscn", "res://scenes/levels/level2.tscn", "res://scenes/levels/level_break_tiles.tscn"]
 
 func next_level():
 	if not _in_progress:

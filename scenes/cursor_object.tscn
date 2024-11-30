@@ -25,7 +25,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CursorObject" type="Area2D"]
+[node name="CursorObject" type="Area2D" groups=["Cursor"]]
 script = ExtResource("1_5webd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

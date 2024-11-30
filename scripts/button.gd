@@ -10,14 +10,14 @@ func _ready():
 
 
 func _on_area_entered(area):
-	if area is Cursor_object:
+	if area.is_in_group("Cursor"):
 		hover_start.emit(area)
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "scale", Vector2(1.2, 1.2), .05)
 		tween.set_trans(Tween.TRANS_CUBIC)
 
 func _on_area_exited(area) -> void:
-	if area is Cursor_object:
+	if area.is_in_group("Cursor"):
 		hover_stopped.emit(area)
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "scale", Vector2(1, 1), .05)

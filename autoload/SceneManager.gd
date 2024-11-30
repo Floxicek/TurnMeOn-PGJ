@@ -12,11 +12,16 @@ var _request_timer: SceneTreeTimer
 var min_wait_time = 1
 var _in_progress = false
 
+signal transition_done
+
+
 func _ready() -> void:
 	_transition = transition_scene.instantiate()
 	add_child(_transition, true)
 	_transition.clear_scene_done.connect(_clear_scene_done)
 	_transition.show_scene_done.connect(_show_scene_done)
+	await get_tree().create_timer(.5).timeout
+	transition_done.emit()
 
 
 func change_scene(target_scene_path) -> void:
@@ -34,7 +39,7 @@ func _clear_scene_done() -> void:
 func _show_scene_done() -> void:
 	# Show scene animation done
 	_in_progress = false
-	pass
+	transition_done.emit()
 
 	
 func _process(_delta: float) -> void:
@@ -58,7 +63,7 @@ func _process(_delta: float) -> void:
 
 
 var _current_level_index := 0
-var levels = ["res://scenes/levels/level1.tscn", "res://scenes/levels/level2.tscn"]
+var levels = ["res://scenes/levels/level1.tscn", "res://scenes/levels/level2.tscn", "res://scenes/levels/level_break_tiles.tscn"]
 
 func next_level():
 	if not _in_progress:

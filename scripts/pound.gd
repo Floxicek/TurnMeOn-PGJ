@@ -11,4 +11,4 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if (water and body.is_in_group("Fireboy")) or (not water and body.is_in_group("Watergirl")):
-		body.die()
+		SceneManager.reload_level("You died")

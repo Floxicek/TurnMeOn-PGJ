@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://co8cafse6uqgj"]
+[gd_scene load_steps=29 format=3 uid="uid://co8cafse6uqgj"]
 
 [ext_resource type="Script" path="res://scenes/levels/level_fireboy_and_watergirl.gd" id="1_d0sc7"]
 [ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="2_c7wh7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/animations/move_here_on_load.gd" id="7_ti10t"]
 [ext_resource type="Texture2D" uid="uid://ckcleebe6kscg" path="res://import_pngs/cursor/IMG_2261.PNG" id="8_2ohch"]
 [ext_resource type="Script" path="res://scripts/fireboy_watergirl/fireboy_character.gd" id="8_rxknh"]
+[ext_resource type="Script" path="res://scripts/fireboy_watergirl/player_detection.gd" id="8_yeunv"]
 [ext_resource type="Texture2D" uid="uid://dpe0myavvlkvd" path="res://import_pngs/cursor/IMG_2262.PNG" id="9_3yh7x"]
 [ext_resource type="Texture2D" uid="uid://dlluqqbio3n7u" path="res://import_pngs/cursor/IMG_2263.PNG" id="10_35gj6"]
 [ext_resource type="Script" path="res://scripts/animations/hide_on_load.gd" id="11_myh46"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://coa5coff1iots" path="res://import_pngs/ground/line2.png" id="15_og146"]
 [ext_resource type="Texture2D" uid="uid://77gm227whcmr" path="res://import_pngs/ground/line3.png" id="16_3bnuj"]
 [ext_resource type="PackedScene" uid="uid://dq21p144y6rd3" path="res://scenes/pond.tscn" id="17_w7sjr"]
+[ext_resource type="PackedScene" uid="uid://d0pws0snogv6x" path="res://scenes/fireboy/rect_half.tscn" id="18_kb8bp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88n0f"]
 size = Vector2(228, 232)
@@ -26,6 +28,9 @@ size = Vector2(325, 228)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iuhb0"]
 size = Vector2(1026, 233)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnjmu"]
+size = Vector2(1020, 302)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwcgt"]
 size = Vector2(234.75, 233)
@@ -47,8 +52,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4p73"]
-size = Vector2(560, 540)
+[sub_resource type="CircleShape2D" id="CircleShape2D_6u57u"]
+radius = 281.603
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yhi4h"]
 distance = -1442.0
@@ -111,8 +116,18 @@ react_on_cursor = false
 shape = SubResource("RectangleShape2D_iuhb0")
 
 [node name="MoveHereOnLoad" type="Marker2D" parent="PlayButtonCharacter"]
-position = Vector2(-112, 392)
+position = Vector2(1010, -188)
 script = ExtResource("7_ti10t")
+
+[node name="PlayDetection" type="Area2D" parent="PlayButtonCharacter"]
+position = Vector2(0, -272)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("8_yeunv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayButtonCharacter/PlayDetection"]
+shape = SubResource("RectangleShape2D_dnjmu")
+debug_color = Color(0, 0.651198, 0.0237737, 0.42)
 
 [node name="SettingsButtonCharacter" type="StaticBody2D" parent="."]
 position = Vector2(2400, 1282)
@@ -124,7 +139,9 @@ react_on_cursor = false
 shape = SubResource("RectangleShape2D_hwcgt")
 
 [node name="Fireboy" type="CharacterBody2D" parent="."]
-position = Vector2(163, 1315)
+z_index = 1
+position = Vector2(309, 1230)
+collision_layer = 2
 script = ExtResource("8_rxknh")
 metadata/_edit_group_ = true
 
@@ -137,10 +154,12 @@ sprite_frames = SubResource("SpriteFrames_4ya76")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fireboy"]
 position = Vector2(-6, -12)
 scale = Vector2(0.1, 0.1)
-shape = SubResource("RectangleShape2D_d4p73")
+shape = SubResource("CircleShape2D_6u57u")
 
 [node name="Watergirl" type="CharacterBody2D" parent="."]
-position = Vector2(230, 1316)
+z_index = 1
+position = Vector2(376, 1231)
+collision_layer = 2
 script = ExtResource("8_rxknh")
 fireboy = false
 metadata/_edit_group_ = true
@@ -154,29 +173,24 @@ sprite_frames = SubResource("SpriteFrames_4ya76")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Watergirl"]
 position = Vector2(-6, -12)
 scale = Vector2(0.1, 0.1)
-shape = SubResource("RectangleShape2D_d4p73")
+shape = SubResource("CircleShape2D_6u57u")
 
 [node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(0, 93)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(0, -36)
 shape = SubResource("WorldBoundaryShape2D_yhi4h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ground"]
-position = Vector2(1282.9, 852)
+position = Vector2(1282.9, 810)
 sprite_frames = SubResource("SpriteFrames_csbfa")
 frame_progress = 0.219904
 
-[node name="MoveHereOnLoad" type="Marker2D" parent="Ground"]
-position = Vector2(0, -80)
-script = ExtResource("7_ti10t")
-duration = 3.0
-
 [node name="Rect" parent="." instance=ExtResource("12_ofjph")]
-position = Vector2(1964, 1533)
+position = Vector2(2004, 1533)
 
 [node name="MoveHereOnLoad" type="Marker2D" parent="Rect"]
-position = Vector2(0, -183)
+position = Vector2(0, -191)
 script = ExtResource("7_ti10t")
 
 [node name="Rect2" parent="." instance=ExtResource("12_ofjph")]
@@ -186,33 +200,51 @@ position = Vector2(2869, 979)
 position = Vector2(-963, 0)
 script = ExtResource("7_ti10t")
 
-[node name="Rect3" parent="." instance=ExtResource("12_ofjph")]
-position = Vector2(-316, 838)
-
-[node name="MoveHereOnLoad" type="Marker2D" parent="Rect3"]
-position = Vector2(452, 0)
-script = ExtResource("7_ti10t")
-
-[node name="Rect4" parent="." instance=ExtResource("12_ofjph")]
-position = Vector2(-366, 631)
-
-[node name="MoveHereOnLoad" type="Marker2D" parent="Rect4"]
-position = Vector2(866, -5)
-script = ExtResource("7_ti10t")
-
 [node name="Rect5" parent="." instance=ExtResource("12_ofjph")]
-position = Vector2(2907, 601)
+position = Vector2(2857, 975)
 
 [node name="MoveHereOnLoad" type="Marker2D" parent="Rect5"]
-position = Vector2(-814, -5)
+position = Vector2(-1726, -5)
 script = ExtResource("7_ti10t")
 
-[node name="Pond" parent="." groups=["Player"] instance=ExtResource("17_w7sjr")]
-position = Vector2(1269, 1419)
+[node name="PondGroup" type="Node2D" parent="."]
+position = Vector2(1053, -365)
+scale = Vector2(0.5, 1)
+
+[node name="Pond" parent="PondGroup" groups=["Player"] instance=ExtResource("17_w7sjr")]
+scale = Vector2(1.215, 1.23)
 lava_color = Color(1, 0.477854, 0.410057, 1)
 water_color = Color(0.333018, 0.537533, 1, 1)
 
+[node name="RectHalf2" parent="PondGroup" instance=ExtResource("18_kb8bp")]
+position = Vector2(-504, 42)
+scale = Vector2(2, 1)
+
+[node name="RectHalf3" parent="PondGroup" instance=ExtResource("18_kb8bp")]
+position = Vector2(24, 156)
+scale = Vector2(2, 1)
+
+[node name="RectHalf4" parent="PondGroup" instance=ExtResource("18_kb8bp")]
+position = Vector2(516, 38)
+scale = Vector2(2, 1)
+
+[node name="MoveHereOnLoad" type="Marker2D" parent="PondGroup"]
+position = Vector2(0, 904)
+script = ExtResource("7_ti10t")
+
+[node name="RectHalf" parent="." instance=ExtResource("18_kb8bp")]
+position = Vector2(318, 766)
+
+[node name="RectHalf2" parent="." instance=ExtResource("18_kb8bp")]
+position = Vector2(-284, 978)
+
+[node name="MoveHereOnLoad" type="Marker2D" parent="RectHalf2"]
+position = Vector2(902, 0)
+script = ExtResource("7_ti10t")
+
 [connection signal="pressed" from="PlayButtonCharacter/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="body_entered" from="PlayButtonCharacter/PlayDetection" to="PlayButtonCharacter/PlayDetection" method="_on_body_entered"]
+[connection signal="body_exited" from="PlayButtonCharacter/PlayDetection" to="PlayButtonCharacter/PlayDetection" method="_on_body_exited"]
 
 [editable path="EscapeButtonCharacter/EscapeButton"]
 [editable path="LanguageBtnCharacter/LanguageBtnKorean"]

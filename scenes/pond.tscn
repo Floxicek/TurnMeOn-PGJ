@@ -1,42 +1,58 @@
 [gd_scene load_steps=4 format=3 uid="uid://dq21p144y6rd3"]
 
 [ext_resource type="Script" path="res://scripts/pound.gd" id="1_ajp7c"]
-[ext_resource type="Texture2D" uid="uid://dp4bgfvy6m4r1" path="res://import_pngs/ground/ground1.png" id="1_jawmn"]
+[ext_resource type="SpriteFrames" uid="uid://cod1757dofwg3" path="res://import_pngs/ground/ground.tres" id="2_dnps5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0m7m3"]
 size = Vector2(371, 90)
 
 [node name="Pond" type="Area2D"]
 modulate = Color(0.354358, 0.661233, 0, 1)
+z_index = 2
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_ajp7c")
+lava_color = Color(1, 0.478431, 0.411765, 1)
+water_color = Color(0.333333, 0.537255, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 35)
 shape = SubResource("RectangleShape2D_0m7m3")
 
-[node name="Ground1" type="Sprite2D" parent="."]
+[node name="Ground1" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -604)
 scale = Vector2(0.15, 1)
-texture = ExtResource("1_jawmn")
+sprite_frames = ExtResource("2_dnps5")
+autoplay = "default"
 
-[node name="Ground2" type="Sprite2D" parent="."]
-position = Vector2(0, -585)
+[node name="Ground2" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -588)
 scale = Vector2(0.15, 1)
-texture = ExtResource("1_jawmn")
+sprite_frames = ExtResource("2_dnps5")
+autoplay = "default"
 
-[node name="Ground3" type="Sprite2D" parent="."]
-position = Vector2(0, -568)
+[node name="Ground3" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -572)
 scale = Vector2(0.15, 1)
-texture = ExtResource("1_jawmn")
+sprite_frames = ExtResource("2_dnps5")
+autoplay = "default"
 
-[node name="Ground4" type="Sprite2D" parent="."]
-position = Vector2(0, -554)
+[node name="Ground4" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -556)
 scale = Vector2(0.15, 1)
-texture = ExtResource("1_jawmn")
+sprite_frames = ExtResource("2_dnps5")
+autoplay = "default"
 
-[node name="Ground5" type="Sprite2D" parent="."]
-position = Vector2(0, -537)
+[node name="Ground5" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -540)
 scale = Vector2(0.15, 1)
-texture = ExtResource("1_jawmn")
+sprite_frames = ExtResource("2_dnps5")
+autoplay = "default"
+
+[node name="Ground6" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -524)
+scale = Vector2(0.15, 1)
+sprite_frames = ExtResource("2_dnps5")
+autoplay = "default"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -18,6 +18,7 @@ var play_spawning: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	await SceneManager.transition_done
 	button_prefabs = [escape_button, settings_button, mute_button, language_button]
 	$PlayTimer.wait_time = play_delay
 	$PlayTimer.start()
@@ -44,7 +45,6 @@ func spawn_button():
 			tmp_button.pressed.connect(push_wrong_button)
 	else:
 		tmp_button.pressed.connect(push_wrong_button)
-			
 	
 	var spawn_pos = Vector2(rng.randi_range(tmp_button.get_node("CollisionShape2D").shape.size.y/2, 2560 - tmp_button.get_node("CollisionShape2D").shape.size.y/2), -tmp_button.get_node("CollisionShape2D").shape.size.x/2)
 	add_child(tmp_button)
@@ -59,8 +59,7 @@ func push_play_button():
 	SceneManager.next_level()
 	
 func push_wrong_button():
-	#SceneManager.reloadScene
-	pass
+	SceneManager.reload_level("Wrong")
 
 func _on_play_timer_timeout() -> void:
 	button_prefabs.append(play_button)

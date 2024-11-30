@@ -4,11 +4,13 @@ var original_background_color
 
 var play_button_on = false
 
+# TODO dont show wrong button quotes before ligths go out
+
 func _ready() -> void:
 	$HiddenLightbulb.process_mode = Node.PROCESS_MODE_DISABLED
 	original_background_color = RenderingServer.get_default_clear_color()
 	await SceneManager.transition_done
-	$Text_displayer.start_printing()
+	$Text_displayer.write_dialogue(["Money is tight", "Turn off the lights!"])
 
 func turn_the_lights_out():
 	for child in get_children():
@@ -40,24 +42,24 @@ func _on_play_button_pressed() -> void:
 	if play_button_on:
 		SceneManager.next_level()
 	else:
-		$Text_displayer.show_rand_bad_button_dialog()
+		$Text_displayer.write_wrong_button()
 
 
 func _on_escape_button_pressed() -> void:
-	$Text_displayer.show_rand_bad_button_dialog()
+	$Text_displayer.write_wrong_button()
 	pass # Replace with function body.
 
 
 func _on_language_btn_korean_pressed() -> void:
-	$Text_displayer.show_rand_bad_button_dialog()
+	$Text_displayer.write_wrong_button()
 	pass # Replace with function body.
 
 
 func _on_settings_button_pressed() -> void:
-	$Text_displayer.show_rand_bad_button_dialog()
+	$Text_displayer.write_wrong_button()
 	pass # Replace with function body.
 
 
 func _on_mute_button_pressed() -> void:
-	$Text_displayer.show_rand_bad_button_dialog()
+	$Text_displayer.write_wrong_button()
 	pass # Replace with function body.

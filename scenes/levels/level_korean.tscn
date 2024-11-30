@@ -34,7 +34,6 @@ position = Vector2(2400, 1282)
 
 [node name="MuteButton" parent="." instance=ExtResource("6_0oqty")]
 position = Vector2(2114, 1284)
-hover_scale = 1.1
 
 [node name="Text_displayer" parent="." instance=ExtResource("9_ct2k4")]
 position = Vector2(1259, 509)

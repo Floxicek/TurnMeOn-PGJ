@@ -97,8 +97,7 @@ offset = Vector2(50, 0)
 [node name="Text_displayer" parent="." instance=ExtResource("13_7a8hx")]
 position = Vector2(961, 470)
 scale = Vector2(0.3, 0.3)
-dialogue = ["Money is tight", "Turn off the lights!"]
-wait_before_hide = 1.0
+wait_before_hide = 2.5
 
 [connection signal="pressed" from="EscapeButton" to="." method="_on_escape_button_pressed"]
 [connection signal="pressed" from="LanguageBtnKorean" to="." method="_on_language_btn_korean_pressed"]

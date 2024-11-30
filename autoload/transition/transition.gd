@@ -8,7 +8,7 @@ signal show_scene_done
 @onready var audio = $AudioStreamPlayer2D
 
 @onready var rng = RandomNumberGenerator.new()
-
+@onready var text_displayer = $TextDisplayer
 
 func _ready() -> void:
 	$AnimatedSprite2D.hide()
@@ -24,10 +24,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		clear_scene_done.emit()
 		if SceneManager.transition_message:
 			print(SceneManager.transition_message)
-			$Text_displayer.dialogue = [str(SceneManager.transition_message)]
-			$Text_displayer.start_printing()
+			text_displayer.write(SceneManager.transition_message)
 		else:
-			$Text_displayer.text_complete = true
+			text_displayer.finished.emit()
 	else:
 		show_scene_done.emit()
 
@@ -41,8 +40,8 @@ func clear_scene():
 
 func show_scene():
 	#print("Transition stoped")
-	if not $Text_displayer.text_complete:
-		await $Text_displayer.finished
+	if not text_displayer.is_done:
+		await text_displayer.finished
 	
 	_started = false
 	$AnimatedSprite2D.show()

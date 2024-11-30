@@ -1,0 +1,216 @@
+[gd_scene load_steps=17 format=3 uid="uid://cw2sr68egc4q3"]
+
+[ext_resource type="Script" path="res://scripts/level_scripts/air_hockey/air_hockey.gd" id="1_njx1p"]
+[ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="2_fw0iq"]
+[ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="3_i8stf"]
+[ext_resource type="Script" path="res://scripts/level_scripts/air_hockey/hockey_paddle.gd" id="3_psfc2"]
+[ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="4_nkbni"]
+[ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="5_bhji4"]
+[ext_resource type="PackedScene" uid="uid://dr3t7x5prtdu3" path="res://scenes/buttons/mute_button.tscn" id="7_48bub"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="9_ibymu"]
+[ext_resource type="Texture2D" uid="uid://b7jqor3qygplh" path="res://import_pngs/settings_button/IMG_2249.PNG" id="10_kl50y"]
+[ext_resource type="Texture2D" uid="uid://dgvdv8j32tcvs" path="res://import_pngs/settings_button/IMG_2250.PNG" id="11_8opt5"]
+[ext_resource type="Texture2D" uid="uid://rhm3q27h3yym" path="res://import_pngs/settings_button/IMG_2251.PNG" id="12_iphkn"]
+[ext_resource type="Script" path="res://scripts/level_scripts/air_hockey/wall.gd" id="12_qbanv"]
+[ext_resource type="SpriteFrames" uid="uid://dm4joe881xca3" path="res://import_pngs/rectangle/rect.tres" id="14_2mt1u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5108"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_kl50y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8opt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_iphkn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwcgt"]
+size = Vector2(234.75, 233)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gavb3"]
+size = Vector2(525, 144)
+
+[node name="AirHockey" type="Node2D"]
+script = ExtResource("1_njx1p")
+
+[node name="AirHockeyPaddle" parent="." instance=ExtResource("2_fw0iq")]
+position = Vector2(0, 2)
+script = ExtResource("3_psfc2")
+max_speed = 70.0
+agility = 6.0
+slow_distance = 150.0
+
+[node name="EscapeButton" parent="." instance=ExtResource("3_i8stf")]
+position = Vector2(343, 571)
+
+[node name="LanguageBtnKorean" parent="." instance=ExtResource("4_nkbni")]
+position = Vector2(581, 676)
+rotation = 1.5708
+
+[node name="PlayButton" parent="." instance=ExtResource("5_bhji4")]
+position = Vector2(123, 736)
+rotation = 4.71239
+
+[node name="MuteButton" parent="." instance=ExtResource("7_48bub")]
+position = Vector2(350, 784)
+
+[node name="Ball" type="Area2D" parent="." groups=["Button"]]
+position = Vector2(940, 1044)
+script = ExtResource("9_ibymu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ball"]
+position = Vector2(-1112, -551)
+sprite_frames = SubResource("SpriteFrames_b5108")
+frame_progress = 0.837495
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("RectangleShape2D_hwcgt")
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall" type="Area2D" parent="Walls"]
+position = Vector2(1100, 1382)
+scale = Vector2(1.15, 1.15)
+script = ExtResource("12_qbanv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Walls/Wall"]
+position = Vector2(246, 333)
+sprite_frames = ExtResource("14_2mt1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
+position = Vector2(-12.5, -1)
+shape = SubResource("RectangleShape2D_gavb3")
+
+[node name="Wall8" type="Area2D" parent="Walls"]
+position = Vector2(1693, 1379)
+scale = Vector2(1.15, 1.15)
+script = ExtResource("12_qbanv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Walls/Wall8"]
+position = Vector2(246, 333)
+sprite_frames = ExtResource("14_2mt1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall8"]
+position = Vector2(-12.5, -1)
+shape = SubResource("RectangleShape2D_gavb3")
+
+[node name="Wall9" type="Area2D" parent="Walls"]
+position = Vector2(2290, 1379)
+scale = Vector2(1.15, 1.15)
+script = ExtResource("12_qbanv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Walls/Wall9"]
+position = Vector2(246, 333)
+sprite_frames = ExtResource("14_2mt1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall9"]
+position = Vector2(-12.5, -1)
+shape = SubResource("RectangleShape2D_gavb3")
+
+[node name="Wall7" type="Area2D" parent="Walls"]
+position = Vector2(1097, 90)
+scale = Vector2(1.15, 1.15)
+script = ExtResource("12_qbanv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Walls/Wall7"]
+position = Vector2(246, 333)
+sprite_frames = ExtResource("14_2mt1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall7"]
+position = Vector2(-12.5, -1)
+shape = SubResource("RectangleShape2D_gavb3")
+
+[node name="Wall10" type="Area2D" parent="Walls"]
+position = Vector2(1690, 87)
+scale = Vector2(1.15, 1.15)
+script = ExtResource("12_qbanv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Walls/Wall10"]
+position = Vector2(246, 333)
+sprite_frames = ExtResource("14_2mt1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall10"]
+position = Vector2(-12.5, -1)
+shape = SubResource("RectangleShape2D_gavb3")
+
+[node name="Wall13" type="Area2D" parent="Walls"]
+position = Vector2(2287, 87)
+scale = Vector2(1.15, 1.15)
+script = ExtResource("12_qbanv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Walls/Wall13"]
+position = Vector2(246, 333)
+sprite_frames = ExtResource("14_2mt1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall13"]
+position = Vector2(-12.5, -1)
+shape = SubResource("RectangleShape2D_gavb3")
+
+[node name="Wall11" type="Area2D" parent="Walls"]
+position = Vector2(2472, 1042)
+rotation = 1.5708
+scale = Vector2(1.1, 1.1)
+script = ExtResource("12_qbanv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Walls/Wall11"]
+position = Vector2(246, 333)
+sprite_frames = ExtResource("14_2mt1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall11"]
+position = Vector2(-12.5, -1)
+shape = SubResource("RectangleShape2D_gavb3")
+
+[node name="Wall12" type="Area2D" parent="Walls"]
+position = Vector2(2473, 464)
+rotation = 1.5708
+scale = Vector2(1.1, 1.1)
+script = ExtResource("12_qbanv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Walls/Wall12"]
+position = Vector2(246, 333)
+sprite_frames = ExtResource("14_2mt1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall12"]
+position = Vector2(-12.5, -1)
+shape = SubResource("RectangleShape2D_gavb3")
+
+[node name="Wall2" type="Area2D" parent="Walls"]
+position = Vector2(413, 115)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("12_qbanv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Walls/Wall2"]
+position = Vector2(246, 333)
+sprite_frames = ExtResource("14_2mt1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
+position = Vector2(-12.5, -1)
+shape = SubResource("RectangleShape2D_gavb3")
+
+[node name="Wall4" type="Area2D" parent="Walls"]
+position = Vector2(404, 1356)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("12_qbanv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Walls/Wall4"]
+position = Vector2(246, 333)
+sprite_frames = ExtResource("14_2mt1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4"]
+position = Vector2(-12.5, -1)
+shape = SubResource("RectangleShape2D_gavb3")
+
+[connection signal="pressed" from="EscapeButton" to="." method="_on_escape_button_pressed"]
+[connection signal="pressed" from="LanguageBtnKorean" to="." method="_on_language_btn_korean_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MuteButton" to="." method="_on_mute_button_pressed"]
+[connection signal="area_entered" from="Ball" to="Ball" method="_on_area_entered"]
+[connection signal="area_exited" from="Ball" to="Ball" method="_on_area_exited"]
+[connection signal="pressed" from="Ball" to="." method="_on_settings_button_pressed"]

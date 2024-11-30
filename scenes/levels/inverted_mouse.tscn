@@ -1,23 +1,54 @@
-[gd_scene load_steps=9 format=3 uid="uid://du1tao3iso7jr"]
+[gd_scene load_steps=14 format=3 uid="uid://du1tao3iso7jr"]
 
-[ext_resource type="Script" path="res://scripts/level_scripts/inverted_mouse.gd" id="1_e2t6q"]
-[ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="1_vla64"]
+[ext_resource type="Script" path="res://scripts/level_scripts/inverted/inverted_mouse.gd" id="1_e2t6q"]
 [ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="2_1pou1"]
+[ext_resource type="Script" path="res://scripts/cursor_object_script.gd" id="2_jeek1"]
 [ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="3_1vct3"]
+[ext_resource type="Texture2D" uid="uid://ckcleebe6kscg" path="res://import_pngs/cursor/IMG_2261.PNG" id="3_4bu4p"]
 [ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="4_nrrpo"]
+[ext_resource type="Texture2D" uid="uid://dpe0myavvlkvd" path="res://import_pngs/cursor/IMG_2262.PNG" id="4_yqekp"]
 [ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="5_n1alb"]
+[ext_resource type="Texture2D" uid="uid://dlluqqbio3n7u" path="res://import_pngs/cursor/IMG_2263.PNG" id="5_s6dmg"]
 [ext_resource type="PackedScene" uid="uid://dr3t7x5prtdu3" path="res://scenes/buttons/mute_button.tscn" id="6_0ehoj"]
 [ext_resource type="PackedScene" uid="uid://ccv4uqgxpmmnx" path="res://scenes/text_displayer.tscn" id="7_36lkt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uy2w"]
+size = Vector2(10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oad18"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4bu4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yqekp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s6dmg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="InvertedMouse" type="Node2D"]
 script = ExtResource("1_e2t6q")
 
-[node name="CursorObject" parent="." instance=ExtResource("1_vla64")]
+[node name="CursorObject" type="Area2D" parent="." groups=["Cursor"]]
 position = Vector2(0, 2)
 rotation = 3.14159
+script = ExtResource("2_jeek1")
 keyboard_max_speed = 40.0
 keyboard_acceleration = 10.0
 keyboard_decceleration = 25.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CursorObject"]
+shape = SubResource("RectangleShape2D_3uy2w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CursorObject"]
+position = Vector2(-400, -2)
+sprite_frames = SubResource("SpriteFrames_oad18")
 
 [node name="EscapeButton" parent="." instance=ExtResource("2_1pou1")]
 position = Vector2(2415, 1291)
@@ -44,6 +75,8 @@ position = Vector2(1280, 899)
 rotation = 3.14159
 wait_before_hide = 2.0
 
+[connection signal="area_entered" from="CursorObject" to="CursorObject" method="_on_area_entered"]
+[connection signal="area_exited" from="CursorObject" to="CursorObject" method="_on_area_exited"]
 [connection signal="pressed" from="EscapeButton" to="." method="_on_escape_button_pressed"]
 [connection signal="pressed" from="LanguageBtnKorean" to="." method="_on_language_btn_korean_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

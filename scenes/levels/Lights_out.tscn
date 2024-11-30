@@ -93,6 +93,10 @@ offset = Vector2(50, 0)
 [node name="Text_displayer" parent="." instance=ExtResource("13_7a8hx")]
 position = Vector2(332, 280)
 scale = Vector2(0.7, 0.7)
+dialogue = Array[String](["Sample text", "Tonda je frajer"])
+time_between_letters = 0.1
+time_between_dialogues = 2
+hide_afterwards = true
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pulled_signal" from="LightString" to="." method="_on_light_string_pulled_signal"]

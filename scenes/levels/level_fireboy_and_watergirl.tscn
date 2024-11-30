@@ -209,24 +209,23 @@ script = ExtResource("7_ti10t")
 
 [node name="PondGroup" type="Node2D" parent="."]
 position = Vector2(1053, -365)
-scale = Vector2(0.5, 1)
-
-[node name="Pond" parent="PondGroup" groups=["Player"] instance=ExtResource("17_w7sjr")]
-scale = Vector2(1.215, 1.23)
-lava_color = Color(1, 0.477854, 0.410057, 1)
-water_color = Color(0.333018, 0.537533, 1, 1)
-
-[node name="RectHalf2" parent="PondGroup" instance=ExtResource("18_kb8bp")]
-position = Vector2(-504, 42)
-scale = Vector2(2, 1)
 
 [node name="RectHalf3" parent="PondGroup" instance=ExtResource("18_kb8bp")]
-position = Vector2(24, 156)
-scale = Vector2(2, 1)
+z_index = 4
+position = Vector2(4, 108)
+
+[node name="RectHalf2" parent="PondGroup" instance=ExtResource("18_kb8bp")]
+z_index = 4
+position = Vector2(-273, 1)
 
 [node name="RectHalf4" parent="PondGroup" instance=ExtResource("18_kb8bp")]
-position = Vector2(516, 38)
-scale = Vector2(2, 1)
+z_index = 4
+position = Vector2(281, -1)
+
+[node name="Pond" parent="PondGroup" groups=["Player"] instance=ExtResource("17_w7sjr")]
+z_index = 3
+position = Vector2(-2, -8)
+type = 2
 
 [node name="MoveHereOnLoad" type="Marker2D" parent="PondGroup"]
 position = Vector2(0, 904)

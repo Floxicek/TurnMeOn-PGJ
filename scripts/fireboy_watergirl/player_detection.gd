@@ -4,10 +4,11 @@ var watergirl_in = false
 var fireboy_in = false
 
 func _on_body_entered(body: Node2D) -> void:
-	print(body.get_groups())
 	if body.is_in_group("Fireboy"):
+		print("Fireboy finished")
 		fireboy_in = true
 	elif body.is_in_group("Watergirl"):
+		print("Watergirl finished")
 		watergirl_in = true
 	
 	if watergirl_in and fireboy_in:

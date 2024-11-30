@@ -212,6 +212,7 @@ position = Vector2(1053, -365)
 scale = Vector2(0.5, 1)
 
 [node name="Pond" parent="PondGroup" groups=["Player"] instance=ExtResource("17_w7sjr")]
+scale = Vector2(1.215, 1.23)
 lava_color = Color(1, 0.477854, 0.410057, 1)
 water_color = Color(0.333018, 0.537533, 1, 1)
 

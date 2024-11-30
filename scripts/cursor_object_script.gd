@@ -18,7 +18,10 @@ func _ready() -> void:
 	if hide_os_cursor: 
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN) 
 	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) 
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
+	if is_keyboard_mode:
+		position = Vector2(206, 1214)
 	
 	$AnimatedSprite2D.play()
 	#if(is_keyboard_mode):

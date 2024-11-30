@@ -39,8 +39,8 @@ func _on_area_exited(area: Area2D) -> void:
 func _on_pressed() -> void:
 	if is_on:
 		$AnimatedSprite2D.play("off_state")
-		AudioPlayer.pause()
+		AudioPlayer.pause_soundratck()
 	else:
 		$AnimatedSprite2D.play("on_state")
-		AudioPlayer.play()
+		AudioPlayer.play_soundtrack()
 	is_on = !is_on

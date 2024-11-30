@@ -10,13 +10,9 @@ var velocity: Vector2 = Vector2.ZERO
 
 
 var buttons = []
-var is_in_button: bool = false
-var current_button: Area2D = null
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.play()
-	
 	if(is_keyboard_mode):
 		position = Vector2(1280, 720)
 
@@ -33,10 +29,6 @@ func _physics_process(delta: float) -> void:
 			velocity += keyboard_acceleration*Vector2.DOWN
 		if Input.is_action_pressed("RIGHT"):
 			velocity += keyboard_acceleration*Vector2.RIGHT
-	
-	if Input.is_action_just_pressed("CLICK") and is_in_button:
-		current_button.push(test_func)
-
 		
 		velocity -= velocity*(keyboard_decceleration)*delta
 
@@ -44,8 +36,6 @@ func _physics_process(delta: float) -> void:
 			velocity = velocity.normalized()*keyboard_max_speed
 		
 		position += velocity
-		
-		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -66,6 +56,7 @@ func _input(event: InputEvent) -> void:
 		for b in buttons:
 			if b.is_in_group("Button"):
 				b.pressed.emit()
+				#current_button.push(test_func)
 
 func _on_area_entered(area: Area2D) -> void:
 	buttons.append(area)

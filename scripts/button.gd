@@ -4,7 +4,6 @@ signal hover_start
 signal hover_stopped
 signal pressed
 
-class_name Custom_Button
 
 func _ready():
 	$AnimatedSprite2D.play()

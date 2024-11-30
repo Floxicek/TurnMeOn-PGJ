@@ -11,7 +11,7 @@ var levels : Array = [
 	"res://scenes/levels/inverted_mouse.tscn",
 	"res://scenes/levels/level2.tscn", #WASD normal
 	"res://scenes/levels/level_invert_wasd.tscn",
-	"res://scenes/levels/level_fireboy_and_watergirl.tscn", 
+	"res://scenes/levels/level_fireboy_and_watergirl.tscn",
 	"res://scenes/levels/level_falling.tscn",
 	"res://scenes/levels/Random_Buttons.tscn",
 	"res://scenes/levels/level_periodic.tscn",
@@ -91,7 +91,9 @@ func next_level(message: String = ""):
 # TODO display message
 
 
-func reload_level(message:String = ""):
+func reload_level(message: String = ""):
+	if _current_level_index == -1:
+		push_error("RELOADING WILL NOT WORK WHEN TESTING LOCAL SCENES")
 	transition_message = message
 	print("Reloading the level ", levels[_current_level_index])
 	change_scene(levels[_current_level_index])

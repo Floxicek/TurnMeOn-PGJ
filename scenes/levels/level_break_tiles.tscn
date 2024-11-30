@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://bp1o00ej7m4j2"]
 
 [ext_resource type="Script" path="res://scenes/levels/level_1.gd" id="1_uoa4o"]
-[ext_resource type="PackedScene" uid="uid://d4m0lti4ef8bb" path="res://scenes/cursor_object.tscn" id="2_2r0tt"]
+[ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="2_2r0tt"]
 [ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="3_52p62"]
-[ext_resource type="Script" path="res://scripts/scale_down_on_load.gd" id="3_mxh57"]
+[ext_resource type="Script" path="res://scripts/animations/scale_down_on_load.gd" id="3_mxh57"]
 [ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="4_h01pg"]
 [ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="5_f3hh2"]
 [ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="6_bgh1r"]
@@ -38,4 +38,4 @@ position = Vector2(2400, 1282)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_nbba5")
 
-[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signStaticBody2Dal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://j02uu0636cvy"]
+[gd_scene load_steps=19 format=3 uid="uid://dnce5lgxx8duv"]
 
 [ext_resource type="Script" path="res://scripts/level_scripts/lights_out/lights_out_lvl.gd" id="1_6nqhs"]
 [ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="2_ax7ef"]

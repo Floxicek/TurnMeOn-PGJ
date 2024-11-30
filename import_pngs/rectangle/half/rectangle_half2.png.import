@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctuj1co1r5g2i"
-path="res://.godot/imported/IMG_2352.PNG-d87bf995326b716ba044b132e6594b98.ctex"
+uid="uid://d1130qfis7ii6"
+path="res://.godot/imported/rectangle_half2.png-ef13de968dcfe4cc305f26858ce7f1a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://import_pngs/lightbulb/IMG_2352.PNG"
-dest_files=["res://.godot/imported/IMG_2352.PNG-d87bf995326b716ba044b132e6594b98.ctex"]
+source_file="res://import_pngs/rectangle/half/rectangle_half2.png"
+dest_files=["res://.godot/imported/rectangle_half2.png-ef13de968dcfe4cc305f26858ce7f1a6.ctex"]
 
 [params]
 

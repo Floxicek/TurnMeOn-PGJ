@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://cecq1oolptfos"]
+
+[ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="1_2i1vd"]
+[ext_resource type="Script" path="res://scripts/level_invert_wasd.gd" id="1_4pjfu"]
+[ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="2_42tg3"]
+[ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="3_wey0y"]
+[ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="4_fv80q"]
+[ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="5_eq16n"]
+[ext_resource type="PackedScene" uid="uid://dr3t7x5prtdu3" path="res://scenes/buttons/mute_button.tscn" id="6_blyk7"]
+[ext_resource type="PackedScene" uid="uid://ccv4uqgxpmmnx" path="res://scenes/text_displayer.tscn" id="7_pmawp"]
+
+[node name="LevelInvertWasd" type="Node2D"]
+script = ExtResource("1_4pjfu")
+
+[node name="CursorObject" parent="." instance=ExtResource("1_2i1vd")]
+position = Vector2(0, 2)
+is_keyboard_mode = true
+keyboard_max_speed = 40.0
+keyboard_acceleration = 10.0
+keyboard_decceleration = 25.0
+invert_wasd = true
+
+[node name="EscapeButton" parent="." instance=ExtResource("2_42tg3")]
+
+[node name="LanguageBtnKorean" parent="." instance=ExtResource("3_wey0y")]
+position = Vector2(2365, 148)
+
+[node name="PlayButton" parent="." instance=ExtResource("4_fv80q")]
+position = Vector2(1263, 716)
+
+[node name="SettingsButton" parent="." instance=ExtResource("5_eq16n")]
+position = Vector2(2410, 1290)
+
+[node name="MuteButton" parent="." instance=ExtResource("6_blyk7")]
+position = Vector2(2144, 1293)
+
+[node name="Text_displayer" parent="." instance=ExtResource("7_pmawp")]
+position = Vector2(1262, 288)
+scale = Vector2(0.3, 0.3)
+wait_before_hide = 2.0
+
+[connection signal="pressed" from="EscapeButton" to="." method="_on_escape_button_pressed"]
+[connection signal="pressed" from="LanguageBtnKorean" to="." method="_on_language_btn_korean_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MuteButton" to="." method="_on_mute_button_pressed"]

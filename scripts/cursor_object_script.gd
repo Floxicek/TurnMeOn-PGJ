@@ -52,7 +52,7 @@ func stop_controlling_mouse_with_keyboard():
 func _input(event: InputEvent) -> void:
 	if event.is_action("START_KEYBOARD_CONTROL"):
 		stop_controlling_mouse_with_keyboard() if is_keyboard_mode else start_controlling_mouse_with_keyboard()
-	elif event.is_action("click"):
+	elif event.is_action_pressed("click"):
 		for b in buttons:
 			b.pressed.emit()
 				#current_button.push(test_func)

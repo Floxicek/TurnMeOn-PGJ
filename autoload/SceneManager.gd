@@ -10,6 +10,7 @@ var _progress: Array[float] = []
 
 var _request_timer: SceneTreeTimer
 var min_wait_time = 1
+var _in_progress = false
 
 func _ready() -> void:
 	_transition = transition_scene.instantiate()
@@ -27,10 +28,12 @@ func _clear_scene_done() -> void:
 	# Clear scene animation done
 	ResourceLoader.load_threaded_request(_target_scene_path)
 	_request_timer = get_tree().create_timer(min_wait_time)
+	_in_progress = true
 	print("loading scene")
 
 func _show_scene_done() -> void:
 	# Show scene animation done
+	_in_progress = false
 	pass
 
 	
@@ -41,7 +44,7 @@ func _process(_delta: float) -> void:
 		# Check the loading status:
 		match _loading_status:
 			ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-				print(_progress[0] * 100)
+				print("loading:", _progress[0] * 100)
 			ResourceLoader.THREAD_LOAD_LOADED:
 				# When done loading, change to the target scene:
 				get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(_target_scene_path))
@@ -52,3 +55,14 @@ func _process(_delta: float) -> void:
 			ResourceLoader.THREAD_LOAD_FAILED:
 				# Well some error happend:
 				push_error("Error changing scenes")
+
+
+var _current_level_index := 0
+var levels = ["res://scenes/levels/level1.tscn", "res://scenes/levels/level2.tscn"]
+
+func next_level():
+	print(_in_progress, "in progress")
+	if not _in_progress:
+		_current_level_index = (_current_level_index + 1) % levels.size()
+		print("Level",_current_level_index)
+		change_scene(levels[_current_level_index])

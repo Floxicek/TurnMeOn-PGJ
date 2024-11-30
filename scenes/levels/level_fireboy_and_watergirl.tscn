@@ -1,0 +1,219 @@
+[gd_scene load_steps=26 format=3 uid="uid://co8cafse6uqgj"]
+
+[ext_resource type="Script" path="res://scenes/levels/level_fireboy_and_watergirl.gd" id="1_d0sc7"]
+[ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="2_c7wh7"]
+[ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="3_f6f43"]
+[ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="4_iw6a3"]
+[ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="5_frh4n"]
+[ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="7_fq3pn"]
+[ext_resource type="Script" path="res://scripts/animations/move_here_on_load.gd" id="7_ti10t"]
+[ext_resource type="Texture2D" uid="uid://ckcleebe6kscg" path="res://import_pngs/cursor/IMG_2261.PNG" id="8_2ohch"]
+[ext_resource type="Script" path="res://scripts/fireboy_watergirl/fireboy_character.gd" id="8_rxknh"]
+[ext_resource type="Texture2D" uid="uid://dpe0myavvlkvd" path="res://import_pngs/cursor/IMG_2262.PNG" id="9_3yh7x"]
+[ext_resource type="Texture2D" uid="uid://dlluqqbio3n7u" path="res://import_pngs/cursor/IMG_2263.PNG" id="10_35gj6"]
+[ext_resource type="Script" path="res://scripts/animations/hide_on_load.gd" id="11_myh46"]
+[ext_resource type="PackedScene" uid="uid://eaufx73bgl5e" path="res://scenes/fireboy/rect.tscn" id="12_ofjph"]
+[ext_resource type="Texture2D" uid="uid://ydwrmrc2vos2" path="res://import_pngs/ground/ground.png" id="14_e3ndq"]
+[ext_resource type="Texture2D" uid="uid://coa5coff1iots" path="res://import_pngs/ground/line2.png" id="15_og146"]
+[ext_resource type="Texture2D" uid="uid://77gm227whcmr" path="res://import_pngs/ground/line3.png" id="16_3bnuj"]
+[ext_resource type="PackedScene" uid="uid://dq21p144y6rd3" path="res://scenes/pond.tscn" id="17_w7sjr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88n0f"]
+size = Vector2(228, 232)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jc4yk"]
+size = Vector2(325, 228)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuhb0"]
+size = Vector2(1026, 233)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwcgt"]
+size = Vector2(234.75, 233)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ya76"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_2ohch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3yh7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_35gj6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4p73"]
+size = Vector2(560, 540)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yhi4h"]
+distance = -1442.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_csbfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_e3ndq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_og146")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3bnuj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FireboyAndWatergirl" type="Node2D"]
+script = ExtResource("1_d0sc7")
+
+[node name="CursorObject" parent="." instance=ExtResource("2_c7wh7")]
+position = Vector2(0, 2)
+keyboard_max_speed = 40.0
+keyboard_acceleration = 10.0
+keyboard_decceleration = 25.0
+
+[node name="HideOnLoad" type="Node" parent="CursorObject"]
+script = ExtResource("11_myh46")
+
+[node name="EscapeButtonCharacter" type="StaticBody2D" parent="."]
+position = Vector2(144, 152)
+
+[node name="EscapeButton" parent="EscapeButtonCharacter" instance=ExtResource("3_f6f43")]
+position = Vector2(0, 0)
+react_on_cursor = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeButtonCharacter"]
+shape = SubResource("RectangleShape2D_88n0f")
+
+[node name="LanguageBtnCharacter" type="StaticBody2D" parent="."]
+position = Vector2(2363, 134)
+
+[node name="LanguageBtnKorean" parent="LanguageBtnCharacter" instance=ExtResource("4_iw6a3")]
+react_on_cursor = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LanguageBtnCharacter"]
+shape = SubResource("RectangleShape2D_jc4yk")
+
+[node name="PlayButtonCharacter" type="StaticBody2D" parent="."]
+position = Vector2(1100, 582)
+
+[node name="PlayButton" parent="PlayButtonCharacter" instance=ExtResource("5_frh4n")]
+react_on_cursor = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayButtonCharacter"]
+shape = SubResource("RectangleShape2D_iuhb0")
+
+[node name="MoveHereOnLoad" type="Marker2D" parent="PlayButtonCharacter"]
+position = Vector2(-112, 392)
+script = ExtResource("7_ti10t")
+
+[node name="SettingsButtonCharacter" type="StaticBody2D" parent="."]
+position = Vector2(2400, 1282)
+
+[node name="SettingsButton" parent="SettingsButtonCharacter" instance=ExtResource("7_fq3pn")]
+react_on_cursor = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsButtonCharacter"]
+shape = SubResource("RectangleShape2D_hwcgt")
+
+[node name="Fireboy" type="CharacterBody2D" parent="."]
+position = Vector2(163, 1315)
+script = ExtResource("8_rxknh")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireboy"]
+modulate = Color(1, 0.19709, 0.350599, 1)
+position = Vector2(-152, -36)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_4ya76")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireboy"]
+position = Vector2(-6, -12)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_d4p73")
+
+[node name="Watergirl" type="CharacterBody2D" parent="."]
+position = Vector2(230, 1316)
+script = ExtResource("8_rxknh")
+fireboy = false
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Watergirl"]
+modulate = Color(0.299927, 0.579225, 0.875175, 1)
+position = Vector2(-152, -36)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_4ya76")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Watergirl"]
+position = Vector2(-6, -12)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_d4p73")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(0, 93)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape2D_yhi4h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ground"]
+position = Vector2(1282.9, 852)
+sprite_frames = SubResource("SpriteFrames_csbfa")
+frame_progress = 0.219904
+
+[node name="MoveHereOnLoad" type="Marker2D" parent="Ground"]
+position = Vector2(0, -80)
+script = ExtResource("7_ti10t")
+duration = 3.0
+
+[node name="Rect" parent="." instance=ExtResource("12_ofjph")]
+position = Vector2(1964, 1533)
+
+[node name="MoveHereOnLoad" type="Marker2D" parent="Rect"]
+position = Vector2(0, -183)
+script = ExtResource("7_ti10t")
+
+[node name="Rect2" parent="." instance=ExtResource("12_ofjph")]
+position = Vector2(2869, 979)
+
+[node name="MoveHereOnLoad" type="Marker2D" parent="Rect2"]
+position = Vector2(-963, 0)
+script = ExtResource("7_ti10t")
+
+[node name="Rect3" parent="." instance=ExtResource("12_ofjph")]
+position = Vector2(-316, 838)
+
+[node name="MoveHereOnLoad" type="Marker2D" parent="Rect3"]
+position = Vector2(452, 0)
+script = ExtResource("7_ti10t")
+
+[node name="Rect4" parent="." instance=ExtResource("12_ofjph")]
+position = Vector2(-366, 631)
+
+[node name="MoveHereOnLoad" type="Marker2D" parent="Rect4"]
+position = Vector2(866, -5)
+script = ExtResource("7_ti10t")
+
+[node name="Rect5" parent="." instance=ExtResource("12_ofjph")]
+position = Vector2(2907, 601)
+
+[node name="MoveHereOnLoad" type="Marker2D" parent="Rect5"]
+position = Vector2(-814, -5)
+script = ExtResource("7_ti10t")
+
+[node name="Pond" parent="." groups=["Player"] instance=ExtResource("17_w7sjr")]
+position = Vector2(1269, 1419)
+lava_color = Color(1, 0.477854, 0.410057, 1)
+water_color = Color(0.333018, 0.537533, 1, 1)
+
+[connection signal="pressed" from="PlayButtonCharacter/PlayButton" to="." method="_on_play_button_pressed"]
+
+[editable path="EscapeButtonCharacter/EscapeButton"]
+[editable path="LanguageBtnCharacter/LanguageBtnKorean"]
+[editable path="PlayButtonCharacter/PlayButton"]

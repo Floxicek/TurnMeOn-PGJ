@@ -11,6 +11,7 @@ var pull_tween: Tween
 signal pulled_signal
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	await SceneManager.transition_done
 	arrive_tween = get_tree().create_tween()
 	arrive_tween.tween_property(self, "position", Vector2(position + Vector2.DOWN * arrive_distance), 3)
 	arrive_tween.set_trans(Tween.TRANS_CUBIC)

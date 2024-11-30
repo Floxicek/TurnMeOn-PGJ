@@ -5,7 +5,10 @@
 
 [node name="AudioPlayer" type="Node2D"]
 script = ExtResource("1_r820l")
+sound_effects = [[], null]
 
 [node name="SoundtrackPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_1k355")
 volume_db = -10.0
+
+[node name="SoundEffectPlayer" type="AudioStreamPlayer" parent="."]

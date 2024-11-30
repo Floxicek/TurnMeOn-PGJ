@@ -22,6 +22,8 @@ func _ready() -> void:
 	_transition.show_scene_done.connect(_show_scene_done)
 	await get_tree().create_timer(.5).timeout
 	transition_done.emit()
+	await get_tree().create_timer(.5).timeout
+	transition_done.emit()
 
 
 func change_scene(target_scene_path) -> void:
@@ -77,3 +79,14 @@ func next_level(message: String = ""):
 func reload_level(message:String = ""):
 	print("Reloading the level ", levels[_current_level_index])
 	change_scene(levels[_current_level_index])
+
+
+var _current_level_index := 0
+var levels = ["res://scenes/levels/level1.tscn", "res://scenes/levels/level2.tscn", "res://scenes/levels/level_break_tiles.tscn"]
+
+func next_level():
+	if not _in_progress:
+		#print(_in_progress, "in progress")
+		_current_level_index = (_current_level_index + 1) % levels.size()
+		print("Changing to level",_current_level_index)
+		change_scene(levels[_current_level_index])

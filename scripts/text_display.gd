@@ -11,7 +11,7 @@ var shown_text = ""
 
 var text_complete:bool = false
 
-var cur_text_index = 0
+var cur_text_index:int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Next_letter_timer.wait_time = time_between_letters
@@ -22,7 +22,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Label.text = shown_text
-
+	
 
 func start_printing(custom_time_to_print:float = -1):
 	if custom_time_to_print != -1:
@@ -54,7 +54,8 @@ func hide_text():
 	$Next_letter_timer.stop()
 	shown_text = ""
 	cur_text_index = 0
-
+	
+	
 func _on_next_letter_timer_timeout() -> void:
 	var len_text = len(dialogue[cur_text_index])
 	for i in range(len(dialogue[cur_text_index])+1):

@@ -8,6 +8,9 @@ var _transition
 var _loading_status: int
 var _progress: Array[float] = []
 
+var _request_timer: SceneTreeTimer
+var min_wait_time = 1
+
 func _ready() -> void:
 	_transition = transition_scene.instantiate()
 	add_child(_transition, true)
@@ -23,6 +26,7 @@ func change_scene(target_scene_path) -> void:
 func _clear_scene_done() -> void:
 	# Clear scene animation done
 	ResourceLoader.load_threaded_request(_target_scene_path)
+	_request_timer = get_tree().create_timer(min_wait_time)
 	print("loading scene")
 
 func _show_scene_done() -> void:
@@ -41,6 +45,7 @@ func _process(_delta: float) -> void:
 			ResourceLoader.THREAD_LOAD_LOADED:
 				# When done loading, change to the target scene:
 				get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(_target_scene_path))
+				await _request_timer.timeout
 				_transition.show_scene()
 				print("Scene changed to: ", _target_scene_path)
 				_target_scene_path = ""

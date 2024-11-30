@@ -10,7 +10,7 @@ func _ready() -> void:
 var _started = false
 func _on_animated_sprite_2d_animation_finished() -> void:
 	mouse_filter = MouseFilter.MOUSE_FILTER_IGNORE
-	print("Finished")
+	#print("Finished")
 	#$AnimatedSprite2D.hide()
 	if _started:
 		clear_scene_done.emit()
@@ -18,14 +18,14 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		show_scene_done.emit()
 
 func clear_scene():
-	print("Transition started")
+	#print("Transition started")
 	_started = true
 	$AnimatedSprite2D.show()
 	mouse_filter = MouseFilter.MOUSE_FILTER_STOP
 	$AnimatedSprite2D.play("transition")
 
 func show_scene():
-	print("Transition stoped")
+	#print("Transition stoped")
 	_started = false
 	$AnimatedSprite2D.show()
 	mouse_filter = MouseFilter.MOUSE_FILTER_STOP

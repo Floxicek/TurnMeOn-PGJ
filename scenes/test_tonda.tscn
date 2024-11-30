@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnvsr20wydde5"]
+[gd_scene load_steps=7 format=3 uid="uid://cnvsr20wydde5"]
 
 [ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="1_y53kq"]
 [ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="2_x6i1g"]
 [ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="3_7ynlh"]
 [ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="4_jvtjn"]
 [ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="5_vvkfu"]
+[ext_resource type="PackedScene" uid="uid://dr3t7x5prtdu3" path="res://scenes/buttons/mute_button.tscn" id="6_efgek"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,3 +24,6 @@ position = Vector2(1263, 716)
 
 [node name="SettingsButton" parent="." instance=ExtResource("5_vvkfu")]
 position = Vector2(2400, 1282)
+
+[node name="MuteButton" parent="." instance=ExtResource("6_efgek")]
+position = Vector2(2114, 1284)

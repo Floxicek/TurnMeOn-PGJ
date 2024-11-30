@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjxuo1v5sgje"]
+[gd_scene load_steps=10 format=3 uid="uid://bjxuo1v5sgje"]
 
 [ext_resource type="Script" path="res://scenes/levels/level_falling.gd" id="1_703ih"]
 [ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="2_nlwer"]
@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="4_c0be5"]
 [ext_resource type="PackedScene" uid="uid://dr3t7x5prtdu3" path="res://scenes/buttons/mute_button.tscn" id="5_rkgef"]
 [ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="6_4m18o"]
+[ext_resource type="Texture2D" uid="uid://ddowvdaybsy76" path="res://import_pngs/hand/IMG_2337.PNG" id="7_6dmo0"]
+[ext_resource type="Script" path="res://scenes/levels/hand.gd" id="7_y623x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eg7a"]
+size = Vector2(107.375, 96)
 
 [node name="LevelFalling" type="Node2D" groups=["SpawnedButtons"]]
 script = ExtResource("1_703ih")
@@ -14,3 +19,23 @@ settings_button = ExtResource("3_dtl77")
 play_button = ExtResource("4_c0be5")
 mute_button = ExtResource("5_rkgef")
 language_button = ExtResource("6_4m18o")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="PlayTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Hand" type="Area2D" parent="." groups=["Cursor"]]
+position = Vector2(1248, 1317)
+script = ExtResource("7_y623x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand"]
+shape = SubResource("RectangleShape2D_1eg7a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hand"]
+position = Vector2(439, -68)
+texture = ExtResource("7_6dmo0")
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="PlayTimer" to="." method="_on_play_timer_timeout"]
+[connection signal="area_entered" from="Hand" to="Hand" method="_on_area_entered"]

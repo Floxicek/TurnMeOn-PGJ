@@ -21,5 +21,5 @@ func _on_area_2d_area_exited(area):
 		scale = Vector2(1, 1)
 
 
-func push():
+func push(callable: Callable):
 	$AnimatedSprite2D.play("on_state") if is_on else $AnimatedSprite2D.play("off_state")

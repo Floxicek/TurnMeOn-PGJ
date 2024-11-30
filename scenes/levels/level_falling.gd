@@ -44,7 +44,6 @@ func spawn_button():
 			tmp_button.pressed.connect(push_wrong_button)
 	else:
 		tmp_button.pressed.connect(push_wrong_button)
-			
 	
 	var spawn_pos = Vector2(rng.randi_range(tmp_button.get_node("CollisionShape2D").shape.size.y/2, 2560 - tmp_button.get_node("CollisionShape2D").shape.size.y/2), -tmp_button.get_node("CollisionShape2D").shape.size.x/2)
 	add_child(tmp_button)
@@ -59,8 +58,7 @@ func push_play_button():
 	SceneManager.next_level()
 	
 func push_wrong_button():
-	#SceneManager.reloadScene
-	pass
+	SceneManager.reload_level("Wrong")
 
 func _on_play_timer_timeout() -> void:
 	button_prefabs.append(play_button)

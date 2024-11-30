@@ -35,6 +35,7 @@ var wrong_button_dialogue:Array[String] = ["Nope, not this one.",
 func _ready() -> void:
 	$Next_letter_timer.wait_time = time_between_letters
 	$Next_word_timer.wait_time = time_between_dialogues
+	$Hide_word_timer.wait_time = wait_before_hide
 	shown_text = ""
 
 
@@ -49,6 +50,7 @@ func show_rand_bad_button_dialog():
 	
 func start_printing_single_word(text:String, custom_time_to_print:float = -1):
 	$Next_word_timer.stop()
+	$Hide_word_timer.stop()
 	hide_text()
 	single_word = true
 	cur_text = text
@@ -60,6 +62,7 @@ func start_printing_single_word(text:String, custom_time_to_print:float = -1):
 func start_printing(custom_time_to_print:float = -1):
 	single_word = false
 	$Next_word_timer.stop()
+	$Hide_word_timer.stop()
 	cur_text = dialogue[cur_text_index]
 	if custom_time_to_print != -1:
 		$Next_letter_timer.wait_time = custom_time_to_print/len(cur_text)
@@ -83,7 +86,8 @@ func finished_word():
 			return
 		
 		if(hide_afterwards):
-			await get_tree().create_timer(wait_before_hide).timeout
+			$Hide_word_timer.start()
+			await $Hide_word_timer.timeout
 			hide_text()
 			return
 	

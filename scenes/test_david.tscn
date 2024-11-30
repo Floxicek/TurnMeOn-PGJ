@@ -30,6 +30,9 @@ position = Vector2(421.5, -134)
 scale = Vector2(100, 100)
 shape = SubResource("RectangleShape2D_2ddp3")
 
+[node name="MuteButton" parent="." instance=ExtResource("6_susb1")]
+position = Vector2(-164, -267)
+
 [node name="Text_displayer" parent="." instance=ExtResource("5_4xns7")]
 position = Vector2(-6, 179)
 scale = Vector2(0.5, 0.5)
@@ -37,8 +40,9 @@ dialogue = Array[String](["Sample text", "Tonda je frajer", "Nebo ne", "I když 
 time_between_letters = 0.1
 loop_dialogue = true
 
-[node name="MuteButton" parent="." instance=ExtResource("6_susb1")]
-position = Vector2(-164, -267)
+[node name="Text_displayer2" parent="." instance=ExtResource("5_4xns7")]
+position = Vector2(0, 501)
+dialogue = Array[String](["Sample text", "Sample text2"])
 
 [connection signal="area_entered" from="Random rect" to="Random rect" method="_on_area_entered"]
 [connection signal="area_exited" from="Random rect" to="Random rect" method="_on_area_exited"]

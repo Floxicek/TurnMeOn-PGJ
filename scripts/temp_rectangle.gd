@@ -13,7 +13,8 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	var sprite:Sprite2D = $rectangle
-	get_parent().get_node("Text_displayer").start_printing()
+	get_parent().get_node("Text_displayer").show_rand_bad_button_dialog()
+	get_parent().get_node("Text_displayer2").start_printing()
 	sprite.self_modulate = Color.RED
 
 func _on_area_exited(area: Area2D) -> void:

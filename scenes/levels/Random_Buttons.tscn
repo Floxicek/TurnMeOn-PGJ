@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckc1uttiveq7u"]
+
+[ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="1_ca830"]
+[ext_resource type="Script" path="res://scripts/level_scripts/random_buttons/random_buttons.gd" id="1_kio3q"]
+[ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="2_i0q3g"]
+[ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="3_r1228"]
+[ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="4_fi2mo"]
+[ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="5_vldd0"]
+[ext_resource type="PackedScene" uid="uid://dr3t7x5prtdu3" path="res://scenes/buttons/mute_button.tscn" id="7_qch6s"]
+
+[node name="RandomButtons" type="Node2D"]
+script = ExtResource("1_kio3q")
+
+[node name="CursorObject" parent="." instance=ExtResource("1_ca830")]
+
+[node name="EscapeButton" parent="." instance=ExtResource("2_i0q3g")]
+
+[node name="LanguageBtnKorean" parent="." instance=ExtResource("3_r1228")]
+position = Vector2(2363, 134)
+
+[node name="PlayButton" parent="." instance=ExtResource("4_fi2mo")]
+position = Vector2(1263, 716)
+
+[node name="SettingsButton" parent="." instance=ExtResource("5_vldd0")]
+position = Vector2(2400, 1282)
+
+[node name="MuteButton" parent="." instance=ExtResource("7_qch6s")]
+position = Vector2(2140, 1283)
+
+[connection signal="pressed" from="EscapeButton" to="." method="_on_escape_button_pressed"]
+[connection signal="pressed" from="LanguageBtnKorean" to="." method="_on_language_btn_korean_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

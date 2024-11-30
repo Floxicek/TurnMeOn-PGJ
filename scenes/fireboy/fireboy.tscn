@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://caf1noqmwe4bm"]
+
+[ext_resource type="Script" path="res://scripts/fireboy_watergirl/fireboy_character.gd" id="1_ybqcq"]
+[ext_resource type="Texture2D" uid="uid://ckcleebe6kscg" path="res://import_pngs/cursor/IMG_2261.PNG" id="2_aotf0"]
+[ext_resource type="Texture2D" uid="uid://dpe0myavvlkvd" path="res://import_pngs/cursor/IMG_2262.PNG" id="3_ah1qn"]
+[ext_resource type="Texture2D" uid="uid://dlluqqbio3n7u" path="res://import_pngs/cursor/IMG_2263.PNG" id="4_6v37d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ya76"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aotf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ah1qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6v37d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6u57u"]
+radius = 281.603
+
+[node name="Fireboy" type="CharacterBody2D"]
+z_index = 1
+position = Vector2(309, 1230)
+collision_layer = 2
+script = ExtResource("1_ybqcq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.19709, 0.350599, 1)
+position = Vector2(-152, -36)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_4ya76")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -12)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("CircleShape2D_6u57u")

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/level_scripts/air_hockey/air_hockey.gd" id="1_njx1p"]
 [ext_resource type="Script" path="res://scripts/level_scripts/air_hockey/hockey_paddle.gd" id="3_psfc2"]
-[ext_resource type="Texture2D" uid="uid://bmthydndluxjy" path="res://import_pngs/ice_hockey/ikony_2-1.png" id="3_x3shg"]
-[ext_resource type="Texture2D" uid="uid://ba5pfxck6gfji" path="res://import_pngs/ice_hockey/ikony_2-2.png" id="4_i2ufk"]
-[ext_resource type="Texture2D" uid="uid://c611xaoxch6l3" path="res://import_pngs/ice_hockey/ikony_2-3.png" id="5_2vc82"]
+[ext_resource type="Texture2D" uid="uid://bmthydndluxjy" path="res://import_pngs/air_hockey/ikony_2-1.png" id="3_x3shg"]
+[ext_resource type="Texture2D" uid="uid://ba5pfxck6gfji" path="res://import_pngs/air_hockey/ikony_2-2.png" id="4_i2ufk"]
+[ext_resource type="Texture2D" uid="uid://c611xaoxch6l3" path="res://import_pngs/air_hockey/ikony_2-3.png" id="5_2vc82"]
 [ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="5_bhji4"]
 [ext_resource type="Texture2D" uid="uid://dampxihajfa4s" path="res://import_pngs/escape_button/IMG_2238.PNG" id="5_jimn4"]
 [ext_resource type="Texture2D" uid="uid://b1l3ux3yt747s" path="res://import_pngs/escape_button/IMG_2241.PNG" id="6_u8o2f"]
@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://cy468onx22dow" path="res://import_pngs/mute_button_on/IMG_2325.PNG" id="17_3chct"]
 [ext_resource type="Texture2D" uid="uid://dlew1jwjp4jk6" path="res://import_pngs/mute_button_on/IMG_2326.PNG" id="18_8o8lm"]
 [ext_resource type="Texture2D" uid="uid://bcc5d63c7xodq" path="res://import_pngs/mute_button_on/IMG_2327.PNG" id="19_nj6lh"]
-[ext_resource type="Texture2D" uid="uid://daga3gfkbtei8" path="res://import_pngs/ice_hockey/play_-_ikony.png" id="24_g8mvd"]
+[ext_resource type="Texture2D" uid="uid://daga3gfkbtei8" path="res://import_pngs/air_hockey/play_-_ikony.png" id="24_g8mvd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7lpye"]
 animations = [{

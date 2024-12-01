@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba5pfxck6gfji"
-path="res://.godot/imported/ikony_2-2.png-38d2758ecbf0cf8ec29cab72833eabe2.ctex"
+uid="uid://c611xaoxch6l3"
+path="res://.godot/imported/ikony_2-3.png-54206a40a6a071782b7f8c95b40103da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://import_pngs/ice_hockey/ikony_2-2.png"
-dest_files=["res://.godot/imported/ikony_2-2.png-38d2758ecbf0cf8ec29cab72833eabe2.ctex"]
+source_file="res://import_pngs/air_hockey/ikony_2-3.png"
+dest_files=["res://.godot/imported/ikony_2-3.png-54206a40a6a071782b7f8c95b40103da.ctex"]
 
 [params]
 

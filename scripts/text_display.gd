@@ -28,7 +28,7 @@ var _wrong_button_dialogue: Array[String] = [
 	"No.",
 	"This button isn’t giving.",
 	"Not slay. ",
-	"Nuh-uh.",
+	"Nuh uh.",
 	"Nice try but no.",
 	"That’s the wrong button.",
 	"That’s the wrong button again.",

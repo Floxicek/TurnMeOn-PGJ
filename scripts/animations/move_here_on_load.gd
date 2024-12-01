@@ -8,7 +8,7 @@ var child_pos: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	if not Engine.is_editor_hint():
-		if get_child(0):
+		if get_children().size() >  0:
 			child_pos = get_child(0).global_position
 			get_child(0).global_position = global_position
 			await SceneManager.transition_done

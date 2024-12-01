@@ -11,6 +11,20 @@ config_version=5
 [application]
 
 config/name="Play with Me"
+config/description="Play with Me
+is a game we made for https://itch.io/jam/gds-jam-2024.
+Theme of the gamejam is: Everything changes
+
+Controls
+
+Those you will have to find out.;) You can play the game using keyboard (without numpad) and mouse (or touchpad)
+
+ESC or F - toggle fullscreen
+R - restart current level
+M - mute music
+
+Feedback is welcome
+We will be grateful for your feedback. "
 run/main_scene="res://scenes/intro.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.8, 0.8, 0.8, 1)

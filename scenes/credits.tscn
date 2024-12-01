@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dqpnh140n72xq"]
+[gd_scene load_steps=21 format=3 uid="uid://dqpnh140n72xq"]
 
 [ext_resource type="Theme" uid="uid://73qrmdmoxyfa" path="res://theme.tres" id="1_6gfop"]
+[ext_resource type="Script" path="res://scripts/credits.gd" id="2_s7msf"]
 [ext_resource type="Texture2D" uid="uid://nxedlp5ggv7p" path="res://import_pngs/dvere_text/dvere_text1.PNG" id="2_us7ho"]
 [ext_resource type="Texture2D" uid="uid://drwqle32mgyq3" path="res://import_pngs/dvere_text/dvere_text2.PNG" id="3_cvnrj"]
 [ext_resource type="Texture2D" uid="uid://msfx5onw16td" path="res://import_pngs/dvere_text/dvere_text3.PNG" id="4_ip6l3"]
@@ -129,7 +130,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_1t7yv"]
 resource_name = "final"
-length = 200.0
+length = 60.0
 step = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -173,7 +174,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
 "points": PackedFloat32Array(-242, -0.25, 0, 0.25, 0, 263, -0.25, 0, 0.25, 0, 263, -0.25, 0, 0.25, 0, 338, -0.25, 0, 0.25, 0, 263, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(12, 14, 44.5, 45, 45.5)
+"times": PackedFloat32Array(12, 14, 53, 53.5, 54)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -209,7 +210,21 @@ tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(45.5, 46.5)
+"times": PackedFloat32Array(54, 55)
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(55),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"turn_off_music"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wxc6m"]
@@ -226,6 +241,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_6gfop")
+script = ExtResource("2_s7msf")
 
 [node name="RichTextLabel" type="Label" parent="."]
 layout_mode = 1
@@ -297,6 +313,7 @@ texture = ExtResource("12_3cjni")
 [node name="TextDisplayer" parent="Lightbulb frame" instance=ExtResource("13_l8usw")]
 position = Vector2(1280, 744)
 scale = Vector2(0.2, 0.2)
+wait_before_hide = 4.0
 
 [node name="Dev Names" type="Label" parent="."]
 layout_mode = 1

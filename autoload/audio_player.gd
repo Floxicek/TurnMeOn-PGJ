@@ -13,7 +13,6 @@ var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rng.randomize()
-	soundtrack_player.play()
 	soundtrack_player_state_updated.emit(soundtrack_player.stream_paused)
 	
 

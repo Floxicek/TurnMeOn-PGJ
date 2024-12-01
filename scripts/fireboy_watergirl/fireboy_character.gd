@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity += get_gravity() * delta
 
-	var jumping = (Input.is_action_just_pressed("UP") and fireboy) or (Input.is_action_just_pressed("arrow_up") and not fireboy)
+	var jumping = (Input.is_action_just_pressed("kb_up") and fireboy) or (Input.is_action_just_pressed("arrow_up") and not fireboy)
 	if jumping and coyote_timer > 0:
 		if inverted_gravity:
 			velocity.y = -jump_velocity
@@ -48,9 +48,9 @@ func _physics_process(delta: float) -> void:
 		
 	var direction := 0.0
 	if inverted_gravity:
-		direction = Input.get_axis("RIGHT", "LEFT") if fireboy else Input.get_axis("arrow_right", "arrow_left")
+		direction = Input.get_axis("kb_right", "kb_left") if fireboy else Input.get_axis("arrow_right", "arrow_left")
 	else:
-		direction = Input.get_axis("LEFT", "RIGHT") if fireboy else Input.get_axis("arrow_left", "arrow_right")
+		direction = Input.get_axis("kb_left", "kb_right") if fireboy else Input.get_axis("arrow_left", "arrow_right")
 	if direction:
 		velocity.x = direction * speed
 	else:

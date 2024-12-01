@@ -1,7 +1,7 @@
 extends Node2D
 
 func _on_play_button_pressed() -> void:
-	SceneManager.next_level("Let`s change things a bit.")
+	SceneManager.next_level()
 
 
 func _on_escape_button_pressed() -> void:

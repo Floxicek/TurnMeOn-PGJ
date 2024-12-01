@@ -109,6 +109,7 @@ func next_level(message: String = "", animation: ANIMATIONS = ANIMATIONS.NONE):
 		change_scene(levels[_current_level_index], animation)
 
 func reload_level(message: String = ""):
+	if _in_progress: return #Don't restart if transition is already in progress
 	if _current_level_index == -1:
 		push_error("RELOADING WILL NOT WORK WHEN TESTING LOCAL SCENES")
 	transition_message = message

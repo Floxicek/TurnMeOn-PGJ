@@ -8,10 +8,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+# TODO FIX it changes position when next scene is called
 func _on_play_button_pressed() -> void:
 	SceneManager.next_level()
 	await SceneManager._clear_scene_done

@@ -8,6 +8,7 @@ var rng = RandomNumberGenerator.new()
 var button_with_play_func: Node2D
 
 func _ready() -> void:
+	rng.randomize()
 	assign_play_func()
 
 func assign_play_func():

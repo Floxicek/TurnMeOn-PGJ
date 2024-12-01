@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_play_button_pressed() -> void:
-	SceneManager.next_level("", true)
+	SceneManager.next_level()
 	await SceneManager._clear_scene_done
 	$CursorObject.inverted_mouse = false
 

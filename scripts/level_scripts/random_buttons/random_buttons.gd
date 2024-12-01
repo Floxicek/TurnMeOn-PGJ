@@ -7,7 +7,6 @@ var rng = RandomNumberGenerator.new()
 @export var play_button: Node2D
 var button_with_play_func: Node2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	assign_play_func()
 
@@ -22,13 +21,9 @@ func assign_play_func():
 			
 	for button in all_buttons:
 		if(button == button_with_play_func):
-			button.pressed.connect(func(): SceneManager.next_level())
+			button.pressed.connect(func(): SceneManager.next_level("", true))
 		else:
 			button.pressed.connect(show_wrong_button_quote)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func show_wrong_button_quote():
 	$Text_displayer.write_wrong_button()

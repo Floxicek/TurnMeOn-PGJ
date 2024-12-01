@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 func _on_play_button_pressed() -> void:
-	SceneManager.next_level()
+	SceneManager.next_level("Oh no! The cat has stolen the mouse!", SceneManager.ANIMATIONS.CAT)
 
 
 func _on_escape_button_pressed() -> void:

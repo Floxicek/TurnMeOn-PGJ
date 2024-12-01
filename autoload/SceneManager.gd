@@ -100,13 +100,13 @@ func _process(_delta: float) -> void:
 				# Well some error happend:
 				push_error("Error changing scenes")
 
-func next_level(message: String = "", show_cat_animation = false):
+func next_level(message: String = "", animation: ANIMATIONS = ANIMATIONS.NONE):
 	if not _in_progress:
 		#print(_in_progress, "in progress")
 		transition_message = message
 		_current_level_index = (_current_level_index + 1) % levels.size()
 		print("Changing to level ", levels[_current_level_index])
-		change_scene(levels[_current_level_index], show_cat_animation)
+		change_scene(levels[_current_level_index], animation)
 
 func reload_level(message: String = ""):
 	if _current_level_index == -1:

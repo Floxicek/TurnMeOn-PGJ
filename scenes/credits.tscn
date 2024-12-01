@@ -1,9 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqpnh140n72xq"]
+[gd_scene load_steps=15 format=3 uid="uid://dqpnh140n72xq"]
 
 [ext_resource type="Theme" uid="uid://73qrmdmoxyfa" path="res://theme.tres" id="1_6gfop"]
 [ext_resource type="Texture2D" uid="uid://nxedlp5ggv7p" path="res://import_pngs/dvere_text/dvere_text1.PNG" id="2_us7ho"]
 [ext_resource type="Texture2D" uid="uid://drwqle32mgyq3" path="res://import_pngs/dvere_text/dvere_text2.PNG" id="3_cvnrj"]
 [ext_resource type="Texture2D" uid="uid://msfx5onw16td" path="res://import_pngs/dvere_text/dvere_text3.PNG" id="4_ip6l3"]
+[ext_resource type="Texture2D" uid="uid://dj3gncdwe878m" path="res://import_pngs/wave/wave1.png" id="5_g0glq"]
+[ext_resource type="Texture2D" uid="uid://h0sbie4r33h2" path="res://import_pngs/wave/wave2.png" id="6_w70q5"]
+[ext_resource type="Texture2D" uid="uid://g5n3i72kcner" path="res://import_pngs/wave/wave3.png" id="7_dgqe4"]
+[ext_resource type="Texture2D" uid="uid://co4gnu5wbv5kp" path="res://import_pngs/wave/wave4.png" id="8_08lsv"]
+[ext_resource type="Texture2D" uid="uid://bdyuhhrb6c2j3" path="res://import_pngs/wave/wave5.png" id="9_58n6o"]
+[ext_resource type="Texture2D" uid="uid://bu2bt3n60aw7" path="res://import_pngs/wave/wave6.png" id="10_2ap8a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t1qvq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_g0glq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w70q5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dgqe4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_08lsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_58n6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2ap8a")
+}],
+"loop": true,
+"name": &"wave",
+"speed": 10.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_utdnl"]
 animations = [{
@@ -21,6 +53,14 @@ animations = [{
 "name": &"default",
 "speed": 7.0
 }]
+
+[sub_resource type="Animation" id="Animation_1t7yv"]
+resource_name = "final"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wxc6m"]
+_data = {
+"final": SubResource("Animation_1t7yv")
+}
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -47,7 +87,19 @@ Sheyvan from freesound.org - click sound"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DveřeText" type="AnimatedSprite2D" parent="."]
-position = Vector2(708, 1140)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1280, 1737)
+sprite_frames = SubResource("SpriteFrames_t1qvq")
+animation = &"wave"
+frame_progress = 0.30833
+
+[node name="DveřeText" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(-572, -413)
 sprite_frames = SubResource("SpriteFrames_utdnl")
 frame_progress = 0.777303
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wxc6m")
+}

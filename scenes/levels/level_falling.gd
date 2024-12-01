@@ -62,13 +62,13 @@ func spawn_button():
 
 func push_play_button():
 	SceneManager.next_level()
-	$Hand/CollisionShape2D.disabled = true
+	$Hand/CollisionShape2D.call_deferred("set", "disabled", true)
 	$Hand.level_done = true
 	
 func push_wrong_button():
 	SceneManager.reload_level("Wrong")
 	velocity = 0
-	$Hand/CollisionShape2D.disabled = true
+	$Hand/CollisionShape2D.call_deferred("set", "disabled", true)
 	$Hand.level_done = true
 
 func _on_play_timer_timeout() -> void:

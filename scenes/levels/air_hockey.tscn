@@ -1,0 +1,476 @@
+[gd_scene load_steps=43 format=3 uid="uid://cw2sr68egc4q3"]
+
+[ext_resource type="Script" path="res://scripts/level_scripts/air_hockey/air_hockey.gd" id="1_njx1p"]
+[ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="2_fw0iq"]
+[ext_resource type="Script" path="res://scripts/level_scripts/air_hockey/hockey_paddle.gd" id="3_psfc2"]
+[ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="5_bhji4"]
+[ext_resource type="Texture2D" uid="uid://dampxihajfa4s" path="res://import_pngs/escape_button/IMG_2238.PNG" id="5_jimn4"]
+[ext_resource type="Texture2D" uid="uid://b1l3ux3yt747s" path="res://import_pngs/escape_button/IMG_2241.PNG" id="6_u8o2f"]
+[ext_resource type="Texture2D" uid="uid://cxaptvjbtihlv" path="res://import_pngs/escape_button/IMG_2242.PNG" id="7_sdktu"]
+[ext_resource type="Texture2D" uid="uid://gf3hsglx3o3u" path="res://import_pngs/escape_button/IMG_2243.PNG" id="8_fkmud"]
+[ext_resource type="Script" path="res://scripts/level_scripts/air_hockey/ball.gd" id="8_wki6o"]
+[ext_resource type="Texture2D" uid="uid://dqsjf55s6mgrq" path="res://import_pngs/language_btn_kor/IMG_2252.PNG" id="9_66nh1"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="9_ibymu"]
+[ext_resource type="Texture2D" uid="uid://cekslfd56t1aj" path="res://import_pngs/language_btn_kor/IMG_2253.PNG" id="10_jrq47"]
+[ext_resource type="Texture2D" uid="uid://b7jqor3qygplh" path="res://import_pngs/settings_button/IMG_2249.PNG" id="10_kl50y"]
+[ext_resource type="Texture2D" uid="uid://dgvdv8j32tcvs" path="res://import_pngs/settings_button/IMG_2250.PNG" id="11_8opt5"]
+[ext_resource type="Texture2D" uid="uid://dcm7ysotl5isv" path="res://import_pngs/language_btn_kor/IMG_2254.PNG" id="11_d5llx"]
+[ext_resource type="Texture2D" uid="uid://rhm3q27h3yym" path="res://import_pngs/settings_button/IMG_2251.PNG" id="12_iphkn"]
+[ext_resource type="Script" path="res://scripts/level_scripts/air_hockey/wall.gd" id="12_qbanv"]
+[ext_resource type="PackedScene" uid="uid://c55xnbirwh6t3" path="res://scenes/wall.tscn" id="12_qk3ad"]
+[ext_resource type="Script" path="res://scripts/mute_button.gd" id="13_5eadg"]
+[ext_resource type="Texture2D" uid="uid://2crcmgqgxc2m" path="res://import_pngs/mute_button_off/IMG_2331.PNG" id="14_ab3o1"]
+[ext_resource type="Texture2D" uid="uid://cpsvcq00bmqx" path="res://import_pngs/mute_button_off/IMG_2332.PNG" id="15_xafc8"]
+[ext_resource type="Texture2D" uid="uid://de67s7m4trj3q" path="res://import_pngs/mute_button_off/IMG_2333.PNG" id="16_jtomg"]
+[ext_resource type="Texture2D" uid="uid://cy468onx22dow" path="res://import_pngs/mute_button_on/IMG_2325.PNG" id="17_3chct"]
+[ext_resource type="Texture2D" uid="uid://dlew1jwjp4jk6" path="res://import_pngs/mute_button_on/IMG_2326.PNG" id="18_8o8lm"]
+[ext_resource type="Texture2D" uid="uid://bcc5d63c7xodq" path="res://import_pngs/mute_button_on/IMG_2327.PNG" id="19_nj6lh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_115l6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jimn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u8o2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sdktu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fkmud")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g0ma"]
+size = Vector2(224, 26.4348)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tl6n"]
+size = Vector2(231, 21.4348)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drk31"]
+size = Vector2(218.5, 23.7174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rf1du"]
+size = Vector2(215, 21.5653)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pt3y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_66nh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jrq47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d5llx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lw4b1"]
+size = Vector2(318, 26.4348)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsh4h"]
+size = Vector2(315, 21.4348)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bc5l"]
+size = Vector2(218.5, 23.8587)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rp05"]
+size = Vector2(215, 21.5653)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xp4ok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ab3o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xafc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jtomg")
+}],
+"loop": true,
+"name": &"off_state",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_3chct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8o8lm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nj6lh")
+}],
+"loop": true,
+"name": &"on_state",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5108"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_kl50y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8opt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_iphkn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwcgt"]
+size = Vector2(234.75, 233)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ys5g3"]
+size = Vector2(499.13, 30.8696)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btk3h"]
+size = Vector2(106.087, 31.1305)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vf3y4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_kl50y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8opt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_iphkn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5ibm"]
+size = Vector2(234.75, 233)
+
+[node name="AirHockey" type="Node2D"]
+script = ExtResource("1_njx1p")
+
+[node name="AirHockeyPaddle" parent="." instance=ExtResource("2_fw0iq")]
+position = Vector2(0, 2)
+script = ExtResource("3_psfc2")
+max_speed = 70.0
+agility = 6.0
+slow_distance = 150.0
+
+[node name="EscapeButton" type="Node2D" parent="." groups=["Button"]]
+position = Vector2(343, 571)
+script = ExtResource("9_ibymu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EscapeButton"]
+position = Vector2(1109, 535)
+sprite_frames = SubResource("SpriteFrames_115l6")
+frame = 1
+frame_progress = 0.503897
+
+[node name="InvisWall" type="Node2D" parent="EscapeButton"]
+position = Vector2(2607, 749)
+rotation = 1.5708
+scale = Vector2(1.2, 1.2)
+script = ExtResource("12_qbanv")
+horizontal = false
+
+[node name="UP" type="Area2D" parent="EscapeButton/InvisWall"]
+position = Vector2(-726.34, 2174.06)
+rotation = -1.5708
+scale = Vector2(0.833333, 0.833333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeButton/InvisWall/UP"]
+position = Vector2(-2.13037, 16.6087)
+shape = SubResource("RectangleShape2D_5g0ma")
+
+[node name="DOWN" type="Area2D" parent="EscapeButton/InvisWall"]
+position = Vector2(-624.167, 2173.33)
+rotation = -1.5708
+scale = Vector2(0.833333, 0.833333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeButton/InvisWall/DOWN"]
+position = Vector2(-2.5, 106.717)
+shape = SubResource("RectangleShape2D_7tl6n")
+
+[node name="RIGHT" type="Area2D" parent="EscapeButton/InvisWall"]
+position = Vector2(-624.167, 2173.33)
+scale = Vector2(0.833333, 0.833333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeButton/InvisWall/RIGHT"]
+position = Vector2(0.75, -108)
+shape = SubResource("RectangleShape2D_drk31")
+
+[node name="LEFT" type="Area2D" parent="EscapeButton/InvisWall"]
+position = Vector2(-621.993, 2190.72)
+rotation = 3.14159
+scale = Vector2(0.833333, 0.833333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeButton/InvisWall/LEFT"]
+position = Vector2(-4.8913, -90.3477)
+shape = SubResource("RectangleShape2D_rf1du")
+
+[node name="LanguageBtnKorean" type="Node2D" parent="." groups=["Button"]]
+position = Vector2(581, 676)
+rotation = 1.5708
+script = ExtResource("9_ibymu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LanguageBtnKorean"]
+position = Vector2(-1055, 529)
+sprite_frames = SubResource("SpriteFrames_3pt3y")
+frame_progress = 0.174294
+
+[node name="InvisWall" type="Node2D" parent="LanguageBtnKorean"]
+position = Vector2(2608, 749)
+rotation = 1.5708
+scale = Vector2(1.2, 1.2)
+script = ExtResource("12_qbanv")
+
+[node name="UP" type="Area2D" parent="LanguageBtnKorean/InvisWall"]
+position = Vector2(-726.34, 2174.06)
+rotation = -1.5708
+scale = Vector2(0.833333, 0.833333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LanguageBtnKorean/InvisWall/UP"]
+position = Vector2(1.8692, 16.6088)
+shape = SubResource("RectangleShape2D_lw4b1")
+
+[node name="DOWN" type="Area2D" parent="LanguageBtnKorean/InvisWall"]
+position = Vector2(-624.167, 2173.33)
+rotation = -1.5708
+scale = Vector2(0.833333, 0.833333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LanguageBtnKorean/InvisWall/DOWN"]
+position = Vector2(-1.49963, 106.717)
+shape = SubResource("RectangleShape2D_lsh4h")
+
+[node name="RIGHT" type="Area2D" parent="LanguageBtnKorean/InvisWall"]
+position = Vector2(-624.167, 2173.33)
+scale = Vector2(0.833333, 0.833333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LanguageBtnKorean/InvisWall/RIGHT"]
+position = Vector2(-1.0005, -153)
+shape = SubResource("RectangleShape2D_6bc5l")
+
+[node name="LEFT" type="Area2D" parent="LanguageBtnKorean/InvisWall"]
+position = Vector2(-621.993, 2190.72)
+rotation = 3.14159
+scale = Vector2(0.833333, 0.833333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LanguageBtnKorean/InvisWall/LEFT"]
+position = Vector2(1.60811, -137.13)
+shape = SubResource("RectangleShape2D_0rp05")
+
+[node name="PlayButton" parent="." instance=ExtResource("5_bhji4")]
+position = Vector2(126, 720)
+rotation = 4.71239
+
+[node name="MuteButton" type="Node2D" parent="." groups=["Button"]]
+position = Vector2(354, 801)
+script = ExtResource("13_5eadg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MuteButton"]
+position = Vector2(-826, -552)
+sprite_frames = SubResource("SpriteFrames_xp4ok")
+animation = &"on_state"
+
+[node name="InvisWall" type="Node2D" parent="MuteButton"]
+position = Vector2(2608, 749)
+rotation = 1.5708
+scale = Vector2(1.2, 1.2)
+script = ExtResource("12_qbanv")
+horizontal = false
+
+[node name="UP" type="Area2D" parent="MuteButton/InvisWall"]
+position = Vector2(-726.34, 2174.06)
+rotation = -1.5708
+scale = Vector2(0.833333, 0.833333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MuteButton/InvisWall/UP"]
+position = Vector2(-2.13037, 16.6087)
+shape = SubResource("RectangleShape2D_5g0ma")
+
+[node name="DOWN" type="Area2D" parent="MuteButton/InvisWall"]
+position = Vector2(-624.167, 2173.33)
+rotation = -1.5708
+scale = Vector2(0.833333, 0.833333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MuteButton/InvisWall/DOWN"]
+position = Vector2(-2.5, 106.717)
+shape = SubResource("RectangleShape2D_7tl6n")
+
+[node name="RIGHT" type="Area2D" parent="MuteButton/InvisWall"]
+position = Vector2(-624.167, 2173.33)
+scale = Vector2(0.833333, 0.833333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MuteButton/InvisWall/RIGHT"]
+position = Vector2(0.75, -108)
+shape = SubResource("RectangleShape2D_drk31")
+
+[node name="LEFT" type="Area2D" parent="MuteButton/InvisWall"]
+position = Vector2(-621.993, 2190.72)
+rotation = 3.14159
+scale = Vector2(0.833333, 0.833333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MuteButton/InvisWall/LEFT"]
+position = Vector2(-4.8913, -90.3477)
+shape = SubResource("RectangleShape2D_rf1du")
+
+[node name="Ball" type="Area2D" parent="."]
+position = Vector2(1811, 855)
+script = ExtResource("8_wki6o")
+velocity = Vector2(1000, 500)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ball"]
+position = Vector2(-1112, -551)
+sprite_frames = SubResource("SpriteFrames_b5108")
+frame_progress = 0.837495
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("RectangleShape2D_hwcgt")
+
+[node name="XBounceDeltaTimer" type="Timer" parent="Ball"]
+wait_time = 0.1
+
+[node name="YBounceDeltaTimer" type="Timer" parent="Ball"]
+wait_time = 0.1
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="BottomWall" parent="Walls" instance=ExtResource("12_qk3ad")]
+position = Vector2(322, 1337)
+scale = Vector2(1.3, 1.3)
+
+[node name="BottomWall2" parent="Walls" instance=ExtResource("12_qk3ad")]
+position = Vector2(975, 1344)
+scale = Vector2(1.2, 1.2)
+
+[node name="BottomWall3" parent="Walls" instance=ExtResource("12_qk3ad")]
+position = Vector2(1600, 1344)
+scale = Vector2(1.2, 1.2)
+
+[node name="BottomWall4" parent="Walls" instance=ExtResource("12_qk3ad")]
+position = Vector2(2225, 1344)
+scale = Vector2(1.2, 1.2)
+
+[node name="TopWall" parent="Walls" instance=ExtResource("12_qk3ad")]
+position = Vector2(353, 100)
+scale = Vector2(1.3, 1.3)
+
+[node name="TopWall2" parent="Walls" instance=ExtResource("12_qk3ad")]
+position = Vector2(1004, 90)
+scale = Vector2(1.2, 1.2)
+
+[node name="TopWall3" parent="Walls" instance=ExtResource("12_qk3ad")]
+position = Vector2(1620, 90)
+scale = Vector2(1.2, 1.2)
+
+[node name="TopWall4" parent="Walls" instance=ExtResource("12_qk3ad")]
+position = Vector2(2236, 87)
+scale = Vector2(1.2, 1.2)
+
+[node name="RightWall" parent="Walls" instance=ExtResource("12_qk3ad")]
+position = Vector2(2608, 322)
+rotation = 1.5708
+scale = Vector2(1.2, 1.2)
+horizontal = false
+
+[node name="RightWall2" parent="Walls" instance=ExtResource("12_qk3ad")]
+position = Vector2(2611, 1141)
+rotation = 1.5708
+scale = Vector2(1.2, 1.2)
+horizontal = false
+
+[node name="LeftWallTemp" parent="Walls" instance=ExtResource("12_qk3ad")]
+position = Vector2(130, 746)
+rotation = 1.5708
+scale = Vector2(2.16, 1.2)
+horizontal = false
+
+[node name="RightWall3Invis" type="Node2D" parent="Walls"]
+position = Vector2(2608, 749)
+rotation = 1.5708
+scale = Vector2(1.2, 1.2)
+script = ExtResource("12_qbanv")
+horizontal = false
+
+[node name="UP" type="Area2D" parent="Walls/RightWall3Invis"]
+position = Vector2(-0.869565, -122.609)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall3Invis/UP"]
+position = Vector2(-11.3044, 61.7391)
+shape = SubResource("RectangleShape2D_ys5g3")
+
+[node name="DOWN" type="Area2D" parent="Walls/RightWall3Invis"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall3Invis/DOWN"]
+position = Vector2(-11.3044, 61.7391)
+shape = SubResource("RectangleShape2D_ys5g3")
+
+[node name="RIGHT" type="Area2D" parent="Walls/RightWall3Invis"]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall3Invis/RIGHT"]
+position = Vector2(0.869751, -240.87)
+shape = SubResource("RectangleShape2D_btk3h")
+
+[node name="LEFT" type="Area2D" parent="Walls/RightWall3Invis"]
+position = Vector2(-20.8696, 2.6087)
+rotation = 4.71239
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall3Invis/LEFT"]
+position = Vector2(0.869751, -240.87)
+shape = SubResource("RectangleShape2D_btk3h")
+
+[node name="SettingsButton" type="Area2D" parent="." groups=["Button"]]
+position = Vector2(2642, 723)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SettingsButton"]
+position = Vector2(-1112, -551)
+sprite_frames = SubResource("SpriteFrames_vf3y4")
+frame_progress = 0.837495
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsButton"]
+position = Vector2(47.1875, 0)
+shape = SubResource("RectangleShape2D_e5ibm")
+
+[connection signal="area_entered" from="EscapeButton/InvisWall/UP" to="Walls/RightWall3Invis" method="_on_up_area_entered"]
+[connection signal="area_entered" from="EscapeButton/InvisWall/DOWN" to="Walls/RightWall3Invis" method="_on_down_area_entered"]
+[connection signal="area_entered" from="EscapeButton/InvisWall/RIGHT" to="Walls/RightWall3Invis" method="_on_right_area_entered"]
+[connection signal="area_entered" from="EscapeButton/InvisWall/LEFT" to="Walls/RightWall3Invis" method="_on_left_area_entered"]
+[connection signal="area_entered" from="LanguageBtnKorean/InvisWall/UP" to="Walls/RightWall3Invis" method="_on_up_area_entered"]
+[connection signal="area_entered" from="LanguageBtnKorean/InvisWall/DOWN" to="Walls/RightWall3Invis" method="_on_down_area_entered"]
+[connection signal="area_entered" from="LanguageBtnKorean/InvisWall/RIGHT" to="Walls/RightWall3Invis" method="_on_right_area_entered"]
+[connection signal="area_entered" from="LanguageBtnKorean/InvisWall/LEFT" to="Walls/RightWall3Invis" method="_on_left_area_entered"]
+[connection signal="area_entered" from="PlayButton" to="." method="_on_play_button_area_entered"]
+[connection signal="pressed" from="MuteButton" to="MuteButton" method="_on_pressed"]
+[connection signal="area_entered" from="MuteButton/InvisWall/UP" to="Walls/RightWall3Invis" method="_on_up_area_entered"]
+[connection signal="area_entered" from="MuteButton/InvisWall/DOWN" to="Walls/RightWall3Invis" method="_on_down_area_entered"]
+[connection signal="area_entered" from="MuteButton/InvisWall/RIGHT" to="Walls/RightWall3Invis" method="_on_right_area_entered"]
+[connection signal="area_entered" from="MuteButton/InvisWall/LEFT" to="Walls/RightWall3Invis" method="_on_left_area_entered"]
+[connection signal="area_entered" from="Ball" to="Ball" method="_on_area_entered"]
+[connection signal="area_exited" from="Ball" to="Ball" method="_on_area_exited"]
+[connection signal="timeout" from="Ball/XBounceDeltaTimer" to="Ball" method="_on_x_bounce_delta_timer_timeout"]
+[connection signal="timeout" from="Ball/YBounceDeltaTimer" to="Ball" method="_on_y_bounce_delta_timer_timeout"]
+[connection signal="area_entered" from="Walls/RightWall3Invis/UP" to="Walls/RightWall3Invis" method="_on_up_area_entered"]
+[connection signal="area_entered" from="Walls/RightWall3Invis/DOWN" to="Walls/RightWall3Invis" method="_on_down_area_entered"]
+[connection signal="area_entered" from="Walls/RightWall3Invis/RIGHT" to="Walls/RightWall3Invis" method="_on_right_area_entered"]
+[connection signal="area_entered" from="Walls/RightWall3Invis/LEFT" to="Walls/RightWall3Invis" method="_on_left_area_entered"]
+[connection signal="area_entered" from="SettingsButton" to="SettingsButton" method="_on_area_entered"]
+[connection signal="area_exited" from="SettingsButton" to="SettingsButton" method="_on_area_exited"]

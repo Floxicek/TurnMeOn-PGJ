@@ -61,13 +61,15 @@ func spawn_button():
 	
 
 func push_play_button():
-	velocity = 0
 	SceneManager.next_level()
 	$Hand/CollisionShape2D.disabled = true
 	$Hand.level_done = true
 	
 func push_wrong_button():
 	SceneManager.reload_level("Wrong")
+	velocity = 0
+	$Hand/CollisionShape2D.disabled = true
+	$Hand.level_done = true
 
 func _on_play_timer_timeout() -> void:
 	button_prefabs.append(play_button)

@@ -380,6 +380,10 @@ wait_time = 0.1
 [node name="YBounceDeltaTimer" type="Timer" parent="Ball"]
 wait_time = 0.1
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Ball"]
+position = Vector2(7.99997, 6.49999)
+scale = Vector2(3.5, 3.35)
+
 [node name="Walls" type="Node" parent="."]
 
 [node name="BottomWall" parent="Walls" instance=ExtResource("12_qk3ad")]
@@ -491,6 +495,7 @@ shape = SubResource("RectangleShape2D_e5ibm")
 [connection signal="area_entered" from="MuteButton/InvisWall/LEFT" to="Walls/RightWall3Invis" method="_on_left_area_entered"]
 [connection signal="timeout" from="Ball/XBounceDeltaTimer" to="Ball" method="_on_x_bounce_delta_timer_timeout"]
 [connection signal="timeout" from="Ball/YBounceDeltaTimer" to="Ball" method="_on_y_bounce_delta_timer_timeout"]
+[connection signal="screen_exited" from="Ball/VisibleOnScreenNotifier2D" to="Ball" method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="area_entered" from="Walls/RightWall3Invis/UP" to="Walls/RightWall3Invis" method="_on_up_area_entered"]
 [connection signal="area_entered" from="Walls/RightWall3Invis/DOWN" to="Walls/RightWall3Invis" method="_on_down_area_entered"]
 [connection signal="area_entered" from="Walls/RightWall3Invis/RIGHT" to="Walls/RightWall3Invis" method="_on_right_area_entered"]

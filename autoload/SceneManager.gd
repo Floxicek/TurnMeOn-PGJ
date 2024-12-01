@@ -5,8 +5,6 @@ const transition_scene = preload("res://autoload/transition/transition.tscn")
 
 var _current_level_index := -1
 var levels: Array = [
-	"res://scenes/levels/air_hockey.tscn",
-	"res://scenes/levels/level_fireboy_and_watergirl_again.tscn",
 	"res://scenes/levels/level1.tscn",
 	"res://scenes/levels/level_korean.tscn",
 	"res://scenes/levels/Lights_out.tscn",
@@ -18,11 +16,14 @@ var levels: Array = [
 	"res://scenes/levels/level_fireboy_and_watergirl.tscn",
 	"res://scenes/levels/level_falling.tscn",
 	"res://scenes/levels/level_periodic.tscn",
+	"res://scenes/levels/level_fireboy_and_watergirl_again.tscn",
+	"res://scenes/levels/air_hockey.tscn",
 	"res://scenes/credits.tscn"
 ]
 
 
 enum ANIMATIONS {
+	NONE,
 	CAT,
 	FIREBOY,
 	WATERGIRL,
@@ -61,12 +62,12 @@ func _ready() -> void:
 	transition_done.emit()
 
 
-func change_scene(target_scene_path, show_cat_animation = false) -> void:
+func change_scene(target_scene_path, animation := ANIMATIONS.NONE) -> void:
 	_in_progress = true
 	_target_scene_path = target_scene_path
 	_transition.clear_scene()
-	if show_cat_animation:
-		_transition.show_cat()
+	if animation != ANIMATIONS.NONE:
+		_transition.play_animation(animation_names[animation])
 
 
 func _clear_scene_done() -> void:

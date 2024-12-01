@@ -237,9 +237,9 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 49
 text = "CREDITS
 
-orginaljun.deviantart.com - erasing sound
-Kenney - godot logo
-Sheyvan from freesound.org - click sound"
+orginaljun.deviantart.com: erasing sound
+Kenney: godot logo
+Sheyvan from freesound.org: click sound"
 horizontal_alignment = 1
 vertical_alignment = 1
 

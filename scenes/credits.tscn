@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dqpnh140n72xq"]
+[gd_scene load_steps=18 format=3 uid="uid://dqpnh140n72xq"]
 
 [ext_resource type="Theme" uid="uid://73qrmdmoxyfa" path="res://theme.tres" id="1_6gfop"]
 [ext_resource type="Texture2D" uid="uid://nxedlp5ggv7p" path="res://import_pngs/dvere_text/dvere_text1.PNG" id="2_us7ho"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bu2bt3n60aw7" path="res://import_pngs/wave/wave6.png" id="10_2ap8a"]
 [ext_resource type="SpriteFrames" uid="uid://dqgfx78px0uj7" path="res://import_pngs/lightbulb/Lights_out.tres" id="11_w6g61"]
 [ext_resource type="Texture2D" uid="uid://ctuj1co1r5g2i" path="res://import_pngs/lightbulb/IMG_2352.PNG" id="12_3cjni"]
+[ext_resource type="PackedScene" uid="uid://ccv4uqgxpmmnx" path="res://scenes/text_displayer.tscn" id="13_l8usw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t1qvq"]
 animations = [{
@@ -109,12 +110,19 @@ libraries = {
 }
 
 [node name="lightbulb_bckground" type="Node2D" parent="."]
+visible = false
 
 [node name="lightbulb" type="AnimatedSprite2D" parent="lightbulb_bckground"]
-position = Vector2(1289, 719)
+position = Vector2(869, 897)
+scale = Vector2(0.7, 0.7)
 sprite_frames = ExtResource("11_w6g61")
 frame_progress = 0.361615
 
 [node name="Sprite2D" type="Sprite2D" parent="lightbulb_bckground"]
-position = Vector2(1271, 723)
+position = Vector2(1761, 263)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("12_3cjni")
+
+[node name="TextDisplayer" parent="lightbulb_bckground" instance=ExtResource("13_l8usw")]
+position = Vector2(1280, 744)
+scale = Vector2(0.3, 0.3)

@@ -12,17 +12,17 @@ func _ready() -> void:
 	assign_play_func()
 
 func assign_play_func():
-	if(len(all_buttons)<=0):
+	if (len(all_buttons) <= 0):
 		return
 	while true:
-		var random_button:Node2D = all_buttons[rng.randi_range(0,len(all_buttons)-1)]
-		if random_button!=play_button:
+		var random_button: Node2D = all_buttons[rng.randi_range(0, len(all_buttons) - 1)]
+		if random_button != play_button:
 			button_with_play_func = random_button
 			break
 			
 	for button in all_buttons:
-		if(button == button_with_play_func):
-			button.pressed.connect(func(): SceneManager.next_level("", true))
+		if (button == button_with_play_func):
+			button.pressed.connect(func(): SceneManager.next_level())
 		else:
 			button.pressed.connect(show_wrong_button_quote)
 

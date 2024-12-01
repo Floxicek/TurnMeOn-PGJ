@@ -16,7 +16,8 @@ func _ready() -> void:
 	$AnimatedSprite2D.hide()
 
 func show_cat():
-	cat_animation.start()
+	#cat_animation.start()
+	pass
 
 
 var _started = false
@@ -48,8 +49,9 @@ func show_scene():
 	if not text_displayer.is_done:
 		await text_displayer.finished
 	
-	if cat_animation.is_playing():
-		await cat_animation.finished
+	if cat_animation:
+		if cat_animation.is_playing():
+			await cat_animation.finished
 	
 	_started = false
 	$AnimatedSprite2D.show()

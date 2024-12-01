@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://yb4m73h2i8kx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ryj"]
+size = Vector2(129, 1.65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npb86"]
+size = Vector2(36, 1485)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnop1"]
+size = Vector2(29, 1491)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebadc"]
+size = Vector2(2597, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq8kn"]
+size = Vector2(136, 20)
+
+[node name="LevelPong" type="Node2D"]
+
+[node name="bricks" type="Node2D" parent="."]
+
+[node name="DeathBox" type="Area2D" parent="."]
+position = Vector2(1280, 1424)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBox"]
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_u0ryj")
+
+[node name="Walls" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 722)
+shape = SubResource("RectangleShape2D_npb86")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(2558.5, 719.5)
+shape = SubResource("RectangleShape2D_dnop1")
+
+[node name="Ceiling" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+position = Vector2(1282.5, 0)
+shape = SubResource("RectangleShape2D_ebadc")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1281, 1329)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_pq8kn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]

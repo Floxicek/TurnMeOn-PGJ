@@ -31,7 +31,8 @@ position = Vector2(2400, 1282)
 position = Vector2(2140, 1283)
 
 [node name="Text_displayer" parent="." instance=ExtResource("8_s21r4")]
-position = Vector2(1247, 491)
+position = Vector2(1261, 295)
+scale = Vector2(0.3, 0.3)
 
 [connection signal="pressed" from="EscapeButton" to="." method="_on_escape_button_pressed"]
 [connection signal="pressed" from="LanguageBtnKorean" to="." method="_on_language_btn_korean_pressed"]

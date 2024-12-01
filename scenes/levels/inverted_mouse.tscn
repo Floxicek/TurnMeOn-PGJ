@@ -40,8 +40,9 @@ position = Vector2(388, 136)
 rotation = 3.14159
 
 [node name="Text_displayer" parent="." instance=ExtResource("7_36lkt")]
-position = Vector2(1280, 899)
+position = Vector2(1262, 1085)
 rotation = 3.14159
+scale = Vector2(0.3, 0.3)
 wait_before_hide = 2.0
 
 [connection signal="pressed" from="EscapeButton" to="." method="_on_escape_button_pressed"]

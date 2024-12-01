@@ -9,11 +9,11 @@ enum LiquidType {LAVA, WATER, ACID}
 
 func _ready() -> void:
 	if type == LiquidType.LAVA:
-		modulate = lava_color
+		$Ground1.modulate = lava_color
 	elif type == LiquidType.WATER:
-		modulate = water_color
+		$Ground1.modulate = water_color
 	elif type == LiquidType.ACID:
-		modulate = acid_color
+		$Ground1.modulate = acid_color
 
 func _on_body_entered(body: Node2D) -> void:
 	if (type == LiquidType.WATER and body.is_in_group("Fireboy")) or (type == LiquidType.LAVA and body.is_in_group("Watergirl")) or (type == LiquidType.ACID and (body.is_in_group("Fireboy") or body.is_in_group("Watergirl"))):

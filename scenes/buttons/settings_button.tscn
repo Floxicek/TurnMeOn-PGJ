@@ -32,6 +32,7 @@ script = ExtResource("1_mc8bv")
 position = Vector2(-1112, -551)
 sprite_frames = SubResource("SpriteFrames_b5108")
 frame_progress = 0.837495
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hwcgt")

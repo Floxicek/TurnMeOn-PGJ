@@ -1,0 +1,295 @@
+[gd_scene load_steps=24 format=3 uid="uid://co2m61mp6uy6q"]
+
+[ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="1_nuh00"]
+[ext_resource type="Script" path="res://scripts/animations/hide_on_load.gd" id="2_vj2my"]
+[ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="3_ykkjt"]
+[ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="4_55kk0"]
+[ext_resource type="Script" path="res://scripts/fireboy_watergirl/player_detection.gd" id="5_aux10"]
+[ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="6_p57gu"]
+[ext_resource type="Script" path="res://scripts/animations/move_here_on_load.gd" id="7_ga8e3"]
+[ext_resource type="Script" path="res://scripts/animations/scale_down_on_load.gd" id="8_koctv"]
+[ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="8_nd1ir"]
+[ext_resource type="PackedScene" uid="uid://caf1noqmwe4bm" path="res://scenes/fireboy/fireboy.tscn" id="9_kgb42"]
+[ext_resource type="Texture2D" uid="uid://ydwrmrc2vos2" path="res://import_pngs/ground/ground.png" id="10_3ym5y"]
+[ext_resource type="Texture2D" uid="uid://coa5coff1iots" path="res://import_pngs/ground/line2.png" id="11_qe3o5"]
+[ext_resource type="Texture2D" uid="uid://77gm227whcmr" path="res://import_pngs/ground/line3.png" id="12_ffiaq"]
+[ext_resource type="PackedScene" uid="uid://eaufx73bgl5e" path="res://scenes/fireboy/rect.tscn" id="13_jebfe"]
+[ext_resource type="PackedScene" uid="uid://d0pws0snogv6x" path="res://scenes/fireboy/rect_half.tscn" id="14_iyoy1"]
+[ext_resource type="PackedScene" uid="uid://dq21p144y6rd3" path="res://scenes/pond.tscn" id="15_6jmdt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88n0f"]
+size = Vector2(228, 232)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jc4yk"]
+size = Vector2(325, 228)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnjmu"]
+size = Vector2(1020, 302)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuhb0"]
+size = Vector2(1026, 233)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwcgt"]
+size = Vector2(234.75, 233)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yhi4h"]
+distance = -1442.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_csbfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_3ym5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qe3o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ffiaq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FireboyAndWatergirlAgain" type="Node2D"]
+position = Vector2(2560, 1440)
+rotation = -3.14159
+
+[node name="Node2D" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CursorObject" parent="Node2D" instance=ExtResource("1_nuh00")]
+position = Vector2(0, 2)
+keyboard_max_speed = 40.0
+keyboard_acceleration = 10.0
+keyboard_decceleration = 25.0
+
+[node name="HideOnLoad" type="Node" parent="Node2D/CursorObject"]
+script = ExtResource("2_vj2my")
+
+[node name="Escape" type="Marker2D" parent="Node2D"]
+position = Vector2(144, 152)
+script = ExtResource("7_ga8e3")
+
+[node name="EscapeButtonCharacter" type="StaticBody2D" parent="Node2D/Escape"]
+position = Vector2(0.00057295, 1055)
+
+[node name="EscapeButton" parent="Node2D/Escape/EscapeButtonCharacter" instance=ExtResource("3_ykkjt")]
+position = Vector2(0, 0)
+react_on_cursor = false
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" parent="Node2D/Escape/EscapeButtonCharacter/EscapeButton" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Escape/EscapeButtonCharacter/EscapeButton" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Escape/EscapeButtonCharacter"]
+shape = SubResource("RectangleShape2D_88n0f")
+metadata/_edit_lock_ = true
+
+[node name="Pond2" parent="Node2D" instance=ExtResource("15_6jmdt")]
+position = Vector2(1306, 1407)
+scale = Vector2(10.8, 0.7)
+type = 2
+
+[node name="Lnaguage" type="Marker2D" parent="Node2D"]
+position = Vector2(2371, 152)
+script = ExtResource("7_ga8e3")
+
+[node name="LanguageBtnCharacter" type="StaticBody2D" parent="Node2D/Lnaguage"]
+position = Vector2(0, 200)
+
+[node name="LanguageBtnKorean" parent="Node2D/Lnaguage/LanguageBtnCharacter" instance=ExtResource("4_55kk0")]
+react_on_cursor = false
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" parent="Node2D/Lnaguage/LanguageBtnCharacter/LanguageBtnKorean" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Lnaguage/LanguageBtnCharacter/LanguageBtnKorean" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Lnaguage/LanguageBtnCharacter"]
+shape = SubResource("RectangleShape2D_jc4yk")
+metadata/_edit_lock_ = true
+
+[node name="Play" type="Marker2D" parent="Node2D"]
+position = Vector2(1280, 670)
+script = ExtResource("7_ga8e3")
+
+[node name="PlayButtonCharacter" type="StaticBody2D" parent="Node2D/Play"]
+position = Vector2(1011, 655)
+
+[node name="PlayDetection" type="Area2D" parent="Node2D/Play/PlayButtonCharacter"]
+position = Vector2(0, -272)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_aux10")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Play/PlayButtonCharacter/PlayDetection"]
+shape = SubResource("RectangleShape2D_dnjmu")
+debug_color = Color(0, 0.651198, 0.0237737, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="RedRect" type="ColorRect" parent="Node2D/Play/PlayButtonCharacter/PlayDetection"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -500.0
+offset_top = 166.0
+offset_bottom = 372.0
+metadata/_edit_lock_ = true
+
+[node name="BlueRect" type="ColorRect" parent="Node2D/Play/PlayButtonCharacter/PlayDetection"]
+modulate = Color(1, 1, 1, 0)
+offset_top = 168.0
+offset_right = 495.0
+offset_bottom = 367.0
+metadata/_edit_lock_ = true
+
+[node name="PlayButton" parent="Node2D/Play/PlayButtonCharacter" instance=ExtResource("6_p57gu")]
+react_on_cursor = false
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" parent="Node2D/Play/PlayButtonCharacter/PlayButton" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Play/PlayButtonCharacter/PlayButton" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Play/PlayButtonCharacter"]
+shape = SubResource("RectangleShape2D_iuhb0")
+metadata/_edit_lock_ = true
+
+[node name="ScaleOnLoad" type="Node" parent="Node2D/Play/PlayButtonCharacter"]
+script = ExtResource("8_koctv")
+scale_to = 0.5
+
+[node name="Settings" type="Marker2D" parent="Node2D"]
+position = Vector2(2400, 1282)
+script = ExtResource("7_ga8e3")
+
+[node name="SettingsButtonCharacter" type="StaticBody2D" parent="Node2D/Settings"]
+position = Vector2(-1298, 0)
+
+[node name="SettingsButton" parent="Node2D/Settings/SettingsButtonCharacter" instance=ExtResource("8_nd1ir")]
+react_on_cursor = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Settings/SettingsButtonCharacter/SettingsButton" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Settings/SettingsButtonCharacter"]
+shape = SubResource("RectangleShape2D_hwcgt")
+metadata/_edit_lock_ = true
+
+[node name="Fireboy" parent="Node2D" instance=ExtResource("9_kgb42")]
+position = Vector2(2322, -45)
+inverted_gravity = true
+
+[node name="WaterGirl" parent="Node2D" instance=ExtResource("9_kgb42")]
+position = Vector2(2440, -55)
+fireboy = false
+inverted_gravity = true
+
+[node name="Ground" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Ground"]
+position = Vector2(0, -36)
+shape = SubResource("WorldBoundaryShape2D_yhi4h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Ground"]
+modulate = Color(0.203922, 0.6, 0.203922, 1)
+position = Vector2(1282.9, 810)
+sprite_frames = SubResource("SpriteFrames_csbfa")
+frame_progress = 0.219904
+metadata/_edit_lock_ = true
+
+[node name="MoveFromHere" type="Marker2D" parent="Node2D"]
+position = Vector2(2784, 543)
+script = ExtResource("7_ga8e3")
+
+[node name="Rect" parent="Node2D/MoveFromHere" instance=ExtResource("13_jebfe")]
+position = Vector2(-858, 0)
+
+[node name="Rect" parent="Node2D" instance=ExtResource("13_jebfe")]
+position = Vector2(2641, -4)
+rotation = 1.57079
+
+[node name="MoveFromHere2" type="Marker2D" parent="Node2D"]
+position = Vector2(625, 1780)
+script = ExtResource("7_ga8e3")
+
+[node name="RectHalf2" parent="Node2D/MoveFromHere2" instance=ExtResource("14_iyoy1")]
+position = Vector2(0, -619)
+
+[node name="MoveFromHere3" type="Marker2D" parent="Node2D"]
+position = Vector2(1512, 1700)
+script = ExtResource("7_ga8e3")
+
+[node name="RectHalf2" parent="Node2D/MoveFromHere3" instance=ExtResource("14_iyoy1")]
+position = Vector2(0, -619)
+
+[node name="Pond" type="Marker2D" parent="Node2D"]
+position = Vector2(1256, -367)
+scale = Vector2(1, 0.7)
+script = ExtResource("7_ga8e3")
+
+[node name="Pond" parent="Node2D/Pond" instance=ExtResource("15_6jmdt")]
+position = Vector2(0, 1302.86)
+scale = Vector2(1, 1)
+
+[node name="Pond" parent="Node2D/Pond/Pond" instance=ExtResource("15_6jmdt")]
+position = Vector2(-533, 5.71417)
+scale = Vector2(1, 1)
+type = 0
+metadata/_edit_lock_ = true
+
+[node name="RectHalf" parent="Node2D/Pond/Pond" instance=ExtResource("14_iyoy1")]
+position = Vector2(-262, 12.8571)
+scale = Vector2(1, 1.42857)
+metadata/_edit_lock_ = true
+
+[node name="RectHalf2" parent="Node2D/Pond/Pond" instance=ExtResource("14_iyoy1")]
+position = Vector2(-791, 12.8571)
+scale = Vector2(1, 1.42857)
+metadata/_edit_lock_ = true
+
+[node name="RectHalf3" parent="Node2D/Pond/Pond" instance=ExtResource("14_iyoy1")]
+position = Vector2(12, 165.714)
+scale = Vector2(1, 1.42857)
+metadata/_edit_lock_ = true
+
+[node name="RectHalf5" parent="Node2D/Pond/Pond" instance=ExtResource("14_iyoy1")]
+position = Vector2(-520, 165.714)
+scale = Vector2(1, 1.42857)
+metadata/_edit_lock_ = true
+
+[node name="RectHalf4" parent="Node2D/Pond/Pond" instance=ExtResource("14_iyoy1")]
+position = Vector2(274, 4.28571)
+scale = Vector2(1, 1.42857)
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="Node2D/Play/PlayButtonCharacter/PlayDetection" to="Node2D/Play/PlayButtonCharacter/PlayDetection" method="_on_body_entered"]
+[connection signal="body_exited" from="Node2D/Play/PlayButtonCharacter/PlayDetection" to="Node2D/Play/PlayButtonCharacter/PlayDetection" method="_on_body_exited"]
+[connection signal="pressed" from="Node2D/Play/PlayButtonCharacter/PlayButton" to="." method="_on_play_button_pressed"]
+
+[editable path="Node2D/Escape/EscapeButtonCharacter/EscapeButton"]
+[editable path="Node2D/Lnaguage/LanguageBtnCharacter/LanguageBtnKorean"]
+[editable path="Node2D/Play/PlayButtonCharacter/PlayButton"]
+[editable path="Node2D/Settings/SettingsButtonCharacter/SettingsButton"]
+[editable path="Node2D/Fireboy"]
+[editable path="Node2D/WaterGirl"]
+[editable path="Node2D/MoveFromHere/Rect"]
+[editable path="Node2D/Rect"]
+[editable path="Node2D/MoveFromHere2/RectHalf2"]
+[editable path="Node2D/MoveFromHere3/RectHalf2"]
+[editable path="Node2D/Pond/Pond"]
+[editable path="Node2D/Pond/Pond/Pond"]
+[editable path="Node2D/Pond/Pond/RectHalf"]
+[editable path="Node2D/Pond/Pond/RectHalf2"]
+[editable path="Node2D/Pond/Pond/RectHalf3"]
+[editable path="Node2D/Pond/Pond/RectHalf5"]
+[editable path="Node2D/Pond/Pond/RectHalf4"]

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+# TODO fix scene
 @export_category("Movement")
 @export var speed = 300.0
 @export var coyote_time = 0.2

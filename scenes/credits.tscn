@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dqpnh140n72xq"]
+[gd_scene load_steps=17 format=3 uid="uid://dqpnh140n72xq"]
 
 [ext_resource type="Theme" uid="uid://73qrmdmoxyfa" path="res://theme.tres" id="1_6gfop"]
 [ext_resource type="Texture2D" uid="uid://nxedlp5ggv7p" path="res://import_pngs/dvere_text/dvere_text1.PNG" id="2_us7ho"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://co4gnu5wbv5kp" path="res://import_pngs/wave/wave4.png" id="8_08lsv"]
 [ext_resource type="Texture2D" uid="uid://bdyuhhrb6c2j3" path="res://import_pngs/wave/wave5.png" id="9_58n6o"]
 [ext_resource type="Texture2D" uid="uid://bu2bt3n60aw7" path="res://import_pngs/wave/wave6.png" id="10_2ap8a"]
+[ext_resource type="SpriteFrames" uid="uid://dqgfx78px0uj7" path="res://import_pngs/lightbulb/Lights_out.tres" id="11_w6g61"]
+[ext_resource type="Texture2D" uid="uid://ctuj1co1r5g2i" path="res://import_pngs/lightbulb/IMG_2352.PNG" id="12_3cjni"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t1qvq"]
 animations = [{
@@ -89,12 +91,14 @@ vertical_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1280, 1737)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_t1qvq")
 animation = &"wave"
 frame_progress = 0.30833
 
 [node name="DveřeText" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
-position = Vector2(-572, -413)
+position = Vector2(-817.143, -590)
+scale = Vector2(1.42857, 1.42857)
 sprite_frames = SubResource("SpriteFrames_utdnl")
 frame_progress = 0.777303
 metadata/_edit_lock_ = true
@@ -103,3 +107,14 @@ metadata/_edit_lock_ = true
 libraries = {
 "": SubResource("AnimationLibrary_wxc6m")
 }
+
+[node name="lightbulb_bckground" type="Node2D" parent="."]
+
+[node name="lightbulb" type="AnimatedSprite2D" parent="lightbulb_bckground"]
+position = Vector2(1289, 719)
+sprite_frames = ExtResource("11_w6g61")
+frame_progress = 0.361615
+
+[node name="Sprite2D" type="Sprite2D" parent="lightbulb_bckground"]
+position = Vector2(1271, 723)
+texture = ExtResource("12_3cjni")

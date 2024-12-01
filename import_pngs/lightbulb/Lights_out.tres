@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dqgfx78px0uj7"]
+
+[ext_resource type="Texture2D" uid="uid://dyfinbjv6bq17" path="res://import_pngs/lightbulb/IMG_2353.PNG" id="1_860e2"]
+[ext_resource type="Texture2D" uid="uid://cta2umxyp4h74" path="res://import_pngs/lightbulb/IMG_2354.PNG" id="2_btm31"]
+[ext_resource type="Texture2D" uid="uid://bc33ruhttl7xc" path="res://import_pngs/lightbulb/IMG_2355.PNG" id="3_qh4x8"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_860e2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_btm31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qh4x8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

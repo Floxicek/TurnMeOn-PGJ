@@ -19,10 +19,8 @@ func _ready() -> void:
 func set_default_scale(_scale):
 	default_scale = _scale
 
-func update_icon(state):
-	print(state)
-	print("MUTEE")
-	if state == is_on:
+func update_icon():
+	if AudioPlayer.soundtrack_player.stream_paused == is_on:
 		_on_pressed()
 
 func _on_area_entered(area: Area2D) -> void:

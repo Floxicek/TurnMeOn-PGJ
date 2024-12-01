@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 func _on_play_button_pressed() -> void:
-	SceneManager.next_level()
+	SceneManager.next_level("Press \'R\' to restart at any time!")
 	
 
 func _on_language_btn_korean_pressed() -> void:

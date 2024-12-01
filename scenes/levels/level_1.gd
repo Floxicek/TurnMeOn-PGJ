@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _on_play_button_pressed() -> void:
-	SceneManager.next_level("Press \'R\' to restart at any time!")
+	SceneManager.next_level("Press \'F\' for fullscreen")
 
 
 func _on_escape_button_pressed() -> void:

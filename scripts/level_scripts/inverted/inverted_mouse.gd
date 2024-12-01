@@ -1,18 +1,13 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$CursorObject.inverted_mouse = true
 	await SceneManager.transition_done
-	pass # Replace with function body.
+	Input.warp_mouse(Vector2(0,0))
 
 
-# TODO FIX it changes position when next scene is called
 func _on_play_button_pressed() -> void:
 	SceneManager.next_level()
-	await SceneManager._clear_scene_done
-	$CursorObject.inverted_mouse = false
 
 
 func _on_escape_button_pressed() -> void:

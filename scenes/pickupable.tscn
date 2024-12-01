@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwbp4kmgh8i74"]
+
+[ext_resource type="Script" path="res://scripts/pickupable.gd" id="1_hjj8v"]
+[ext_resource type="Texture2D" uid="uid://6jr373is2fj0" path="res://import_pngs/eating_robot/eatables/food/apple/IMG_2437.PNG" id="2_4xb5x"]
+[ext_resource type="Texture2D" uid="uid://bhi6oy60cxgpm" path="res://import_pngs/eating_robot/eatables/food/apple/IMG_2438.PNG" id="3_fxp8v"]
+[ext_resource type="Texture2D" uid="uid://dk0s45j7s2ml1" path="res://import_pngs/eating_robot/eatables/food/apple/IMG_2439.PNG" id="4_4xqav"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2bpqp"]
+radius = 76.2916
+height = 189.426
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b04mm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4xb5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fxp8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4xqav")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Pickupable" type="Area2D" groups=["Button"]]
+script = ExtResource("1_hjj8v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.39626
+shape = SubResource("CapsuleShape2D_2bpqp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(839, 287)
+sprite_frames = SubResource("SpriteFrames_b04mm")
+frame = 2
+frame_progress = 0.653892
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

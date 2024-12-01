@@ -1,0 +1,551 @@
+[gd_scene load_steps=84 format=3 uid="uid://dkothl2wavaue"]
+
+[ext_resource type="Script" path="res://scripts/level_eater.gd" id="1_7cqjn"]
+[ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="1_dmlgh"]
+[ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="2_igtop"]
+[ext_resource type="Script" path="res://scripts/pickupable.gd" id="2_mjjv5"]
+[ext_resource type="Texture2D" uid="uid://6jr373is2fj0" path="res://import_pngs/eating_robot/eatables/food/apple/IMG_2437.PNG" id="2_nvjjl"]
+[ext_resource type="Texture2D" uid="uid://ctjxltsvfl17j" path="res://import_pngs/eating_robot/eatables/food/banana/IMG_2440.PNG" id="3_b7xbu"]
+[ext_resource type="Texture2D" uid="uid://bhi6oy60cxgpm" path="res://import_pngs/eating_robot/eatables/food/apple/IMG_2438.PNG" id="3_q2ini"]
+[ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="3_qmd0x"]
+[ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="4_mghq6"]
+[ext_resource type="Texture2D" uid="uid://dk0s45j7s2ml1" path="res://import_pngs/eating_robot/eatables/food/apple/IMG_2439.PNG" id="4_pw6fj"]
+[ext_resource type="Texture2D" uid="uid://dcl8x2ykncgtd" path="res://import_pngs/eating_robot/eatables/food/banana/IMG_2441.PNG" id="4_xqcr3"]
+[ext_resource type="PackedScene" uid="uid://dofhmkti2cult" path="res://scenes/buttons/settings_button.tscn" id="5_6hkdf"]
+[ext_resource type="Texture2D" uid="uid://begheb5bdh1eh" path="res://import_pngs/eating_robot/eatables/food/banana/IMG_2442.PNG" id="5_bj5kr"]
+[ext_resource type="PackedScene" uid="uid://dr3t7x5prtdu3" path="res://scenes/buttons/mute_button.tscn" id="6_v1s7q"]
+[ext_resource type="Texture2D" uid="uid://cv33j1y8mhn7j" path="res://import_pngs/eating_robot/hungy/IMG_2402.PNG" id="7_jrqfl"]
+[ext_resource type="Script" path="res://scripts/eater_robot.gd" id="7_tl54y"]
+[ext_resource type="Texture2D" uid="uid://c5m5pe0mnx7tb" path="res://import_pngs/eating_robot/hungy/IMG_2403.PNG" id="8_1gtrx"]
+[ext_resource type="Texture2D" uid="uid://d1kymda73u8mo" path="res://import_pngs/eating_robot/eatables/food/cheese/IMG_2434.PNG" id="8_8mb6m"]
+[ext_resource type="Texture2D" uid="uid://b82u6rgsf5e18" path="res://import_pngs/eating_robot/eatables/food/cheese/IMG_2435.PNG" id="9_61vd7"]
+[ext_resource type="Texture2D" uid="uid://c6a5yny5iku8u" path="res://import_pngs/eating_robot/hungy/IMG_2404.PNG" id="9_nre7f"]
+[ext_resource type="Texture2D" uid="uid://b6m44u8qr2dxf" path="res://import_pngs/eating_robot/eatables/food/cheese/IMG_2436.PNG" id="10_468c6"]
+[ext_resource type="Texture2D" uid="uid://cdb02lg7t5n1a" path="res://import_pngs/eating_robot/hungy/IMG_2405.PNG" id="10_vu24b"]
+[ext_resource type="Texture2D" uid="uid://x2nsyw6nx0l3" path="res://import_pngs/eating_robot/omnomnom/IMG_2406.PNG" id="11_g0h1o"]
+[ext_resource type="Texture2D" uid="uid://bcb0ulja1t3gy" path="res://import_pngs/eating_robot/eatables/food/ice_cream/IMG_2422.PNG" id="11_v34sm"]
+[ext_resource type="Texture2D" uid="uid://8wdrl82i3tk" path="res://import_pngs/eating_robot/omnomnom/IMG_2407 2.PNG" id="12_6koah"]
+[ext_resource type="Texture2D" uid="uid://bncqdv2k4jisv" path="res://import_pngs/eating_robot/eatables/food/ice_cream/IMG_2423.PNG" id="12_076aa"]
+[ext_resource type="Texture2D" uid="uid://do0y20es0i6lq" path="res://import_pngs/eating_robot/omnomnom/IMG_2407.PNG" id="13_8753q"]
+[ext_resource type="Texture2D" uid="uid://bnt1yfc1awfeb" path="res://import_pngs/eating_robot/eatables/food/ice_cream/IMG_2424.PNG" id="13_kge5x"]
+[ext_resource type="Texture2D" uid="uid://becvtrvldrb7q" path="res://import_pngs/eating_robot/eatables/junk/boot/IMG_2425.PNG" id="14_6pt2d"]
+[ext_resource type="Texture2D" uid="uid://bx0h8iwi1pqta" path="res://import_pngs/eating_robot/omnomnom/IMG_2408 2.PNG" id="14_l5fg3"]
+[ext_resource type="Texture2D" uid="uid://dg5nuns0t4p0n" path="res://import_pngs/eating_robot/omnomnom/IMG_2408.PNG" id="15_hw078"]
+[ext_resource type="Texture2D" uid="uid://cbg3pkbyjn4d7" path="res://import_pngs/eating_robot/eatables/junk/boot/IMG_2426.PNG" id="15_w0w10"]
+[ext_resource type="Texture2D" uid="uid://dgj4adwd5dbs6" path="res://import_pngs/eating_robot/eatables/junk/boot/IMG_2427.PNG" id="16_os06r"]
+[ext_resource type="Texture2D" uid="uid://barcxjqla7j44" path="res://import_pngs/eating_robot/omnomnom/IMG_2409 2.PNG" id="16_yv0rn"]
+[ext_resource type="Texture2D" uid="uid://cvy8ejgo41u8x" path="res://import_pngs/eating_robot/omnomnom/IMG_2409.PNG" id="17_o0ecl"]
+[ext_resource type="Texture2D" uid="uid://vtkblip6hflj" path="res://import_pngs/eating_robot/eatables/junk/camera/IMG_2431.PNG" id="17_qnf0m"]
+[ext_resource type="Texture2D" uid="uid://dxq14bd53eeye" path="res://import_pngs/eating_robot/eatables/junk/camera/IMG_2432.PNG" id="18_lxk3l"]
+[ext_resource type="Texture2D" uid="uid://bq2cqswudxjd6" path="res://import_pngs/eating_robot/omnomnom/IMG_2410.PNG" id="18_ywaqt"]
+[ext_resource type="Texture2D" uid="uid://cum46lkk8iphs" path="res://import_pngs/eating_robot/eatables/junk/camera/IMG_2433.PNG" id="19_jfgj6"]
+[ext_resource type="Texture2D" uid="uid://ddaku78b74bho" path="res://import_pngs/eating_robot/omnomnom/IMG_2410 2.PNG" id="19_vq2ee"]
+[ext_resource type="Texture2D" uid="uid://cik0nb5l8xjkv" path="res://import_pngs/eating_robot/eatables/junk/clock/IMG_2428.PNG" id="20_1vyde"]
+[ext_resource type="Texture2D" uid="uid://bbafi4wijetth" path="res://import_pngs/eating_robot/omnomnom/IMG_2411 2.PNG" id="20_pu2jj"]
+[ext_resource type="Texture2D" uid="uid://cq0mu6hbl8rbe" path="res://import_pngs/eating_robot/omnomnom/IMG_2411.PNG" id="21_3gwrs"]
+[ext_resource type="Texture2D" uid="uid://btdwfu77g4gw2" path="res://import_pngs/eating_robot/eatables/junk/clock/IMG_2429.PNG" id="21_a80ut"]
+[ext_resource type="Texture2D" uid="uid://7fbdyqon8qk8" path="res://import_pngs/eating_robot/omnomnom/IMG_2412.PNG" id="22_7nvo8"]
+[ext_resource type="Texture2D" uid="uid://s25kvgyyt447" path="res://import_pngs/eating_robot/eatables/junk/clock/IMG_2430.PNG" id="22_dige0"]
+[ext_resource type="Texture2D" uid="uid://sds68cvioknc" path="res://import_pngs/eating_robot/eatables/junk/notebook/IMG_2443.PNG" id="23_lc3rf"]
+[ext_resource type="Texture2D" uid="uid://cdvn4ekm8aom5" path="res://import_pngs/eating_robot/omnomnom/IMG_2412 2.PNG" id="23_ucw6m"]
+[ext_resource type="Texture2D" uid="uid://leon40i76cis" path="res://import_pngs/eating_robot/omnomnom/IMG_2413 2.PNG" id="24_4x0u6"]
+[ext_resource type="Texture2D" uid="uid://1juy12mrcpse" path="res://import_pngs/eating_robot/eatables/junk/notebook/IMG_2444.PNG" id="24_kp86w"]
+[ext_resource type="Texture2D" uid="uid://bnt7uo524ug6x" path="res://import_pngs/eating_robot/omnomnom/IMG_2413.PNG" id="25_a7mbb"]
+[ext_resource type="Texture2D" uid="uid://dardl5d8156ic" path="res://import_pngs/eating_robot/eatables/junk/notebook/IMG_2445.PNG" id="25_bgpey"]
+[ext_resource type="Texture2D" uid="uid://66ktxxemdu6b" path="res://import_pngs/eating_robot/omnomnom/IMG_2414.PNG" id="26_q7frf"]
+[ext_resource type="Texture2D" uid="uid://bhhpccst7a3fa" path="res://import_pngs/eating_robot/just a chill guy/IMG_2395.PNG" id="27_ild56"]
+[ext_resource type="Texture2D" uid="uid://cjtxuh78jbod" path="res://import_pngs/eating_robot/just a chill guy/IMG_2397.PNG" id="28_5fwuq"]
+[ext_resource type="Texture2D" uid="uid://bxt04j3me8gqi" path="res://import_pngs/eating_robot/just a chill guy/IMG_2398.PNG" id="29_mc3jf"]
+[ext_resource type="Texture2D" uid="uid://duvntpy7l5lak" path="res://import_pngs/poof_animation/IMG_2468.PNG" id="57_w7kta"]
+[ext_resource type="Texture2D" uid="uid://v4wdgakenx85" path="res://import_pngs/poof_animation/IMG_2469.PNG" id="58_lyf55"]
+[ext_resource type="Texture2D" uid="uid://b5hhmrsmkh83s" path="res://import_pngs/poof_animation/IMG_2470.PNG" id="59_jhseg"]
+[ext_resource type="Texture2D" uid="uid://c7ou11hi616rj" path="res://import_pngs/poof_animation/IMG_2471.PNG" id="60_jg2hy"]
+[ext_resource type="Texture2D" uid="uid://ubualm1cv5l0" path="res://import_pngs/poof_animation/IMG_2472.PNG" id="61_34j0m"]
+[ext_resource type="Texture2D" uid="uid://hvf6guhtdwqo" path="res://import_pngs/poof_animation/IMG_2473.PNG" id="62_p5lek"]
+[ext_resource type="Texture2D" uid="uid://dagr1cgksn821" path="res://import_pngs/poof_animation/IMG_2474.PNG" id="63_neco3"]
+[ext_resource type="Texture2D" uid="uid://04cuyqtbaf35" path="res://import_pngs/poof_animation/IMG_2475.PNG" id="64_xgt67"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ot2l"]
+radius = 3.57421
+height = 9.78409
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wte0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nvjjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q2ini")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pw6fj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hltak"]
+radius = 3.60969
+height = 16.0897
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fr1wo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b7xbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xqcr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bj5kr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cltnm"]
+size = Vector2(18.5334, 27.281)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21rj1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_8mb6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_61vd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_468c6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tykq1"]
+radius = 6.29506
+height = 28.04
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gnae0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_v34sm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_076aa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_kge5x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8kk6"]
+size = Vector2(26.7, 21.8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lix2s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_6pt2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_w0w10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_os06r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxsrp"]
+size = Vector2(35.2635, 22.5063)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nds6j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_qnf0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_lxk3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jfgj6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j10hj"]
+radius = 6.45019
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lsfol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_1vyde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_a80ut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dige0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_by2tv"]
+size = Vector2(10.0317, 13.3515)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_purd2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_lc3rf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_kp86w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_bgpey")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qoq8m"]
+radius = 9.86667
+height = 33.6667
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_duaew"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jrqfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1gtrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nre7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vu24b")
+}],
+"loop": true,
+"name": &"Anticipating_food",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_g0h1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6koah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8753q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_l5fg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hw078")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yv0rn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_o0ecl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ywaqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vq2ee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_pu2jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3gwrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7nvo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ucw6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_4x0u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_a7mbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_q7frf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_q7frf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7nvo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ucw6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3gwrs")
+}],
+"loop": true,
+"name": &"Eat",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_ild56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5fwuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_mc3jf")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lb5rx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_w7kta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_lyf55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_jhseg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_jg2hy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_34j0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_p5lek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_neco3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_xgt67")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="LevelEater" type="Node2D"]
+script = ExtResource("1_7cqjn")
+
+[node name="pickupables" type="Node2D" parent="."]
+
+[node name="Pickupable" type="Area2D" parent="pickupables" groups=["Button", "Pickupable"]]
+position = Vector2(1181, 175)
+script = ExtResource("2_mjjv5")
+is_food = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupables/Pickupable"]
+rotation = 1.39626
+scale = Vector2(20, 20)
+shape = SubResource("CapsuleShape2D_4ot2l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pickupables/Pickupable"]
+position = Vector2(838, 283)
+sprite_frames = SubResource("SpriteFrames_4wte0")
+
+[node name="Pickupable2" type="Area2D" parent="pickupables" groups=["Button", "Pickupable"]]
+position = Vector2(2163, 646)
+script = ExtResource("2_mjjv5")
+is_food = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupables/Pickupable2"]
+rotation = 0.698132
+scale = Vector2(20, 20)
+shape = SubResource("CapsuleShape2D_hltak")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pickupables/Pickupable2"]
+position = Vector2(-291, -356)
+sprite_frames = SubResource("SpriteFrames_fr1wo")
+
+[node name="Pickupable3" type="Area2D" parent="pickupables" groups=["Button", "Pickupable"]]
+position = Vector2(1819, 1180)
+script = ExtResource("2_mjjv5")
+is_food = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupables/Pickupable3"]
+position = Vector2(-5.55151, -5.7572)
+rotation = 1.14319
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_cltnm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pickupables/Pickupable3"]
+position = Vector2(-404, -178)
+sprite_frames = SubResource("SpriteFrames_21rj1")
+
+[node name="Pickupable4" type="Area2D" parent="pickupables" groups=["Button", "Pickupable"]]
+position = Vector2(387, 741)
+script = ExtResource("2_mjjv5")
+is_food = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupables/Pickupable4"]
+rotation = 0.380482
+scale = Vector2(10, 10)
+shape = SubResource("CapsuleShape2D_tykq1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pickupables/Pickupable4"]
+position = Vector2(-759, -170)
+sprite_frames = SubResource("SpriteFrames_gnae0")
+
+[node name="Pickupable5" type="Area2D" parent="pickupables" groups=["Button", "Pickupable"]]
+position = Vector2(567, 1165)
+script = ExtResource("2_mjjv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupables/Pickupable5"]
+position = Vector2(6.5, 1)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_i8kk6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pickupables/Pickupable5"]
+position = Vector2(393, -201)
+sprite_frames = SubResource("SpriteFrames_lix2s")
+
+[node name="Pickupable6" type="Area2D" parent="pickupables" groups=["Button", "Pickupable"]]
+position = Vector2(1702, 245)
+script = ExtResource("2_mjjv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupables/Pickupable6"]
+position = Vector2(11.0501, 0.624634)
+rotation = 0.380482
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_wxsrp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pickupables/Pickupable6"]
+position = Vector2(-25, -244)
+sprite_frames = SubResource("SpriteFrames_nds6j")
+
+[node name="Pickupable7" type="Area2D" parent="pickupables" groups=["Button", "Pickupable"]]
+position = Vector2(1142, 1233)
+script = ExtResource("2_mjjv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupables/Pickupable7"]
+scale = Vector2(20, 20)
+shape = SubResource("CircleShape2D_j10hj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pickupables/Pickupable7"]
+position = Vector2(909, 15)
+sprite_frames = SubResource("SpriteFrames_lsfol")
+
+[node name="Pickupable8" type="Area2D" parent="pickupables" groups=["Button", "Pickupable"]]
+position = Vector2(579, 254)
+script = ExtResource("2_mjjv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupables/Pickupable8"]
+position = Vector2(16, -11)
+rotation = -0.6353
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_by2tv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pickupables/Pickupable8"]
+position = Vector2(221, -158)
+sprite_frames = SubResource("SpriteFrames_purd2")
+
+[node name="CursorObject" parent="." instance=ExtResource("1_dmlgh")]
+position = Vector2(0, 2)
+keyboard_max_speed = 40.0
+keyboard_acceleration = 10.0
+keyboard_decceleration = 25.0
+
+[node name="EscapeButton" parent="." instance=ExtResource("2_igtop")]
+
+[node name="LanguageBtnKorean" parent="." instance=ExtResource("3_qmd0x")]
+position = Vector2(2365, 148)
+
+[node name="PlayButton" parent="." instance=ExtResource("4_mghq6")]
+position = Vector2(1263, 716)
+
+[node name="SettingsButton" parent="." instance=ExtResource("5_6hkdf")]
+position = Vector2(2410, 1290)
+
+[node name="MuteButton" parent="." instance=ExtResource("6_v1s7q")]
+position = Vector2(2144, 1293)
+
+[node name="EaterRobot" type="Area2D" parent="." groups=["Pickupable"]]
+position = Vector2(1259, 744)
+script = ExtResource("7_tl54y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EaterRobot"]
+rotation = 1.5708
+scale = Vector2(30, 30)
+shape = SubResource("CapsuleShape2D_qoq8m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EaterRobot"]
+position = Vector2(-2, 254)
+sprite_frames = SubResource("SpriteFrames_duaew")
+animation = &"Eat"
+frame = 9
+frame_progress = 0.796059
+
+[node name="PoofAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(1323, 806)
+sprite_frames = SubResource("SpriteFrames_lb5rx")
+frame = 7
+frame_progress = 1.0
+
+[connection signal="area_entered" from="pickupables/Pickupable" to="pickupables/Pickupable" method="_on_area_entered"]
+[connection signal="area_exited" from="pickupables/Pickupable" to="pickupables/Pickupable" method="_on_area_exited"]
+[connection signal="dropped" from="pickupables/Pickupable" to="EaterRobot" method="_on_pickupable_dropped"]
+[connection signal="area_entered" from="pickupables/Pickupable2" to="pickupables/Pickupable2" method="_on_area_entered"]
+[connection signal="area_exited" from="pickupables/Pickupable2" to="pickupables/Pickupable2" method="_on_area_exited"]
+[connection signal="dropped" from="pickupables/Pickupable2" to="EaterRobot" method="_on_pickupable_dropped"]
+[connection signal="area_entered" from="pickupables/Pickupable3" to="pickupables/Pickupable3" method="_on_area_entered"]
+[connection signal="area_exited" from="pickupables/Pickupable3" to="pickupables/Pickupable3" method="_on_area_exited"]
+[connection signal="dropped" from="pickupables/Pickupable3" to="EaterRobot" method="_on_pickupable_dropped"]
+[connection signal="area_entered" from="pickupables/Pickupable4" to="pickupables/Pickupable4" method="_on_area_entered"]
+[connection signal="area_exited" from="pickupables/Pickupable4" to="pickupables/Pickupable4" method="_on_area_exited"]
+[connection signal="dropped" from="pickupables/Pickupable4" to="EaterRobot" method="_on_pickupable_dropped"]
+[connection signal="area_entered" from="pickupables/Pickupable5" to="pickupables/Pickupable5" method="_on_area_entered"]
+[connection signal="area_exited" from="pickupables/Pickupable5" to="pickupables/Pickupable5" method="_on_area_exited"]
+[connection signal="dropped" from="pickupables/Pickupable5" to="EaterRobot" method="_on_pickupable_dropped"]
+[connection signal="area_entered" from="pickupables/Pickupable6" to="pickupables/Pickupable6" method="_on_area_entered"]
+[connection signal="area_exited" from="pickupables/Pickupable6" to="pickupables/Pickupable6" method="_on_area_exited"]
+[connection signal="dropped" from="pickupables/Pickupable6" to="EaterRobot" method="_on_pickupable_dropped"]
+[connection signal="area_entered" from="pickupables/Pickupable7" to="pickupables/Pickupable7" method="_on_area_entered"]
+[connection signal="area_exited" from="pickupables/Pickupable7" to="pickupables/Pickupable7" method="_on_area_exited"]
+[connection signal="dropped" from="pickupables/Pickupable7" to="EaterRobot" method="_on_pickupable_dropped"]
+[connection signal="area_entered" from="pickupables/Pickupable8" to="pickupables/Pickupable8" method="_on_area_entered"]
+[connection signal="area_exited" from="pickupables/Pickupable8" to="pickupables/Pickupable8" method="_on_area_exited"]
+[connection signal="dropped" from="pickupables/Pickupable8" to="EaterRobot" method="_on_pickupable_dropped"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="area_entered" from="EaterRobot" to="EaterRobot" method="_on_area_entered"]
+[connection signal="area_exited" from="EaterRobot" to="EaterRobot" method="_on_area_exited"]
+[connection signal="full" from="EaterRobot" to="." method="_on_eater_robot_full"]
+[connection signal="animation_finished" from="PoofAnimation" to="." method="_on_poof_animation_animation_finished"]

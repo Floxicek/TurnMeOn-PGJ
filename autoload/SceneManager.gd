@@ -5,6 +5,7 @@ const transition_scene = preload("res://autoload/transition/transition.tscn")
 
 var _current_level_index := -1
 var levels : Array = [
+	"res://scenes/levels/level_eater.tscn",
 	"res://scenes/levels/level1.tscn",
 	"res://scenes/levels/level_korean.tscn",
 	"res://scenes/levels/Lights_out.tscn",

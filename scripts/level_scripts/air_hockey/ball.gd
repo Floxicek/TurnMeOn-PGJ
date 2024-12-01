@@ -10,6 +10,14 @@ var recently_bounced_y: bool = false
 
 var rotating_right:= false
 
+func _ready() -> void:
+	if not $VisibleOnScreenNotifier2D.is_on_screen():
+		Globals.error_counter_air_hocker += 1
+		if Globals.error_counter_air_hocker > 1:
+			SceneManager.next_level()
+		else:
+			SceneManager.reload_level()
+
 func _physics_process(delta: float) -> void:
 	rotation += pow(-1, int(rotating_right)) * rotation_speed*delta
 	position += delta*velocity*100

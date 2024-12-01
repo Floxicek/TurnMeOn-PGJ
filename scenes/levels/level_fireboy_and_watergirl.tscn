@@ -103,6 +103,7 @@ offset_top = 166.0
 offset_bottom = 372.0
 
 [node name="BlueRect" type="ColorRect" parent="PlayButtonCharacter/PlayDetection"]
+modulate = Color(1, 1, 1, 0)
 offset_top = 168.0
 offset_right = 495.0
 offset_bottom = 367.0

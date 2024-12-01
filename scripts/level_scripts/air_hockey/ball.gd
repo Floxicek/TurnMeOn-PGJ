@@ -9,6 +9,7 @@ var recently_bounced_x: bool = false
 var recently_bounced_y: bool = false
 
 var rotating_right:= false
+var _start_moving = false
 
 func _ready() -> void:
 	if not $VisibleOnScreenNotifier2D.is_on_screen():
@@ -17,10 +18,13 @@ func _ready() -> void:
 			SceneManager.next_level()
 		else:
 			SceneManager.reload_level()
+	await SceneManager.transition_done
+	_start_moving = true
 
 func _physics_process(delta: float) -> void:
-	rotation += pow(-1, int(rotating_right)) * rotation_speed*delta
-	position += delta*velocity*100
+	if _start_moving:
+		rotation += pow(-1, int(rotating_right)) * rotation_speed*delta
+		position += delta*velocity*100
 
 
 func bounce_x():
@@ -38,12 +42,13 @@ func bounce_y():
 	
 
 func hit_with_paddle(paddle: Hockey_paddle):
-	rotating_right = not rotating_right
-	var velocity_length = velocity.length()
-	var new_velocity = velocity + paddle.velocity
-	velocity = paddle.velocity
-	#velocity = new_velocity.normalized()*velocity_length
-	return
+	if _start_moving:
+		rotating_right = not rotating_right
+		var velocity_length = velocity.length()
+		var new_velocity = velocity + paddle.velocity
+		velocity = paddle.velocity
+		#velocity = new_velocity.normalized()*velocity_length
+		return
 
 func _on_x_bounce_delta_timer_timeout() -> void:
 	recently_bounced_x = false

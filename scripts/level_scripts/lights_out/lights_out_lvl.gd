@@ -7,6 +7,7 @@ var play_button_on = false
 
 func _ready() -> void:
 	$HiddenLightbulb.process_mode = Node.PROCESS_MODE_DISABLED
+	$NeonSign.process_mode = Node.PROCESS_MODE_DISABLED
 	original_background_color = RenderingServer.get_default_clear_color()
 	await SceneManager.transition_done
 	$Text_displayer.write_dialogue(["Money is tight", "Turn off the lights!"])
@@ -24,7 +25,9 @@ func turn_the_lights_on():
 		if (child.is_in_group("Button")):
 			child.find_child("AnimatedSprite2D").show()
 			child.process_mode = Node.PROCESS_MODE_PAUSABLE
-
+	
+	$NeonSign.process_mode = Node.PROCESS_MODE_DISABLED
+	$NeonSign.hide()
 	RenderingServer.set_default_clear_color(original_background_color)
 	play_button_on = true
 
@@ -32,6 +35,7 @@ func _on_light_string_pulled_signal() -> void:
 	turn_the_lights_out()
 	$LightString.hide()
 	$HiddenLightbulb.process_mode = Node.PROCESS_MODE_PAUSABLE
+	$NeonSign.process_mode = Node.PROCESS_MODE_PAUSABLE
 
 
 func _on_hidden_lightbulb_pressed() -> void:

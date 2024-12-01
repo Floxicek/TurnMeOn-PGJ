@@ -50,8 +50,6 @@ func show_scene():
 	
 	if animation_player.is_playing():
 		await animation_player.finished
-	if animation_player.is_playing():
-		await animation_player.finished
 	
 	_started = false
 	$AnimatedSprite2D.show()

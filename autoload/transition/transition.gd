@@ -10,6 +10,7 @@ signal show_scene_done
 @onready var rng = RandomNumberGenerator.new()
 @onready var text_displayer = $TextDisplayer
 @onready var animation_player = $Animations
+@onready var animation_player = $Animations
 
 
 func _ready() -> void:
@@ -48,6 +49,8 @@ func show_scene():
 	if not text_displayer.is_done:
 		await text_displayer.finished
 	
+	if animation_player.is_playing():
+		await animation_player.finished
 	if animation_player.is_playing():
 		await animation_player.finished
 	

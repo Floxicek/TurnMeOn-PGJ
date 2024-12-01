@@ -12,7 +12,12 @@ var rng = RandomNumberGenerator.new()
 var button_prefabs = []
 var play_spawning: bool = false
 
+@export_category("Spawning")
 @export var spawn_delay: float = 1
+@export var randomized_spawn_delay:= true
+@export var min_spawn_delay: float = 0.2
+@export var max_spawn_delay: float = 1.2
+
 
 @export var play_delay: float = 8
 
@@ -71,3 +76,11 @@ func _on_play_timer_timeout() -> void:
 
 func _on_spawn_timer_timeout() -> void:
 	spawn_button()
+	#Randomized timer
+	 
+	if(randomized_spawn_delay):
+		$SpawnTimer.stop()
+		$SpawnTimer.wait_time = rng.randf_range(min_spawn_delay, max_spawn_delay)
+		$SpawnTimer.start()
+	
+	

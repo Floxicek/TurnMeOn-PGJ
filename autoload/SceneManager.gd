@@ -4,7 +4,7 @@ const transition_scene = preload("res://autoload/transition/transition.tscn")
 
 
 var _current_level_index := -1
-var levels : Array = [
+var levels: Array = [
 	"res://scenes/levels/air_hockey.tscn",
 	"res://scenes/levels/level_fireboy_and_watergirl_again.tscn",
 	"res://scenes/levels/level1.tscn",
@@ -20,6 +20,22 @@ var levels : Array = [
 	"res://scenes/levels/level_periodic.tscn",
 	"res://scenes/credits.tscn"
 ]
+
+
+enum ANIMATIONS {
+	CAT,
+	FIREBOY,
+	WATERGIRL,
+	HOCKEY,
+	EATING
+}
+var animation_names = {
+	ANIMATIONS.CAT: "cat",
+	ANIMATIONS.FIREBOY: "fireboy",
+	ANIMATIONS.WATERGIRL: "watergirl",
+	ANIMATIONS.HOCKEY: "hockey",
+	ANIMATIONS.EATING: "eating"
+}
 
 
 var _target_scene_path
@@ -41,8 +57,6 @@ func _ready() -> void:
 	add_child(_transition, true)
 	_transition.clear_scene_done.connect(_clear_scene_done)
 	_transition.show_scene_done.connect(_show_scene_done)
-	await get_tree().create_timer(.5).timeout
-	transition_done.emit()
 	await get_tree().create_timer(.5).timeout
 	transition_done.emit()
 
@@ -74,7 +88,8 @@ func _process(_delta: float) -> void:
 		# Check the loading status:
 		match _loading_status:
 			ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-				print("loading:", _progress[0] * 100)
+				#print("loading:", _progress[0] * 100)
+				pass
 			ResourceLoader.THREAD_LOAD_LOADED:
 				# When done loading, change to the target scene:
 				get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(_target_scene_path))

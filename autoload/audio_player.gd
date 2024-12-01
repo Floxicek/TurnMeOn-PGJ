@@ -2,20 +2,33 @@ extends Node2D
 
 enum SFX_Type {CLICK = 0, WRONG_CLICK = 1}
 
+signal soundtrack_player_state_updated(updated_stated)
+
 @export var click: Array[AudioStream] = []
 @export var wrong_click: Array[AudioStream] = []
 var rng = RandomNumberGenerator.new()
 
+@onready var soundtrack_player = $SoundtrackPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rng.randomize()
-	$SoundtrackPlayer.play()
+	soundtrack_player.play()
+	soundtrack_player_state_updated.emit()
+	
 
 func pause_soundratck():
-	$SoundtrackPlayer.stream_paused = true
+	soundtrack_player.stream_paused = true
+	soundtrack_player_state_updated.emit()
 	
 func play_soundtrack():
-	$SoundtrackPlayer.stream_paused = false
+	soundtrack_player.stream_paused = false
+	soundtrack_player_state_updated.emit()
+
+func toggle_soundtrack():
+	soundtrack_player.stream_paused = !soundtrack_player.stream_paused
+	soundtrack_player_state_updated.emit(soundtrack_player.stream_paused)
+	
 
 func play_sound_effect(type: SFX_Type):
 	var sound_effects = []

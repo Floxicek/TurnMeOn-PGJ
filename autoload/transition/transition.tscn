@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://baoekoka5qn0"]
+[gd_scene load_steps=118 format=3 uid="uid://baoekoka5qn0"]
 
 [ext_resource type="Script" path="res://autoload/transition/transition.gd" id="1_rsv86"]
 [ext_resource type="AudioStream" uid="uid://cqyoagte5iyey" path="res://assets/sounds/clear01.mp3" id="2_tf0ll"]
@@ -77,6 +77,38 @@
 [ext_resource type="Texture2D" uid="uid://dhddwuejf4o6r" path="res://import_pngs/kocur/kocur7.PNG" id="75_wc8da"]
 [ext_resource type="Texture2D" uid="uid://cnhnps7he00xl" path="res://import_pngs/kocur/kocur8.PNG" id="76_gcwhc"]
 [ext_resource type="Texture2D" uid="uid://dn4mu0bbsh6dr" path="res://import_pngs/kocur/kocur9.PNG" id="77_mwiin"]
+[ext_resource type="Texture2D" uid="uid://bj4inayugpitr" path="res://import_pngs/hokej/hokej1.PNG" id="78_av67e"]
+[ext_resource type="Texture2D" uid="uid://dmb1bhw8x8ta4" path="res://import_pngs/hokej/hokej2.PNG" id="79_wdlmv"]
+[ext_resource type="Texture2D" uid="uid://b64q2iq8ex1or" path="res://import_pngs/hokej/hokej3.PNG" id="80_qpxpe"]
+[ext_resource type="Texture2D" uid="uid://uqhowlyjk7hp" path="res://import_pngs/hokej/hokej4.PNG" id="81_nu6ey"]
+[ext_resource type="Texture2D" uid="uid://ug4axko4cwl3" path="res://import_pngs/hokej/hokej5.PNG" id="82_o2fxq"]
+[ext_resource type="Texture2D" uid="uid://ccgjsbry460nu" path="res://import_pngs/hokej/hokej6.PNG" id="83_6e6nw"]
+[ext_resource type="Texture2D" uid="uid://beworpviwmxj0" path="res://import_pngs/hokej/hokej7.PNG" id="84_us18l"]
+[ext_resource type="Texture2D" uid="uid://bqyly26kgxxka" path="res://import_pngs/hokej/hokej8.PNG" id="85_7d0il"]
+[ext_resource type="Texture2D" uid="uid://ps18ldm4d16r" path="res://import_pngs/hokej/hokej9.PNG" id="86_7d5y8"]
+[ext_resource type="Texture2D" uid="uid://82wudfbc1ahw" path="res://import_pngs/hokej/hokej10.PNG" id="87_wlhaj"]
+[ext_resource type="Texture2D" uid="uid://bdwxlsll52l6m" path="res://import_pngs/hokej/hokej11.PNG" id="88_xqiiy"]
+[ext_resource type="Texture2D" uid="uid://cmjyyh5c83htm" path="res://import_pngs/hokej/hokej12.PNG" id="89_e5vl3"]
+[ext_resource type="Texture2D" uid="uid://ut6ibcyym6f0" path="res://import_pngs/hokej/hokej13.PNG" id="90_rsuki"]
+[ext_resource type="Texture2D" uid="uid://c70ss3b65e0cm" path="res://import_pngs/hokej/hokej14.PNG" id="91_6unfw"]
+[ext_resource type="Texture2D" uid="uid://dpr6vyqk2nsrb" path="res://import_pngs/hokej/hokej15.PNG" id="92_vugp2"]
+[ext_resource type="Texture2D" uid="uid://c3oe06mv7x7vj" path="res://import_pngs/hokej/hokej16.PNG" id="93_jd0d7"]
+[ext_resource type="Texture2D" uid="uid://bm6wxqcgu2ikc" path="res://import_pngs/hokej/hokej17.PNG" id="94_v6slw"]
+[ext_resource type="Texture2D" uid="uid://ddvkin6o17w75" path="res://import_pngs/video/FaW/FaW_video1.PNG" id="95_wc405"]
+[ext_resource type="Texture2D" uid="uid://cb7iv4ue2ume1" path="res://import_pngs/video/FaW/FaW_video2.PNG" id="96_2dmxm"]
+[ext_resource type="Texture2D" uid="uid://cb1r5cvnx0gwt" path="res://import_pngs/video/FaW/FaW_video3.PNG" id="97_2xhfd"]
+[ext_resource type="Texture2D" uid="uid://dsnbik5p2lelq" path="res://import_pngs/video/FaW/FaW_video4.PNG" id="98_k41jd"]
+[ext_resource type="Texture2D" uid="uid://b288yfqgujn5l" path="res://import_pngs/video/FaW/FaW_video5.PNG" id="99_8n4ri"]
+[ext_resource type="Texture2D" uid="uid://dxckhjn26wg6c" path="res://import_pngs/video/FaW/FaW_video6.PNG" id="100_11652"]
+[ext_resource type="Texture2D" uid="uid://crcm5d6oaitgq" path="res://import_pngs/video/FaW/FaW_video7.PNG" id="101_dy8t1"]
+[ext_resource type="Texture2D" uid="uid://jav64or41g6a" path="res://import_pngs/video/FaW/FaW_video8.PNG" id="102_kfpts"]
+[ext_resource type="Texture2D" uid="uid://bwmqji5x2cfc3" path="res://import_pngs/video/FaW/FaW_video9.PNG" id="103_ibw1a"]
+[ext_resource type="Texture2D" uid="uid://c4a84v6vkjqrx" path="res://import_pngs/video/FaW/FaW_video10.PNG" id="104_nnf6e"]
+[ext_resource type="Texture2D" uid="uid://bf2r8rai3t2ao" path="res://import_pngs/video/FaW/FaW_video11.PNG" id="105_7car3"]
+[ext_resource type="Texture2D" uid="uid://c4wuke82t83vb" path="res://import_pngs/video/FaW/FaW_video12.PNG" id="106_bmdi3"]
+[ext_resource type="Texture2D" uid="uid://bixau1hdus61" path="res://import_pngs/video/FaW/FaW_video13.PNG" id="107_b1a34"]
+[ext_resource type="Texture2D" uid="uid://dw3sognks10pr" path="res://import_pngs/video/FaW/FaW_video14.PNG" id="108_bffs8"]
+[ext_resource type="Texture2D" uid="uid://bo40oe8540y2d" path="res://import_pngs/video/FaW/FaW_video15.PNG" id="109_hemcp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qfybm"]
 animations = [{
@@ -274,7 +306,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CatAnimation/AnimatedSprite2D:position")
+tracks/0/path = NodePath("Animations/Cat:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -285,12 +317,12 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_6seiv"]
-resource_name = "walk_animation"
+resource_name = "cat"
 length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CatAnimation/AnimatedSprite2D:position")
+tracks/0/path = NodePath("Animations/Cat:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -300,10 +332,14 @@ tracks/0/keys = {
 "values": [Vector2(-400, 856), Vector2(2880, 856)]
 }
 
+[sub_resource type="Animation" id="Animation_3p5tp"]
+resource_name = "hockey"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tilie"]
 _data = {
 "RESET": SubResource("Animation_1qhys"),
-"walk_animation": SubResource("Animation_6seiv")
+"cat": SubResource("Animation_6seiv"),
+"hockey": SubResource("Animation_3p5tp")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5sr5l"]
@@ -341,6 +377,118 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_is27l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("78_av67e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_wdlmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_qpxpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_nu6ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_o2fxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_6e6nw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_us18l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_7d0il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_7d5y8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_wlhaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_xqiiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_e5vl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_rsuki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_6unfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_vugp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_jd0d7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_v6slw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_248kb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("95_wc405")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_2dmxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_2xhfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_k41jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_8n4ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_11652")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_dy8t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_kfpts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_ibw1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_nnf6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_7car3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_bmdi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_b1a34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_bffs8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_hemcp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
 [node name="Transition" type="Control"]
 top_level = true
 z_index = 10
@@ -369,13 +517,13 @@ speed_scale = 10.0
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 volume_db = 24.0
 
-[node name="CatAnimation" type="AnimationPlayer" parent="."]
+[node name="Animations" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_tilie")
 }
 script = ExtResource("68_0f35o")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CatAnimation"]
+[node name="Cat" type="AnimatedSprite2D" parent="Animations"]
 z_index = 100
 position = Vector2(-223, 856)
 scale = Vector2(0.389236, 0.389236)
@@ -384,5 +532,22 @@ animation = &"walking"
 autoplay = "walking"
 frame_progress = 0.847388
 
+[node name="Hockey" type="AnimatedSprite2D" parent="Animations"]
+visible = false
+position = Vector2(2066, 651)
+sprite_frames = SubResource("SpriteFrames_is27l")
+
+[node name="FaW2" type="AnimatedSprite2D" parent="Animations"]
+visible = false
+position = Vector2(523, 1020)
+sprite_frames = SubResource("SpriteFrames_248kb")
+frame_progress = 0.448305
+
+[node name="FaW" type="AnimatedSprite2D" parent="Animations"]
+visible = false
+position = Vector2(1116, 1025)
+sprite_frames = SubResource("SpriteFrames_248kb")
+frame_progress = 0.660967
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="animation_finished" from="CatAnimation" to="CatAnimation" method="_on_animation_finished"]
+[connection signal="animation_finished" from="Animations" to="Animations" method="_on_animation_finished"]

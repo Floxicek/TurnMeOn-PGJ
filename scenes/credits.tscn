@@ -115,11 +115,22 @@ tracks/4/keys = {
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:color:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_1t7yv"]
 resource_name = "final"
 length = 200.0
-step = 1.0
+step = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -188,6 +199,17 @@ tracks/5/keys = {
 "args": [["Starting something new is always difficult.", "But you made it through all the same.", "Even though you haven't got past the main menu,", "we hope you enjoyed this little adventure.", "And that's what starting new things is all about!", "So remember...", "life changes.", "Everything changes...", "... and that's okay.", "Thank you for playing."]],
 "method": &"write_dialogue"
 }]
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:color:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(55.5, 56.5)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wxc6m"]

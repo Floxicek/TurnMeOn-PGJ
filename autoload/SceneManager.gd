@@ -26,14 +26,12 @@ enum ANIMATIONS {
 	NONE,
 	CAT,
 	FIREBOY,
-	WATERGIRL,
 	HOCKEY,
 	EATING
 }
 var animation_names = {
 	ANIMATIONS.CAT: "cat",
 	ANIMATIONS.FIREBOY: "fireboy",
-	ANIMATIONS.WATERGIRL: "watergirl",
 	ANIMATIONS.HOCKEY: "hockey",
 	ANIMATIONS.EATING: "eating"
 }

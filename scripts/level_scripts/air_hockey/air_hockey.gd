@@ -11,21 +11,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_escape_button_pressed() -> void:
-	pass # Replace with function body.
 
 
-func _on_language_btn_korean_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_play_button_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_settings_button_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_mute_button_pressed() -> void:
-	pass # Replace with function body.
+func _on_play_button_area_entered(area: Area2D) -> void:
+	if(area is Ball):
+		SceneManager.next_level()

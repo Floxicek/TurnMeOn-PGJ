@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://c55xnbirwh6t3"]
+
+[ext_resource type="Script" path="res://scripts/level_scripts/air_hockey/wall.gd" id="1_csdi6"]
+[ext_resource type="SpriteFrames" uid="uid://dm4joe881xca3" path="res://import_pngs/rectangle/rect.tres" id="2_vctev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ys5g3"]
+size = Vector2(499.13, 30.8696)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btk3h"]
+size = Vector2(106.087, 31.1305)
+
+[node name="Wall" type="Node2D"]
+script = ExtResource("1_csdi6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(246, 333)
+sprite_frames = ExtResource("2_vctev")
+
+[node name="UP" type="Area2D" parent="."]
+position = Vector2(-0.869565, -122.609)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UP"]
+position = Vector2(-11.3044, 67.1739)
+shape = SubResource("RectangleShape2D_ys5g3")
+
+[node name="DOWN" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DOWN"]
+position = Vector2(-12, 53)
+shape = SubResource("RectangleShape2D_ys5g3")
+
+[node name="RIGHT" type="Area2D" parent="."]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RIGHT"]
+position = Vector2(-1.03712e-05, -237)
+shape = SubResource("RectangleShape2D_btk3h")
+
+[node name="LEFT" type="Area2D" parent="."]
+position = Vector2(-20.8696, 2.6087)
+rotation = 4.71239
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LEFT"]
+position = Vector2(3.60869, -241.13)
+shape = SubResource("RectangleShape2D_btk3h")
+
+[connection signal="area_entered" from="UP" to="." method="_on_up_area_entered"]
+[connection signal="area_entered" from="DOWN" to="." method="_on_down_area_entered"]
+[connection signal="area_entered" from="RIGHT" to="." method="_on_right_area_entered"]
+[connection signal="area_entered" from="LEFT" to="." method="_on_left_area_entered"]

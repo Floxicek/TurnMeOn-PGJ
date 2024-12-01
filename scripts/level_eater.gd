@@ -34,4 +34,4 @@ func _on_eater_robot_full() -> void:
 
 
 func _on_play_button_pressed() -> void:
-	SceneManager.next_level("", SceneManager.ANIMATIONS.HOCKEY)
+	SceneManager.next_level()

@@ -18,8 +18,8 @@ var levels: Array = [
 	"res://scenes/levels/level_pong.tscn",
 	"res://scenes/levels/level_fireboy_and_watergirl_again.tscn",
 	"res://scenes/levels/level_periodic.tscn",
-	"res://scenes/levels/level_eater.tscn",
 	"res://scenes/levels/air_hockey.tscn",
+	"res://scenes/levels/level_eater.tscn",
 	"res://scenes/credits.tscn"
 ]
 

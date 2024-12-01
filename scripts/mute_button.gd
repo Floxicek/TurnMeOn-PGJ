@@ -10,15 +10,20 @@ var default_scale = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioPlayer.soundtrack_player_state_updated.connect(update_icon)
+
 	$AnimatedSprite2D.play()
+	if AudioPlayer.soundtrack_player.stream_paused:
+		_on_pressed()
 
 func set_default_scale(_scale):
 	default_scale = _scale
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
+func update_icon(state):
+	print(state)
+	print("MUTEE")
+	if state == is_on:
+		_on_pressed()
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Cursor"):

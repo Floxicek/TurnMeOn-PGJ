@@ -1,0 +1,86 @@
+[gd_scene load_steps=19 format=3 uid="uid://cwbx5prrf02fn"]
+
+[ext_resource type="Texture2D" uid="uid://bj4inayugpitr" path="res://import_pngs/hokej/hokej1.PNG" id="1_xjb8m"]
+[ext_resource type="Texture2D" uid="uid://dmb1bhw8x8ta4" path="res://import_pngs/hokej/hokej2.PNG" id="2_d21ss"]
+[ext_resource type="Texture2D" uid="uid://b64q2iq8ex1or" path="res://import_pngs/hokej/hokej3.PNG" id="3_nl7i3"]
+[ext_resource type="Texture2D" uid="uid://uqhowlyjk7hp" path="res://import_pngs/hokej/hokej4.PNG" id="4_1xfsi"]
+[ext_resource type="Texture2D" uid="uid://ug4axko4cwl3" path="res://import_pngs/hokej/hokej5.PNG" id="5_geggp"]
+[ext_resource type="Texture2D" uid="uid://ccgjsbry460nu" path="res://import_pngs/hokej/hokej6.PNG" id="6_0byyd"]
+[ext_resource type="Texture2D" uid="uid://beworpviwmxj0" path="res://import_pngs/hokej/hokej7.PNG" id="7_0g1f4"]
+[ext_resource type="Texture2D" uid="uid://bqyly26kgxxka" path="res://import_pngs/hokej/hokej8.PNG" id="8_qtjbs"]
+[ext_resource type="Texture2D" uid="uid://ps18ldm4d16r" path="res://import_pngs/hokej/hokej9.PNG" id="9_qhl8e"]
+[ext_resource type="Texture2D" uid="uid://82wudfbc1ahw" path="res://import_pngs/hokej/hokej10.PNG" id="10_0tljw"]
+[ext_resource type="Texture2D" uid="uid://bdwxlsll52l6m" path="res://import_pngs/hokej/hokej11.PNG" id="11_21n6h"]
+[ext_resource type="Texture2D" uid="uid://cmjyyh5c83htm" path="res://import_pngs/hokej/hokej12.PNG" id="12_f15b3"]
+[ext_resource type="Texture2D" uid="uid://ut6ibcyym6f0" path="res://import_pngs/hokej/hokej13.PNG" id="13_43f3c"]
+[ext_resource type="Texture2D" uid="uid://c70ss3b65e0cm" path="res://import_pngs/hokej/hokej14.PNG" id="14_rinqg"]
+[ext_resource type="Texture2D" uid="uid://dpr6vyqk2nsrb" path="res://import_pngs/hokej/hokej15.PNG" id="15_bsbiw"]
+[ext_resource type="Texture2D" uid="uid://c3oe06mv7x7vj" path="res://import_pngs/hokej/hokej16.PNG" id="16_7ebfp"]
+[ext_resource type="Texture2D" uid="uid://bm6wxqcgu2ikc" path="res://import_pngs/hokej/hokej17.PNG" id="17_iox5e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_odg8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xjb8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d21ss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nl7i3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1xfsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_geggp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0byyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0g1f4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qtjbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qhl8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0tljw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_21n6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_f15b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_43f3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rinqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bsbiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7ebfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_iox5e")
+}],
+"loop": true,
+"name": &"Hockey",
+"speed": 20.0
+}]
+
+[node name="HockeyAnimation" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(857, -312)
+sprite_frames = SubResource("SpriteFrames_odg8f")
+animation = &"Hockey"
+frame_progress = 0.584391

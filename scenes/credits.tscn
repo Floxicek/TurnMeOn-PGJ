@@ -1,6 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqpnh140n72xq"]
+[gd_scene load_steps=6 format=3 uid="uid://dqpnh140n72xq"]
 
 [ext_resource type="Theme" uid="uid://73qrmdmoxyfa" path="res://theme.tres" id="1_6gfop"]
+[ext_resource type="Texture2D" uid="uid://nxedlp5ggv7p" path="res://import_pngs/dvere_text/dvere_text1.PNG" id="2_us7ho"]
+[ext_resource type="Texture2D" uid="uid://drwqle32mgyq3" path="res://import_pngs/dvere_text/dvere_text2.PNG" id="3_cvnrj"]
+[ext_resource type="Texture2D" uid="uid://msfx5onw16td" path="res://import_pngs/dvere_text/dvere_text3.PNG" id="4_ip6l3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_utdnl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_us7ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cvnrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ip6l3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -26,3 +46,8 @@ Kenney - godot logo
 Sheyvan from freesound.org - click sound"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DveřeText" type="AnimatedSprite2D" parent="."]
+position = Vector2(708, 1140)
+sprite_frames = SubResource("SpriteFrames_utdnl")
+frame_progress = 0.777303

@@ -43,8 +43,6 @@ func _ready() -> void:
 	_transition.show_scene_done.connect(_show_scene_done)
 	await get_tree().create_timer(.5).timeout
 	transition_done.emit()
-	await get_tree().create_timer(.5).timeout
-	transition_done.emit()
 
 
 func change_scene(target_scene_path, show_cat_animation = false) -> void:
@@ -74,7 +72,8 @@ func _process(_delta: float) -> void:
 		# Check the loading status:
 		match _loading_status:
 			ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-				print("loading:", _progress[0] * 100)
+				#print("loading:", _progress[0] * 100)
+				pass
 			ResourceLoader.THREAD_LOAD_LOADED:
 				# When done loading, change to the target scene:
 				get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(_target_scene_path))

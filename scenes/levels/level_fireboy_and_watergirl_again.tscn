@@ -90,11 +90,6 @@ metadata/_edit_lock_ = true
 shape = SubResource("RectangleShape2D_88n0f")
 metadata/_edit_lock_ = true
 
-[node name="Pond2" parent="Node2D" instance=ExtResource("15_6jmdt")]
-position = Vector2(1306, 1407)
-scale = Vector2(10.8, 0.7)
-type = 2
-
 [node name="Lnaguage" type="Marker2D" parent="Node2D"]
 position = Vector2(2371, 152)
 script = ExtResource("7_ga8e3")
@@ -248,11 +243,13 @@ type = 0
 metadata/_edit_lock_ = true
 
 [node name="RectHalf" parent="Node2D/Pond/Pond" instance=ExtResource("14_iyoy1")]
+z_index = 3
 position = Vector2(-262, 12.8571)
 scale = Vector2(1, 1.42857)
 metadata/_edit_lock_ = true
 
 [node name="RectHalf2" parent="Node2D/Pond/Pond" instance=ExtResource("14_iyoy1")]
+z_index = 3
 position = Vector2(-791, 12.8571)
 scale = Vector2(1, 1.42857)
 metadata/_edit_lock_ = true
@@ -263,6 +260,7 @@ scale = Vector2(1, 1.42857)
 metadata/_edit_lock_ = true
 
 [node name="RectHalf5" parent="Node2D/Pond/Pond" instance=ExtResource("14_iyoy1")]
+z_index = 3
 position = Vector2(-520, 165.714)
 scale = Vector2(1, 1.42857)
 metadata/_edit_lock_ = true
@@ -271,6 +269,11 @@ metadata/_edit_lock_ = true
 position = Vector2(274, 4.28571)
 scale = Vector2(1, 1.42857)
 metadata/_edit_lock_ = true
+
+[node name="Pond2" parent="Node2D" instance=ExtResource("15_6jmdt")]
+position = Vector2(1306, 1407)
+scale = Vector2(10.8, 0.7)
+type = 2
 
 [connection signal="body_entered" from="Node2D/Play/PlayButtonCharacter/PlayDetection" to="Node2D/Play/PlayButtonCharacter/PlayDetection" method="_on_body_entered"]
 [connection signal="body_exited" from="Node2D/Play/PlayButtonCharacter/PlayDetection" to="Node2D/Play/PlayButtonCharacter/PlayDetection" method="_on_body_exited"]

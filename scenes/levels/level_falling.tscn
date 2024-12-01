@@ -19,6 +19,8 @@ settings_button = ExtResource("3_dtl77")
 play_button = ExtResource("4_c0be5")
 mute_button = ExtResource("5_rkgef")
 language_button = ExtResource("6_4m18o")
+min_spawn_delay = 0.4
+max_spawn_delay = 0.8
 
 [node name="SpawnTimer" type="Timer" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://j02uu0636cvy"]
+[gd_scene load_steps=24 format=3 uid="uid://j02uu0636cvy"]
 
 [ext_resource type="Script" path="res://scripts/level_scripts/lights_out/lights_out_lvl.gd" id="1_6nqhs"]
 [ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="2_ax7ef"]
@@ -13,7 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://cta2umxyp4h74" path="res://import_pngs/lightbulb/IMG_2354.PNG" id="11_6m72f"]
 [ext_resource type="Texture2D" uid="uid://bc33ruhttl7xc" path="res://import_pngs/lightbulb/IMG_2355.PNG" id="12_8ga55"]
 [ext_resource type="PackedScene" uid="uid://ccv4uqgxpmmnx" path="res://scenes/text_displayer.tscn" id="13_7a8hx"]
+[ext_resource type="Texture2D" uid="uid://bbtstlu75vurr" path="res://import_pngs/neon_sign/NeonSign1.png" id="14_6a2px"]
 [ext_resource type="Script" path="res://scripts/level_scripts/lights_out/hidden_lightbulb.gd" id="15_b5fla"]
+[ext_resource type="Texture2D" uid="uid://dpojhqrimev44" path="res://import_pngs/neon_sign/NeonSign2.png" id="15_qnrv6"]
+[ext_resource type="Texture2D" uid="uid://b8p4v6gta41rv" path="res://import_pngs/neon_sign/NeonSign3.png" id="16_sq5ot"]
+[ext_resource type="Texture2D" uid="uid://do1budgy2inbh" path="res://import_pngs/neon_sign/NeonSign4.png" id="17_t4l1q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_juwcy"]
 animations = [{
@@ -46,6 +50,30 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("12_8ga55")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rct5h"]
+radius = 83.1903
+height = 261.932
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_717lg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_6a2px")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qnrv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_sq5ot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t4l1q")
 }],
 "loop": true,
 "name": &"default",
@@ -94,6 +122,22 @@ scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_27f04")
 offset = Vector2(50, 0)
 
+[node name="NeonSign" type="Area2D" parent="." groups=["Button"]]
+position = Vector2(1977, 227)
+rotation = 0.128483
+scale = Vector2(1.5, 1.5)
+script = ExtResource("15_b5fla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NeonSign"]
+position = Vector2(-5, 0)
+rotation = 0.820305
+shape = SubResource("CapsuleShape2D_rct5h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NeonSign"]
+position = Vector2(-135, 44)
+sprite_frames = SubResource("SpriteFrames_717lg")
+offset = Vector2(50, 0)
+
 [node name="Text_displayer" parent="." instance=ExtResource("13_7a8hx")]
 position = Vector2(1280, 470.66)
 scale = Vector2(0.3, 0.3)
@@ -108,3 +152,5 @@ wait_before_hide = 2.5
 [connection signal="area_entered" from="HiddenLightbulb" to="HiddenLightbulb" method="_on_area_entered"]
 [connection signal="area_exited" from="HiddenLightbulb" to="HiddenLightbulb" method="_on_area_exited"]
 [connection signal="pressed" from="HiddenLightbulb" to="." method="_on_hidden_lightbulb_pressed"]
+[connection signal="area_entered" from="NeonSign" to="NeonSign" method="_on_area_entered"]
+[connection signal="area_exited" from="NeonSign" to="NeonSign" method="_on_area_exited"]

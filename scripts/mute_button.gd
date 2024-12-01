@@ -14,7 +14,8 @@ func _ready() -> void:
 
 	$AnimatedSprite2D.play()
 	if AudioPlayer.soundtrack_player.stream_paused:
-		_on_pressed()
+		$AnimatedSprite2D.play("off_state")
+		
 
 func set_default_scale(_scale):
 	default_scale = _scale

@@ -91,8 +91,6 @@ func next_level(message: String = "", show_cat_animation = false):
 		_current_level_index = (_current_level_index + 1) % levels.size()
 		print("Changing to level ", levels[_current_level_index])
 		change_scene(levels[_current_level_index], show_cat_animation)
-# TODO display message
-
 
 func reload_level(message: String = ""):
 	if _current_level_index == -1:

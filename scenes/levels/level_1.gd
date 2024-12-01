@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _on_play_button_pressed() -> void:
-	SceneManager.next_level("", SceneManager.ANIMATIONS.FIREBOY)
+	SceneManager.next_level("Press \'R\' to restart at any time!")
 
 
 func _on_escape_button_pressed() -> void:

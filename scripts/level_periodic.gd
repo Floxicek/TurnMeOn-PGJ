@@ -52,7 +52,7 @@ func _on_a_element_pressed() -> void:
 
 func _on_y_element_pressed() -> void:
 	if evaluate_element_click(3, "Y_element"):
-		SceneManager.next_level()
+		SceneManager.next_level("", SceneManager.ANIMATIONS.EATING)
 
 
 func _on_table_wrong_pressed() -> void:

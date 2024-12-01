@@ -9,16 +9,15 @@ signal show_scene_done
 
 @onready var rng = RandomNumberGenerator.new()
 @onready var text_displayer = $TextDisplayer
-@onready var cat_animation = $CatAnimation
+@onready var animation_player = $Animations
 
 
 func _ready() -> void:
 	$AnimatedSprite2D.hide()
 
-func show_cat():
-	#cat_animation.start()
-	pass
-
+func play_animation(animation_name):
+	
+	animation_player.play(animation_name)
 
 var _started = false
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -49,9 +48,8 @@ func show_scene():
 	if not text_displayer.is_done:
 		await text_displayer.finished
 	
-	if cat_animation:
-		if cat_animation.is_playing():
-			await cat_animation.finished
+	if animation_player.is_playing():
+		await animation_player.finished
 	
 	_started = false
 	$AnimatedSprite2D.show()

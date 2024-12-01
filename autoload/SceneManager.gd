@@ -24,6 +24,7 @@ var levels: Array = [
 
 
 enum ANIMATIONS {
+	NONE,
 	CAT,
 	FIREBOY,
 	WATERGIRL,
@@ -62,12 +63,12 @@ func _ready() -> void:
 	transition_done.emit()
 
 
-func change_scene(target_scene_path, show_cat_animation = false) -> void:
+func change_scene(target_scene_path, animation := ANIMATIONS.NONE) -> void:
 	_in_progress = true
 	_target_scene_path = target_scene_path
 	_transition.clear_scene()
-	if show_cat_animation:
-		_transition.show_cat()
+	if animation != ANIMATIONS.NONE:
+		_transition.play_animation(animation_names[animation])
 
 
 func _clear_scene_done() -> void:

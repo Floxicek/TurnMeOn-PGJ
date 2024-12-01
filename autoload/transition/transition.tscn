@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://baoekoka5qn0"]
+[gd_scene load_steps=116 format=3 uid="uid://baoekoka5qn0"]
 
 [ext_resource type="Script" path="res://autoload/transition/transition.gd" id="1_rsv86"]
 [ext_resource type="AudioStream" uid="uid://cqyoagte5iyey" path="res://assets/sounds/clear01.mp3" id="2_tf0ll"]
@@ -94,21 +94,17 @@
 [ext_resource type="Texture2D" uid="uid://dpr6vyqk2nsrb" path="res://import_pngs/hokej/hokej15.PNG" id="92_vugp2"]
 [ext_resource type="Texture2D" uid="uid://c3oe06mv7x7vj" path="res://import_pngs/hokej/hokej16.PNG" id="93_jd0d7"]
 [ext_resource type="Texture2D" uid="uid://bm6wxqcgu2ikc" path="res://import_pngs/hokej/hokej17.PNG" id="94_v6slw"]
-[ext_resource type="Texture2D" uid="uid://ddvkin6o17w75" path="res://import_pngs/video/FaW/FaW_video1.PNG" id="95_wc405"]
-[ext_resource type="Texture2D" uid="uid://cb7iv4ue2ume1" path="res://import_pngs/video/FaW/FaW_video2.PNG" id="96_2dmxm"]
-[ext_resource type="Texture2D" uid="uid://cb1r5cvnx0gwt" path="res://import_pngs/video/FaW/FaW_video3.PNG" id="97_2xhfd"]
-[ext_resource type="Texture2D" uid="uid://dsnbik5p2lelq" path="res://import_pngs/video/FaW/FaW_video4.PNG" id="98_k41jd"]
-[ext_resource type="Texture2D" uid="uid://b288yfqgujn5l" path="res://import_pngs/video/FaW/FaW_video5.PNG" id="99_8n4ri"]
-[ext_resource type="Texture2D" uid="uid://dxckhjn26wg6c" path="res://import_pngs/video/FaW/FaW_video6.PNG" id="100_11652"]
-[ext_resource type="Texture2D" uid="uid://crcm5d6oaitgq" path="res://import_pngs/video/FaW/FaW_video7.PNG" id="101_dy8t1"]
-[ext_resource type="Texture2D" uid="uid://jav64or41g6a" path="res://import_pngs/video/FaW/FaW_video8.PNG" id="102_kfpts"]
-[ext_resource type="Texture2D" uid="uid://bwmqji5x2cfc3" path="res://import_pngs/video/FaW/FaW_video9.PNG" id="103_ibw1a"]
-[ext_resource type="Texture2D" uid="uid://c4a84v6vkjqrx" path="res://import_pngs/video/FaW/FaW_video10.PNG" id="104_nnf6e"]
-[ext_resource type="Texture2D" uid="uid://bf2r8rai3t2ao" path="res://import_pngs/video/FaW/FaW_video11.PNG" id="105_7car3"]
-[ext_resource type="Texture2D" uid="uid://c4wuke82t83vb" path="res://import_pngs/video/FaW/FaW_video12.PNG" id="106_bmdi3"]
-[ext_resource type="Texture2D" uid="uid://bixau1hdus61" path="res://import_pngs/video/FaW/FaW_video13.PNG" id="107_b1a34"]
-[ext_resource type="Texture2D" uid="uid://dw3sognks10pr" path="res://import_pngs/video/FaW/FaW_video14.PNG" id="108_bffs8"]
-[ext_resource type="Texture2D" uid="uid://bo40oe8540y2d" path="res://import_pngs/video/FaW/FaW_video15.PNG" id="109_hemcp"]
+[ext_resource type="SpriteFrames" uid="uid://vxidmt6sx2g2" path="res://assets/fireboy.tres" id="95_3k45p"]
+[ext_resource type="Texture2D" uid="uid://dtmea8i7ffybk" path="res://import_pngs/eating_animation/eating1.PNG" id="96_1hb1a"]
+[ext_resource type="Texture2D" uid="uid://cn6owewmv8286" path="res://import_pngs/eating_animation/eating2.PNG" id="97_lkgem"]
+[ext_resource type="Texture2D" uid="uid://ce4i6p4nhg0fm" path="res://import_pngs/eating_animation/eating3.PNG" id="98_dk4fi"]
+[ext_resource type="Texture2D" uid="uid://ydvy56oax7pt" path="res://import_pngs/eating_animation/eating4.PNG" id="99_uvsqj"]
+[ext_resource type="Texture2D" uid="uid://bnoanmk0jkerj" path="res://import_pngs/eating_animation/eating5.PNG" id="100_484wh"]
+[ext_resource type="Texture2D" uid="uid://235aoignni37" path="res://import_pngs/eating_animation/eating6.PNG" id="101_i1juj"]
+[ext_resource type="Texture2D" uid="uid://cdccmkabnv3cd" path="res://import_pngs/eating_animation/eating7.PNG" id="102_s6sh5"]
+[ext_resource type="Texture2D" uid="uid://dojopt6ndeutl" path="res://import_pngs/eating_animation/eating8.PNG" id="103_3p12b"]
+[ext_resource type="Texture2D" uid="uid://5bmrhxorxbqb" path="res://import_pngs/eating_animation/eating9.PNG" id="104_7m4tn"]
+[ext_resource type="Texture2D" uid="uid://bpm7l6hnsafio" path="res://import_pngs/eating_animation/eating10.PNG" id="105_x5ytd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qfybm"]
 animations = [{
@@ -315,6 +311,54 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-223, 856)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animations/Hockey:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Animations/Cat:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walking"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Animations/FaW:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Animations/Eating:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_6seiv"]
 resource_name = "cat"
@@ -331,14 +375,73 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-400, 856), Vector2(2880, 856)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animations/Cat:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walking"]
+}
 
 [sub_resource type="Animation" id="Animation_3p5tp"]
 resource_name = "hockey"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animations/Hockey:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_6gt28"]
+resource_name = "fireboy"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animations/FaW:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_gtfao"]
+resource_name = "eating"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animations/Eating:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tilie"]
 _data = {
 "RESET": SubResource("Animation_1qhys"),
 "cat": SubResource("Animation_6seiv"),
+"eating": SubResource("Animation_gtfao"),
+"fireboy": SubResource("Animation_6gt28"),
 "hockey": SubResource("Animation_3p5tp")
 }
 
@@ -433,60 +536,45 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_248kb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkl62"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("95_wc405")
+"texture": ExtResource("96_1hb1a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("96_2dmxm")
+"texture": ExtResource("97_lkgem")
 }, {
 "duration": 1.0,
-"texture": ExtResource("97_2xhfd")
+"texture": ExtResource("98_dk4fi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("98_k41jd")
+"texture": ExtResource("99_uvsqj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("99_8n4ri")
+"texture": ExtResource("100_484wh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("100_11652")
+"texture": ExtResource("101_i1juj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("101_dy8t1")
+"texture": ExtResource("102_s6sh5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("102_kfpts")
+"texture": ExtResource("103_3p12b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("103_ibw1a")
+"texture": ExtResource("104_7m4tn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("104_nnf6e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("105_7car3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("106_bmdi3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("107_b1a34")
-}, {
-"duration": 1.0,
-"texture": ExtResource("108_bffs8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("109_hemcp")
+"texture": ExtResource("105_x5ytd")
 }],
 "loop": true,
 "name": &"default",
-"speed": 7.0
+"speed": 5.0
 }]
 
 [node name="Transition" type="Control"]
@@ -530,24 +618,52 @@ scale = Vector2(0.389236, 0.389236)
 sprite_frames = SubResource("SpriteFrames_5sr5l")
 animation = &"walking"
 autoplay = "walking"
-frame_progress = 0.847388
+frame_progress = 0.0590395
 
-[node name="Hockey" type="AnimatedSprite2D" parent="Animations"]
+[node name="Hockey" type="Node2D" parent="Animations"]
 visible = false
-position = Vector2(2066, 651)
+z_index = 100
+position = Vector2(1280, 1001)
+
+[node name="Hockey" type="AnimatedSprite2D" parent="Animations/Hockey"]
+position = Vector2(822, -346)
 sprite_frames = SubResource("SpriteFrames_is27l")
+autoplay = "default"
+frame_progress = 0.0709859
+speed_scale = 10.0
+metadata/_edit_lock_ = true
 
-[node name="FaW2" type="AnimatedSprite2D" parent="Animations"]
+[node name="FaW" type="Node2D" parent="Animations"]
 visible = false
-position = Vector2(523, 1020)
-sprite_frames = SubResource("SpriteFrames_248kb")
+z_index = 100
+position = Vector2(1280, 1064)
+
+[node name="Fireboy" type="AnimatedSprite2D" parent="Animations/FaW"]
+self_modulate = Color(1, 0.196078, 0.34902, 1)
+position = Vector2(-256, -135)
+sprite_frames = ExtResource("95_3k45p")
+autoplay = "default"
 frame_progress = 0.448305
+metadata/_edit_lock_ = true
 
-[node name="FaW" type="AnimatedSprite2D" parent="Animations"]
-visible = false
-position = Vector2(1116, 1025)
-sprite_frames = SubResource("SpriteFrames_248kb")
+[node name="Watergirl" type="AnimatedSprite2D" parent="Animations/FaW"]
+self_modulate = Color(0.298039, 0.580392, 0.87451, 1)
+position = Vector2(-769, -135)
+sprite_frames = ExtResource("95_3k45p")
+autoplay = "default"
 frame_progress = 0.660967
+metadata/_edit_lock_ = true
+
+[node name="Eating" type="Node2D" parent="Animations"]
+visible = false
+z_index = 100
+position = Vector2(1352, 990)
+
+[node name="EatingSprite" type="AnimatedSprite2D" parent="Animations/Eating"]
+sprite_frames = SubResource("SpriteFrames_rkl62")
+autoplay = "default"
+frame_progress = 0.21836
+metadata/_edit_lock_ = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="Animations" to="Animations" method="_on_animation_finished"]

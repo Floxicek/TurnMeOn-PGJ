@@ -62,6 +62,7 @@ func spawn_button():
 
 func push_play_button():
 	SceneManager.next_level()
+	velocity = 0
 	$Hand/CollisionShape2D.disabled = true
 	$Hand.level_done = true
 	

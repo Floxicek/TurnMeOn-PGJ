@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 			
 		coyote_timer = 0
 		
-	var direction := 0
+	var direction := 0.0
 	if inverted_gravity:
 		direction = Input.get_axis("RIGHT", "LEFT") if fireboy else Input.get_axis("arrow_right", "arrow_left")
 	else:

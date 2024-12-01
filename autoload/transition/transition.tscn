@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://baoekoka5qn0"]
+[gd_scene load_steps=132 format=3 uid="uid://baoekoka5qn0"]
 
 [ext_resource type="Script" path="res://autoload/transition/transition.gd" id="1_rsv86"]
 [ext_resource type="AudioStream" uid="uid://cqyoagte5iyey" path="res://assets/sounds/clear01.mp3" id="2_tf0ll"]
@@ -94,17 +94,31 @@
 [ext_resource type="Texture2D" uid="uid://dpr6vyqk2nsrb" path="res://import_pngs/hokej/hokej15.PNG" id="92_vugp2"]
 [ext_resource type="Texture2D" uid="uid://c3oe06mv7x7vj" path="res://import_pngs/hokej/hokej16.PNG" id="93_jd0d7"]
 [ext_resource type="Texture2D" uid="uid://bm6wxqcgu2ikc" path="res://import_pngs/hokej/hokej17.PNG" id="94_v6slw"]
-[ext_resource type="SpriteFrames" uid="uid://vxidmt6sx2g2" path="res://assets/fireboy.tres" id="95_3k45p"]
+[ext_resource type="Texture2D" uid="uid://ddvkin6o17w75" path="res://import_pngs/video/FaW/FaW_video1.PNG" id="95_n1tio"]
 [ext_resource type="Texture2D" uid="uid://dtmea8i7ffybk" path="res://import_pngs/eating_animation/eating1.PNG" id="96_1hb1a"]
+[ext_resource type="Texture2D" uid="uid://cb7iv4ue2ume1" path="res://import_pngs/video/FaW/FaW_video2.PNG" id="96_cdq7v"]
+[ext_resource type="Texture2D" uid="uid://cb1r5cvnx0gwt" path="res://import_pngs/video/FaW/FaW_video3.PNG" id="97_5hl8c"]
 [ext_resource type="Texture2D" uid="uid://cn6owewmv8286" path="res://import_pngs/eating_animation/eating2.PNG" id="97_lkgem"]
 [ext_resource type="Texture2D" uid="uid://ce4i6p4nhg0fm" path="res://import_pngs/eating_animation/eating3.PNG" id="98_dk4fi"]
+[ext_resource type="Texture2D" uid="uid://dsnbik5p2lelq" path="res://import_pngs/video/FaW/FaW_video4.PNG" id="98_uxagw"]
 [ext_resource type="Texture2D" uid="uid://ydvy56oax7pt" path="res://import_pngs/eating_animation/eating4.PNG" id="99_uvsqj"]
+[ext_resource type="Texture2D" uid="uid://b288yfqgujn5l" path="res://import_pngs/video/FaW/FaW_video5.PNG" id="99_w6y01"]
 [ext_resource type="Texture2D" uid="uid://bnoanmk0jkerj" path="res://import_pngs/eating_animation/eating5.PNG" id="100_484wh"]
+[ext_resource type="Texture2D" uid="uid://dxckhjn26wg6c" path="res://import_pngs/video/FaW/FaW_video6.PNG" id="100_sij0t"]
+[ext_resource type="Texture2D" uid="uid://crcm5d6oaitgq" path="res://import_pngs/video/FaW/FaW_video7.PNG" id="101_0f0ji"]
 [ext_resource type="Texture2D" uid="uid://235aoignni37" path="res://import_pngs/eating_animation/eating6.PNG" id="101_i1juj"]
+[ext_resource type="Texture2D" uid="uid://jav64or41g6a" path="res://import_pngs/video/FaW/FaW_video8.PNG" id="102_m8fqc"]
 [ext_resource type="Texture2D" uid="uid://cdccmkabnv3cd" path="res://import_pngs/eating_animation/eating7.PNG" id="102_s6sh5"]
 [ext_resource type="Texture2D" uid="uid://dojopt6ndeutl" path="res://import_pngs/eating_animation/eating8.PNG" id="103_3p12b"]
+[ext_resource type="Texture2D" uid="uid://bwmqji5x2cfc3" path="res://import_pngs/video/FaW/FaW_video9.PNG" id="103_qrrj2"]
 [ext_resource type="Texture2D" uid="uid://5bmrhxorxbqb" path="res://import_pngs/eating_animation/eating9.PNG" id="104_7m4tn"]
+[ext_resource type="Texture2D" uid="uid://c4a84v6vkjqrx" path="res://import_pngs/video/FaW/FaW_video10.PNG" id="104_ayrwe"]
+[ext_resource type="Texture2D" uid="uid://bf2r8rai3t2ao" path="res://import_pngs/video/FaW/FaW_video11.PNG" id="105_kcr7i"]
 [ext_resource type="Texture2D" uid="uid://bpm7l6hnsafio" path="res://import_pngs/eating_animation/eating10.PNG" id="105_x5ytd"]
+[ext_resource type="Texture2D" uid="uid://c4wuke82t83vb" path="res://import_pngs/video/FaW/FaW_video12.PNG" id="106_xbw5q"]
+[ext_resource type="Texture2D" uid="uid://bixau1hdus61" path="res://import_pngs/video/FaW/FaW_video13.PNG" id="107_fsubq"]
+[ext_resource type="Texture2D" uid="uid://dw3sognks10pr" path="res://import_pngs/video/FaW/FaW_video14.PNG" id="108_5a4cu"]
+[ext_resource type="Texture2D" uid="uid://bo40oe8540y2d" path="res://import_pngs/video/FaW/FaW_video15.PNG" id="109_orja4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qfybm"]
 animations = [{
@@ -422,17 +436,17 @@ tracks/1/keys = {
 "values": [&"walking"]
 }
 
-[sub_resource type="Animation" id="Animation_3p5tp"]
-resource_name = "hockey"
-length = 4.0
+[sub_resource type="Animation" id="Animation_gtfao"]
+resource_name = "eating"
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Animations/Hockey:visible")
+tracks/0/path = NodePath("Animations/Eating:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -440,30 +454,13 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Animations/Hockey:position:y")
+tracks/1/path = NodePath("Animations/Eating:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(1800, -0.25, 0, 0.25, 0, 1001, -0.25, 0, 0.25, 0, 1001, -0.25, 0, 0.25, 0, -300, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1, 3, 4)
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Animations/Hockey/Hockey")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1.1, 3.56667),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [&"", 1.0, false],
-"method": &"play"
-}, {
-"args": [],
-"method": &"stop"
-}]
+"points": PackedFloat32Array(2100, -0.25, 0, 0.25, 0, 1000, -0.25, 0, 0.25, 0, 1000, -0.25, 0, 0.25, 0, -200, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.06667, 3.83333, 5)
 }
 
 [sub_resource type="Animation" id="Animation_6gt28"]
@@ -528,17 +525,17 @@ tracks/3/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_gtfao"]
-resource_name = "eating"
-length = 5.0
+[sub_resource type="Animation" id="Animation_3p5tp"]
+resource_name = "hockey"
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Animations/Eating:visible")
+tracks/0/path = NodePath("Animations/Hockey:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -546,13 +543,30 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Animations/Eating:position:y")
+tracks/1/path = NodePath("Animations/Hockey:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(2100, -0.25, 0, 0.25, 0, 1000, -0.25, 0, 0.25, 0, 1000, -0.25, 0, 0.25, 0, -200, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1.06667, 3.83333, 5)
+"points": PackedFloat32Array(1800, -0.25, 0, 0.25, 0, 1001, -0.25, 0, 0.25, 0, 1001, -0.25, 0, 0.25, 0, -300, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 3, 4)
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Animations/Hockey/Hockey")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.1, 3.56667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"", 1.0, false],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tilie"]
@@ -658,6 +672,112 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5qt2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("95_n1tio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_cdq7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_5hl8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_uxagw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_w6y01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_sij0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_0f0ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_m8fqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_qrrj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_ayrwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_kcr7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_xbw5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_fsubq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_5a4cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_orja4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gellu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("95_n1tio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_cdq7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_5hl8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_uxagw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_w6y01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_sij0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_0f0ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_m8fqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_qrrj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_ayrwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_kcr7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_xbw5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_fsubq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_5a4cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_orja4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_rkl62"]
 animations = [{
 "frames": [{
@@ -760,14 +880,14 @@ position = Vector2(1280, 1064)
 [node name="Fireboy" type="AnimatedSprite2D" parent="Animations/FaW"]
 self_modulate = Color(1, 0.196078, 0.34902, 1)
 position = Vector2(-256, -135)
-sprite_frames = ExtResource("95_3k45p")
+sprite_frames = SubResource("SpriteFrames_v5qt2")
 frame_progress = 0.448305
 metadata/_edit_lock_ = true
 
 [node name="Watergirl" type="AnimatedSprite2D" parent="Animations/FaW"]
 self_modulate = Color(0.298039, 0.580392, 0.87451, 1)
 position = Vector2(-769, -135)
-sprite_frames = ExtResource("95_3k45p")
+sprite_frames = SubResource("SpriteFrames_gellu")
 frame_progress = 0.660967
 metadata/_edit_lock_ = true
 

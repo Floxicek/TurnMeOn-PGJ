@@ -10,7 +10,6 @@ signal show_scene_done
 @onready var rng = RandomNumberGenerator.new()
 @onready var text_displayer = $TextDisplayer
 @onready var animation_player = $Animations
-@onready var animation_player = $Animations
 
 
 func _ready() -> void:

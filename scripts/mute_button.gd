@@ -19,9 +19,11 @@ func _ready() -> void:
 func set_default_scale(_scale):
 	default_scale = _scale
 
-func update_icon():
-	if AudioPlayer.soundtrack_player.stream_paused == is_on:
-		_on_pressed()
+func update_icon(state):
+	if state == is_on:
+		$AnimatedSprite2D.play("off_state")
+	else:
+		$AnimatedSprite2D.play("on_state")
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Cursor"):
@@ -40,10 +42,4 @@ func _on_area_exited(area: Area2D) -> void:
 
 
 func _on_pressed() -> void:
-	if is_on:
-		$AnimatedSprite2D.play("off_state")
-		AudioPlayer.pause_soundratck()
-	else:
-		$AnimatedSprite2D.play("on_state")
-		AudioPlayer.play_soundtrack()
-	is_on = !is_on
+	AudioPlayer.toggle_soundtrack()

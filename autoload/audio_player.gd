@@ -14,16 +14,16 @@ var rng = RandomNumberGenerator.new()
 func _ready() -> void:
 	rng.randomize()
 	soundtrack_player.play()
-	soundtrack_player_state_updated.emit()
+	soundtrack_player_state_updated.emit(soundtrack_player.stream_paused)
 	
 
 func pause_soundratck():
 	soundtrack_player.stream_paused = true
-	soundtrack_player_state_updated.emit()
+	soundtrack_player_state_updated.emit(soundtrack_player.stream_paused)
 	
 func play_soundtrack():
 	soundtrack_player.stream_paused = false
-	soundtrack_player_state_updated.emit()
+	soundtrack_player_state_updated.emit(soundtrack_player.stream_paused)
 
 func toggle_soundtrack():
 	soundtrack_player.stream_paused = !soundtrack_player.stream_paused

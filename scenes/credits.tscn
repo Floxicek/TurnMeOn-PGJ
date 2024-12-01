@@ -173,7 +173,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
 "points": PackedFloat32Array(-242, -0.25, 0, 0.25, 0, 263, -0.25, 0, 0.25, 0, 263, -0.25, 0, 0.25, 0, 338, -0.25, 0, 0.25, 0, 263, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(12, 14, 54, 55, 56)
+"times": PackedFloat32Array(12, 14, 44.5, 45, 45.5)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -209,7 +209,7 @@ tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(55.5, 56.5)
+"times": PackedFloat32Array(45.5, 46.5)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wxc6m"]

@@ -14,7 +14,7 @@ var play_spawning: bool = false
 
 @export_category("Spawning")
 @export var spawn_delay: float = 1
-@export var randomized_spawn_delay:= true
+@export var randomized_spawn_delay := true
 @export var min_spawn_delay: float = 0.2
 @export var max_spawn_delay: float = 1.2
 
@@ -34,24 +34,24 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	for butt in get_children():
 		if butt.is_in_group("SpawnedButtons"):
-			butt.global_position.y += delta*velocity
+			butt.global_position.y += delta * velocity
 
 		#b.position.y += delta*velocity
 
 func spawn_button():
-	var index = rng.randi_range(0, len(button_prefabs)-1)
+	var index = rng.randi_range(0, len(button_prefabs) - 1)
 	var tmp_button = button_prefabs[index].instantiate()
 	
 	
 	if play_spawning:
-		if index == len(button_prefabs)-1:
+		if index == len(button_prefabs) - 1:
 			tmp_button.pressed.connect(push_play_button)
 		else:
 			tmp_button.pressed.connect(push_wrong_button)
 	else:
 		tmp_button.pressed.connect(push_wrong_button)
 	
-	var spawn_pos = Vector2(rng.randi_range(tmp_button.get_node("CollisionShape2D").shape.size.y/2, 2560 - tmp_button.get_node("CollisionShape2D").shape.size.y/2), -tmp_button.get_node("CollisionShape2D").shape.size.x/2)
+	var spawn_pos = Vector2(rng.randi_range(tmp_button.get_node("CollisionShape2D").shape.size.y / 2, 2560 - tmp_button.get_node("CollisionShape2D").shape.size.y / 2), -tmp_button.get_node("CollisionShape2D").shape.size.x / 2)
 	add_child(tmp_button)
 	
 	tmp_button.set_global_position(spawn_pos)
@@ -62,6 +62,7 @@ func spawn_button():
 
 func push_play_button():
 	SceneManager.next_level()
+	velocity = 0
 	$Hand/CollisionShape2D.call_deferred("set", "disabled", true)
 	$Hand.level_done = true
 	
@@ -80,9 +81,7 @@ func _on_spawn_timer_timeout() -> void:
 	spawn_button()
 	#Randomized timer
 	 
-	if(randomized_spawn_delay):
+	if (randomized_spawn_delay):
 		$SpawnTimer.stop()
 		$SpawnTimer.wait_time = rng.randf_range(min_spawn_delay, max_spawn_delay)
 		$SpawnTimer.start()
-	
-	

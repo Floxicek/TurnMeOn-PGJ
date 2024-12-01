@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cecq1oolptfos"]
+[gd_scene load_steps=9 format=3 uid="uid://bwo0rkyurw11n"]
 
 [ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="1_2i1vd"]
 [ext_resource type="Script" path="res://scripts/level_invert_wasd.gd" id="1_4pjfu"]

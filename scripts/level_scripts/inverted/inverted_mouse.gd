@@ -2,8 +2,8 @@ extends Node2D
 
 
 func _ready() -> void:
-	await SceneManager.transition_done
 	Input.warp_mouse(Vector2(0,0))
+	await SceneManager.transition_done
 
 
 func _on_play_button_pressed() -> void:

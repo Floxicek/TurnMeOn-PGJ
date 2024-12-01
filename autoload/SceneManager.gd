@@ -16,24 +16,22 @@ var levels: Array = [
 	"res://scenes/levels/level_falling.tscn",
 	"res://scenes/levels/level_pong.tscn",
 	"res://scenes/levels/level_periodic.tscn",
-	"res://scenes/levels/level_eater.tscn",
-	"res://scenes/levels/air_hockey.tscn",
 	"res://scenes/levels/level_fireboy_and_watergirl_again.tscn",
+	"res://scenes/levels/air_hockey.tscn",
 	"res://scenes/credits.tscn"
 ]
 
 
 enum ANIMATIONS {
+	NONE,
 	CAT,
 	FIREBOY,
-	WATERGIRL,
 	HOCKEY,
 	EATING
 }
 var animation_names = {
 	ANIMATIONS.CAT: "cat",
 	ANIMATIONS.FIREBOY: "fireboy",
-	ANIMATIONS.WATERGIRL: "watergirl",
 	ANIMATIONS.HOCKEY: "hockey",
 	ANIMATIONS.EATING: "eating"
 }
@@ -62,12 +60,12 @@ func _ready() -> void:
 	transition_done.emit()
 
 
-func change_scene(target_scene_path, show_cat_animation = false) -> void:
+func change_scene(target_scene_path, animation := ANIMATIONS.NONE) -> void:
 	_in_progress = true
 	_target_scene_path = target_scene_path
 	_transition.clear_scene()
-	if show_cat_animation:
-		_transition.show_cat()
+	if animation != ANIMATIONS.NONE:
+		_transition.play_animation(animation_names[animation])
 
 
 func _clear_scene_done() -> void:

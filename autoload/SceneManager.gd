@@ -9,11 +9,11 @@ var levels : Array = [
 	"res://scenes/levels/level_korean.tscn",
 	"res://scenes/levels/Lights_out.tscn",
 	"res://scenes/levels/inverted_mouse.tscn",
+	"res://scenes/levels/Random_Buttons.tscn",
 	"res://scenes/levels/level2.tscn", #WASD normal
 	"res://scenes/levels/level_invert_wasd.tscn",
 	"res://scenes/levels/level_fireboy_and_watergirl.tscn",
 	"res://scenes/levels/level_falling.tscn",
-	"res://scenes/levels/Random_Buttons.tscn",
 	"res://scenes/levels/level_periodic.tscn",
 	"res://scenes/credits.tscn"
 ]
@@ -44,10 +44,12 @@ func _ready() -> void:
 	transition_done.emit()
 
 
-func change_scene(target_scene_path) -> void:
+func change_scene(target_scene_path, show_cat_animation = false) -> void:
 	_in_progress = true
 	_target_scene_path = target_scene_path
 	_transition.clear_scene()
+	if show_cat_animation:
+		_transition.show_cat()
 
 
 func _clear_scene_done() -> void:
@@ -81,13 +83,13 @@ func _process(_delta: float) -> void:
 				# Well some error happend:
 				push_error("Error changing scenes")
 
-func next_level(message: String = ""):
+func next_level(message: String = "", show_cat_animation = false):
 	if not _in_progress:
 		#print(_in_progress, "in progress")
 		transition_message = message
 		_current_level_index = (_current_level_index + 1) % levels.size()
 		print("Changing to level ", levels[_current_level_index])
-		change_scene(levels[_current_level_index])
+		change_scene(levels[_current_level_index], show_cat_animation)
 # TODO display message
 
 

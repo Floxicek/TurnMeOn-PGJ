@@ -9,9 +9,14 @@ signal show_scene_done
 
 @onready var rng = RandomNumberGenerator.new()
 @onready var text_displayer = $TextDisplayer
+@onready var cat_animation = $CatAnimation
+
 
 func _ready() -> void:
 	$AnimatedSprite2D.hide()
+
+func show_cat():
+	cat_animation.start()
 
 
 var _started = false
@@ -42,6 +47,9 @@ func show_scene():
 	#print("Transition stoped")
 	if not text_displayer.is_done:
 		await text_displayer.finished
+	
+	if cat_animation.is_playing():
+		await cat_animation.finished
 	
 	_started = false
 	$AnimatedSprite2D.show()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dqpnh140n72xq"]
+[gd_scene load_steps=20 format=3 uid="uid://dqpnh140n72xq"]
 
 [ext_resource type="Theme" uid="uid://73qrmdmoxyfa" path="res://theme.tres" id="1_6gfop"]
 [ext_resource type="Texture2D" uid="uid://nxedlp5ggv7p" path="res://import_pngs/dvere_text/dvere_text1.PNG" id="2_us7ho"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bdyuhhrb6c2j3" path="res://import_pngs/wave/wave5.png" id="9_58n6o"]
 [ext_resource type="Texture2D" uid="uid://bu2bt3n60aw7" path="res://import_pngs/wave/wave6.png" id="10_2ap8a"]
 [ext_resource type="SpriteFrames" uid="uid://dqgfx78px0uj7" path="res://import_pngs/lightbulb/Lights_out.tres" id="11_w6g61"]
+[ext_resource type="FontFile" uid="uid://b0mqrvh2k3iw5" path="res://assets/fonts/Julinkafont-Regular.ttf" id="11_wet6k"]
 [ext_resource type="Texture2D" uid="uid://ctuj1co1r5g2i" path="res://import_pngs/lightbulb/IMG_2352.PNG" id="12_3cjni"]
 [ext_resource type="PackedScene" uid="uid://ccv4uqgxpmmnx" path="res://scenes/text_displayer.tscn" id="13_l8usw"]
 
@@ -57,11 +58,163 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="Animation" id="Animation_hu1sf"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lightbulb frame/lightbulb:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(869, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lightbulb frame/Sprite2D:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1761, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Lightbulb frame/Sprite2D:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(263, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Lightbulb frame/Sprite2D:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:color:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_1t7yv"]
 resource_name = "final"
+length = 200.0
+step = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -1440, -0.25, 0, 0.25, 0, -1440, -0.25, 0, 0.25, 0, -2880, -0.25, 0, 0.25, 0, -2880, -0.25, 0, 0.25, 0, -4320, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3, 4, 7, 8, 11, 12)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lightbulb frame/lightbulb:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(182, -0.25, 0, 0.25, 0, 869, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(12, 14)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lightbulb frame/Sprite2D:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1761, -0.25, 0, 0.25, 0, 1761, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(12, 14)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Lightbulb frame/Sprite2D:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-242, -0.25, 0, 0.25, 0, 263, -0.25, 0, 0.25, 0, 263, -0.25, 0, 0.25, 0, 338, -0.25, 0, 0.25, 0, 263, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(12, 14, 54, 55, 56)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Lightbulb frame/Sprite2D:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 12, 12.0687)
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Lightbulb frame/TextDisplayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(15),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [["Starting something new is always difficult.", "But you made it through all the same.", "Even though you haven't got past the main menu,", "we hope you enjoyed this little adventure.", "And that's what starting new things is all about!", "So remember...", "life changes.", "Everything changes...", "... and that's okay.", "Thank you for playing."]],
+"method": &"write_dialogue"
+}]
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:color:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(55.5, 56.5)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wxc6m"]
 _data = {
+"RESET": SubResource("Animation_hu1sf"),
 "final": SubResource("Animation_1t7yv")
 }
 
@@ -90,39 +243,99 @@ Sheyvan from freesound.org - click sound"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1280, 1737)
+[node name="wave animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(1280, 2306)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_t1qvq")
 animation = &"wave"
+autoplay = "wave"
 frame_progress = 0.30833
 
-[node name="DveřeText" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
-position = Vector2(-817.143, -590)
-scale = Vector2(1.42857, 1.42857)
+[node name="DveřeText" type="AnimatedSprite2D" parent="wave animation"]
+position = Vector2(-634.08, -516.491)
+scale = Vector2(0.989, 0.989)
 sprite_frames = SubResource("SpriteFrames_utdnl")
+autoplay = "default"
 frame_progress = 0.777303
-metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="wave animation"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1325.71
+offset_top = -1505.71
+offset_right = -1325.71
+offset_bottom = -1505.71
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "team"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_wxc6m")
 }
+autoplay = "final"
 
-[node name="lightbulb_bckground" type="Node2D" parent="."]
-visible = false
+[node name="Lightbulb frame" type="Node2D" parent="."]
+position = Vector2(0, 4320)
 
-[node name="lightbulb" type="AnimatedSprite2D" parent="lightbulb_bckground"]
+[node name="lightbulb" type="AnimatedSprite2D" parent="Lightbulb frame"]
 position = Vector2(869, 897)
 scale = Vector2(0.7, 0.7)
 sprite_frames = ExtResource("11_w6g61")
+autoplay = "default"
 frame_progress = 0.361615
 
-[node name="Sprite2D" type="Sprite2D" parent="lightbulb_bckground"]
+[node name="Sprite2D" type="Sprite2D" parent="Lightbulb frame"]
 position = Vector2(1761, 263)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("12_3cjni")
 
-[node name="TextDisplayer" parent="lightbulb_bckground" instance=ExtResource("13_l8usw")]
+[node name="TextDisplayer" parent="Lightbulb frame" instance=ExtResource("13_l8usw")]
 position = Vector2(1280, 744)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
+
+[node name="Dev Names" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2880.0
+offset_bottom = 2880.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Antonín Voráček        Jan Řehák
+
+David Říha         Julie Řihošková"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1280.0
+offset_top = -720.0
+offset_right = -1280.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("11_wet6k")
+theme_override_font_sizes/normal_font_size = 100
+text = "team"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4320.0
+offset_bottom = 4320.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)

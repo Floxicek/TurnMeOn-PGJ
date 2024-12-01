@@ -16,7 +16,7 @@ func _ready() -> void:
 	$AnimatedSprite2D.hide()
 
 func play_animation(animation_name):
-	
+	await clear_scene_done
 	animation_player.play(animation_name)
 
 var _started = false

@@ -41,7 +41,7 @@ func update_rect():
 		update_color(red_rect, Color.TRANSPARENT)
 	
 	if watergirl_in:
-		update_color(blue_rect, fireboy_color)
+		update_color(blue_rect, water_color)
 	else:
 		update_color(blue_rect, Color.TRANSPARENT)
 

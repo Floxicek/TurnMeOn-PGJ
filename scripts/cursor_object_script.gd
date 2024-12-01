@@ -12,7 +12,7 @@ var velocity: Vector2 = Vector2.ZERO
 @export var hide_os_cursor := true
 @export var invert_wasd: = false
 var inverted_wasd_const: int
-var inverted_mouse: bool = false
+@export var inverted_mouse: bool = false
 
 
 var buttons = []

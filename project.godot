@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="TurnMeOn"
+config/name="Play with Me"
 run/main_scene="res://scenes/intro.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.8, 0.8, 0.8, 1)
@@ -29,10 +29,18 @@ window/size/viewport_width=2560
 window/size/viewport_height=1440
 window/stretch/mode="viewport"
 
+[editor]
+
+movie_writer/movie_file="/home/floxicek/Godot/TurnMeOn-PGJ/videos/last.avi"
+
 [global_group]
 
 Button=""
 Cursor=""
+
+[gui]
+
+theme/custom_font="res://assets/fonts/Julinkafont-Regular.ttf"
 
 [input]
 

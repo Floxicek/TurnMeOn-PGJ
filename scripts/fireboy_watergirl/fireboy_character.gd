@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var fireboy := true
 @export var fireboy_color = Color(1, 0.19709, 0.350599, 1)
 @export var watergirl_color = Color(0.299927, 0.579225, 0.875175, 1)
-
+@export var inverted_gravity = false
 var coyote_timer = 0.0
 var finished = false
 
@@ -26,19 +26,30 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if is_on_floor():
+	if (is_on_floor() and not inverted_gravity) or (is_on_ceiling() and inverted_gravity):
 		coyote_timer = coyote_time
 	else:
 		coyote_timer -= delta
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	if not (is_on_floor() and not inverted_gravity) or (not (is_on_ceiling() and inverted_gravity)):
+		if inverted_gravity:
+			velocity -= get_gravity() * delta
+		else:
+			velocity += get_gravity() * delta
 
 	var jumping = (Input.is_action_just_pressed("UP") and fireboy) or (Input.is_action_just_pressed("arrow_up") and not fireboy)
 	if jumping and coyote_timer > 0:
-		velocity.y = jump_velocity
+		if inverted_gravity:
+			velocity.y = -jump_velocity
+		else:
+			velocity.y = jump_velocity
+			
 		coyote_timer = 0
-
-	var direction := Input.get_axis("LEFT", "RIGHT") if fireboy else Input.get_axis("arrow_left", "arrow_right")
+		
+	var direction := 0.0
+	if inverted_gravity:
+		direction = Input.get_axis("RIGHT", "LEFT") if fireboy else Input.get_axis("arrow_right", "arrow_left")
+	else:
+		direction = Input.get_axis("LEFT", "RIGHT") if fireboy else Input.get_axis("arrow_left", "arrow_right")
 	if direction:
 		velocity.x = direction * speed
 	else:

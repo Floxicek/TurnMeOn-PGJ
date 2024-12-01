@@ -7,7 +7,7 @@
 size = Vector2(283, 137)
 
 [node name="Pond" type="Area2D"]
-modulate = Color(0.354358, 0.661233, 0, 1)
+self_modulate = Color(0.352941, 0.662745, 0, 1)
 z_index = 2
 scale = Vector2(1, 0.7)
 collision_layer = 2
@@ -17,6 +17,7 @@ script = ExtResource("1_j48tt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 11.5)
 shape = SubResource("RectangleShape2D_0m7m3")
+metadata/_edit_lock_ = true
 
 [node name="Ground1" type="AnimatedSprite2D" parent="."]
 z_index = -1
@@ -24,5 +25,6 @@ position = Vector2(142, 81)
 scale = Vector2(0.7, 0.7)
 sprite_frames = ExtResource("2_wiq04")
 autoplay = "default"
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,7 +4,6 @@ var original_background_color
 
 var play_button_on = false
 
-# TODO dont show wrong button quotes before ligths go out
 
 func _ready() -> void:
 	$HiddenLightbulb.process_mode = Node.PROCESS_MODE_DISABLED
@@ -16,7 +15,7 @@ func turn_the_lights_out():
 	for child in get_children():
 		if (child.is_in_group("Button")):
 			child.find_child("AnimatedSprite2D").hide()
-			child.process_mode= Node.PROCESS_MODE_DISABLED
+			child.process_mode = Node.PROCESS_MODE_DISABLED
 	$Text_displayer._reset_label()
 	RenderingServer.set_default_clear_color(Color.BLACK)
 	
@@ -24,7 +23,7 @@ func turn_the_lights_on():
 	for child in get_children():
 		if (child.is_in_group("Button")):
 			child.find_child("AnimatedSprite2D").show()
-			child.process_mode= Node.PROCESS_MODE_PAUSABLE
+			child.process_mode = Node.PROCESS_MODE_PAUSABLE
 
 	RenderingServer.set_default_clear_color(original_background_color)
 	play_button_on = true
@@ -42,25 +41,26 @@ func _on_hidden_lightbulb_pressed() -> void:
 func _on_play_button_pressed() -> void:
 	if play_button_on:
 		SceneManager.next_level()
-	else:
-		$Text_displayer.write_wrong_button()
+	# THID CHANGES THE TEXT BEFORE LIGHTS GO OUT
+	# else:
+	# 	$Text_displayer.write_wrong_button()
 
 
 func _on_escape_button_pressed() -> void:
-	$Text_displayer.write_wrong_button()
-	pass # Replace with function body.
+	if play_button_on:
+		$Text_displayer.write_wrong_button()
 
 
 func _on_language_btn_korean_pressed() -> void:
-	$Text_displayer.write_wrong_button()
-	pass # Replace with function body.
+	if play_button_on:
+		$Text_displayer.write_wrong_button()
 
 
 func _on_settings_button_pressed() -> void:
-	$Text_displayer.write_wrong_button()
-	pass # Replace with function body.
+	if play_button_on:
+		$Text_displayer.write_wrong_button()
 
 
 func _on_mute_button_pressed() -> void:
-	$Text_displayer.write_wrong_button()
-	pass # Replace with function body.
+	if play_button_on:
+		$Text_displayer.write_wrong_button()

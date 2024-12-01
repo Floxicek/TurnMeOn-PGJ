@@ -1,6 +1,5 @@
-[gd_scene load_steps=24 format=3 uid="uid://co8cafse6uqgj"]
+[gd_scene load_steps=23 format=3 uid="uid://co8cafse6uqgj"]
 
-[ext_resource type="Script" path="res://scenes/levels/level_fireboy_and_watergirl.gd" id="1_d0sc7"]
 [ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="2_c7wh7"]
 [ext_resource type="PackedScene" uid="uid://f0k535wjbhob" path="res://scenes/buttons/escape_button.tscn" id="3_f6f43"]
 [ext_resource type="PackedScene" uid="uid://cguwqv4xmawl2" path="res://scenes/buttons/language_btn_korean.tscn" id="4_iw6a3"]
@@ -53,7 +52,6 @@ animations = [{
 }]
 
 [node name="FireboyAndWatergirl" type="Node2D"]
-script = ExtResource("1_d0sc7")
 
 [node name="CursorObject" parent="." instance=ExtResource("2_c7wh7")]
 position = Vector2(0, 2)
@@ -103,6 +101,7 @@ offset_top = 166.0
 offset_bottom = 372.0
 
 [node name="BlueRect" type="ColorRect" parent="PlayButtonCharacter/PlayDetection"]
+modulate = Color(1, 1, 1, 0)
 offset_top = 168.0
 offset_right = 495.0
 offset_bottom = 367.0

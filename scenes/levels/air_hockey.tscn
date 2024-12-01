@@ -1,8 +1,10 @@
-[gd_scene load_steps=43 format=3 uid="uid://cw2sr68egc4q3"]
+[gd_scene load_steps=50 format=3 uid="uid://cw2sr68egc4q3"]
 
 [ext_resource type="Script" path="res://scripts/level_scripts/air_hockey/air_hockey.gd" id="1_njx1p"]
-[ext_resource type="PackedScene" uid="uid://bjcotyn3r2w3o" path="res://scenes/cursor_object.tscn" id="2_fw0iq"]
 [ext_resource type="Script" path="res://scripts/level_scripts/air_hockey/hockey_paddle.gd" id="3_psfc2"]
+[ext_resource type="Texture2D" uid="uid://bmthydndluxjy" path="res://import_pngs/ice_hockey/ikony_2-1.png" id="3_x3shg"]
+[ext_resource type="Texture2D" uid="uid://ba5pfxck6gfji" path="res://import_pngs/ice_hockey/ikony_2-2.png" id="4_i2ufk"]
+[ext_resource type="Texture2D" uid="uid://c611xaoxch6l3" path="res://import_pngs/ice_hockey/ikony_2-3.png" id="5_2vc82"]
 [ext_resource type="PackedScene" uid="uid://bb0vlrhpg536j" path="res://scenes/buttons/play_button.tscn" id="5_bhji4"]
 [ext_resource type="Texture2D" uid="uid://dampxihajfa4s" path="res://import_pngs/escape_button/IMG_2238.PNG" id="5_jimn4"]
 [ext_resource type="Texture2D" uid="uid://b1l3ux3yt747s" path="res://import_pngs/escape_button/IMG_2241.PNG" id="6_u8o2f"]
@@ -25,6 +27,28 @@
 [ext_resource type="Texture2D" uid="uid://cy468onx22dow" path="res://import_pngs/mute_button_on/IMG_2325.PNG" id="17_3chct"]
 [ext_resource type="Texture2D" uid="uid://dlew1jwjp4jk6" path="res://import_pngs/mute_button_on/IMG_2326.PNG" id="18_8o8lm"]
 [ext_resource type="Texture2D" uid="uid://bcc5d63c7xodq" path="res://import_pngs/mute_button_on/IMG_2327.PNG" id="19_nj6lh"]
+[ext_resource type="Texture2D" uid="uid://daga3gfkbtei8" path="res://import_pngs/ice_hockey/play_-_ikony.png" id="24_g8mvd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7lpye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x3shg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i2ufk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2vc82")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v3gq6"]
+radius = 91.0
+height = 182.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_115l6"]
 animations = [{
@@ -46,8 +70,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g0ma"]
-size = Vector2(224, 26.4348)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5ltj"]
+size = Vector2(224, 231.609)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tl6n"]
 size = Vector2(231, 21.4348)
@@ -76,10 +100,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lw4b1"]
-size = Vector2(318, 26.4348)
+size = Vector2(318, 112.609)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsh4h"]
-size = Vector2(315, 21.4348)
+size = Vector2(315, 119.434)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bc5l"]
 size = Vector2(218.5, 23.8587)
@@ -118,25 +142,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_b5108"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g0ma"]
+size = Vector2(224, 26.4348)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgymb"]
+size = Vector2(231, 215.434)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kbd2r"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_kl50y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_8opt5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_iphkn")
+"texture": ExtResource("24_g8mvd")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwcgt"]
-size = Vector2(234.75, 233)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ry3ms"]
+radius = 82.0
+height = 164.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ys5g3"]
 size = Vector2(499.13, 30.8696)
@@ -167,12 +192,22 @@ size = Vector2(234.75, 233)
 [node name="AirHockey" type="Node2D"]
 script = ExtResource("1_njx1p")
 
-[node name="AirHockeyPaddle" parent="." instance=ExtResource("2_fw0iq")]
-position = Vector2(0, 2)
+[node name="AirHockeyPaddle" type="Area2D" parent="." groups=["Cursor"]]
+position = Vector2(1847, 683)
 script = ExtResource("3_psfc2")
 max_speed = 70.0
 agility = 6.0
-slow_distance = 150.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AirHockeyPaddle"]
+position = Vector2(-63, -39)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_7lpye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AirHockeyPaddle"]
+shape = SubResource("CapsuleShape2D_v3gq6")
+
+[node name="BounceTimer" type="Timer" parent="AirHockeyPaddle"]
+wait_time = 0.15
 
 [node name="EscapeButton" type="Node2D" parent="." groups=["Button"]]
 position = Vector2(343, 571)
@@ -185,23 +220,21 @@ frame = 1
 frame_progress = 0.503897
 
 [node name="InvisWall" type="Node2D" parent="EscapeButton"]
-position = Vector2(2607, 749)
 rotation = 1.5708
 scale = Vector2(1.2, 1.2)
 script = ExtResource("12_qbanv")
 horizontal = false
 
 [node name="UP" type="Area2D" parent="EscapeButton/InvisWall"]
-position = Vector2(-726.34, 2174.06)
+position = Vector2(-102.5, -2.49963)
 rotation = -1.5708
 scale = Vector2(0.833333, 0.833333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeButton/InvisWall/UP"]
-position = Vector2(-2.13037, 16.6087)
-shape = SubResource("RectangleShape2D_5g0ma")
+position = Vector2(-2.13037, 119.196)
+shape = SubResource("RectangleShape2D_b5ltj")
 
 [node name="DOWN" type="Area2D" parent="EscapeButton/InvisWall"]
-position = Vector2(-624.167, 2173.33)
 rotation = -1.5708
 scale = Vector2(0.833333, 0.833333)
 
@@ -210,7 +243,6 @@ position = Vector2(-2.5, 106.717)
 shape = SubResource("RectangleShape2D_7tl6n")
 
 [node name="RIGHT" type="Area2D" parent="EscapeButton/InvisWall"]
-position = Vector2(-624.167, 2173.33)
 scale = Vector2(0.833333, 0.833333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeButton/InvisWall/RIGHT"]
@@ -218,7 +250,6 @@ position = Vector2(0.75, -108)
 shape = SubResource("RectangleShape2D_drk31")
 
 [node name="LEFT" type="Area2D" parent="EscapeButton/InvisWall"]
-position = Vector2(-621.993, 2190.72)
 rotation = 3.14159
 scale = Vector2(0.833333, 0.833333)
 
@@ -237,31 +268,28 @@ sprite_frames = SubResource("SpriteFrames_3pt3y")
 frame_progress = 0.174294
 
 [node name="InvisWall" type="Node2D" parent="LanguageBtnKorean"]
-position = Vector2(2608, 749)
 rotation = 1.5708
 scale = Vector2(1.2, 1.2)
 script = ExtResource("12_qbanv")
 
 [node name="UP" type="Area2D" parent="LanguageBtnKorean/InvisWall"]
-position = Vector2(-726.34, 2174.06)
+position = Vector2(-98.3333, -0.832621)
 rotation = -1.5708
 scale = Vector2(0.833333, 0.833333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LanguageBtnKorean/InvisWall/UP"]
-position = Vector2(1.8692, 16.6088)
+position = Vector2(1.86902, 59.6957)
 shape = SubResource("RectangleShape2D_lw4b1")
 
 [node name="DOWN" type="Area2D" parent="LanguageBtnKorean/InvisWall"]
-position = Vector2(-624.167, 2173.33)
 rotation = -1.5708
 scale = Vector2(0.833333, 0.833333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LanguageBtnKorean/InvisWall/DOWN"]
-position = Vector2(-1.49963, 106.717)
+position = Vector2(-1.49963, 57.7172)
 shape = SubResource("RectangleShape2D_lsh4h")
 
 [node name="RIGHT" type="Area2D" parent="LanguageBtnKorean/InvisWall"]
-position = Vector2(-624.167, 2173.33)
 scale = Vector2(0.833333, 0.833333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LanguageBtnKorean/InvisWall/RIGHT"]
@@ -269,7 +297,7 @@ position = Vector2(-1.0005, -153)
 shape = SubResource("RectangleShape2D_6bc5l")
 
 [node name="LEFT" type="Area2D" parent="LanguageBtnKorean/InvisWall"]
-position = Vector2(-621.993, 2190.72)
+position = Vector2(4.16676, 12.5)
 rotation = 3.14159
 scale = Vector2(0.833333, 0.833333)
 
@@ -291,14 +319,14 @@ sprite_frames = SubResource("SpriteFrames_xp4ok")
 animation = &"on_state"
 
 [node name="InvisWall" type="Node2D" parent="MuteButton"]
-position = Vector2(2608, 749)
+position = Vector2(-5, 1)
 rotation = 1.5708
 scale = Vector2(1.2, 1.2)
 script = ExtResource("12_qbanv")
 horizontal = false
 
 [node name="UP" type="Area2D" parent="MuteButton/InvisWall"]
-position = Vector2(-726.34, 2174.06)
+position = Vector2(-102.5, -1.6663)
 rotation = -1.5708
 scale = Vector2(0.833333, 0.833333)
 
@@ -307,16 +335,16 @@ position = Vector2(-2.13037, 16.6087)
 shape = SubResource("RectangleShape2D_5g0ma")
 
 [node name="DOWN" type="Area2D" parent="MuteButton/InvisWall"]
-position = Vector2(-624.167, 2173.33)
+position = Vector2(-0.833354, -5.83333)
 rotation = -1.5708
 scale = Vector2(0.833333, 0.833333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MuteButton/InvisWall/DOWN"]
-position = Vector2(-2.5, 106.717)
-shape = SubResource("RectangleShape2D_7tl6n")
+position = Vector2(-2.5, 9.71716)
+shape = SubResource("RectangleShape2D_dgymb")
 
 [node name="RIGHT" type="Area2D" parent="MuteButton/InvisWall"]
-position = Vector2(-624.167, 2173.33)
+position = Vector2(-3.33335, -4.16665)
 scale = Vector2(0.833333, 0.833333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MuteButton/InvisWall/RIGHT"]
@@ -324,7 +352,7 @@ position = Vector2(0.75, -108)
 shape = SubResource("RectangleShape2D_drk31")
 
 [node name="LEFT" type="Area2D" parent="MuteButton/InvisWall"]
-position = Vector2(-621.993, 2190.72)
+position = Vector2(5.42998e-05, 15)
 rotation = 3.14159
 scale = Vector2(0.833333, 0.833333)
 
@@ -333,17 +361,18 @@ position = Vector2(-4.8913, -90.3477)
 shape = SubResource("RectangleShape2D_rf1du")
 
 [node name="Ball" type="Area2D" parent="."]
-position = Vector2(1811, 855)
+position = Vector2(1208, 691)
 script = ExtResource("8_wki6o")
-velocity = Vector2(1000, 500)
+velocity = Vector2(0, 0)
+rotation_speed = 2.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ball"]
 position = Vector2(-1112, -551)
-sprite_frames = SubResource("SpriteFrames_b5108")
-frame_progress = 0.837495
+sprite_frames = SubResource("SpriteFrames_kbd2r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
-shape = SubResource("RectangleShape2D_hwcgt")
+position = Vector2(7, -2)
+shape = SubResource("CapsuleShape2D_ry3ms")
 
 [node name="XBounceDeltaTimer" type="Timer" parent="Ball"]
 wait_time = 0.1
@@ -397,12 +426,6 @@ rotation = 1.5708
 scale = Vector2(1.2, 1.2)
 horizontal = false
 
-[node name="LeftWallTemp" parent="Walls" instance=ExtResource("12_qk3ad")]
-position = Vector2(130, 746)
-rotation = 1.5708
-scale = Vector2(2.16, 1.2)
-horizontal = false
-
 [node name="RightWall3Invis" type="Node2D" parent="Walls"]
 position = Vector2(2608, 749)
 rotation = 1.5708
@@ -450,6 +473,8 @@ frame_progress = 0.837495
 position = Vector2(47.1875, 0)
 shape = SubResource("RectangleShape2D_e5ibm")
 
+[connection signal="area_entered" from="AirHockeyPaddle" to="AirHockeyPaddle" method="_on_area_entered"]
+[connection signal="timeout" from="AirHockeyPaddle/BounceTimer" to="AirHockeyPaddle" method="_on_bounce_timer_timeout"]
 [connection signal="area_entered" from="EscapeButton/InvisWall/UP" to="Walls/RightWall3Invis" method="_on_up_area_entered"]
 [connection signal="area_entered" from="EscapeButton/InvisWall/DOWN" to="Walls/RightWall3Invis" method="_on_down_area_entered"]
 [connection signal="area_entered" from="EscapeButton/InvisWall/RIGHT" to="Walls/RightWall3Invis" method="_on_right_area_entered"]
@@ -464,8 +489,6 @@ shape = SubResource("RectangleShape2D_e5ibm")
 [connection signal="area_entered" from="MuteButton/InvisWall/DOWN" to="Walls/RightWall3Invis" method="_on_down_area_entered"]
 [connection signal="area_entered" from="MuteButton/InvisWall/RIGHT" to="Walls/RightWall3Invis" method="_on_right_area_entered"]
 [connection signal="area_entered" from="MuteButton/InvisWall/LEFT" to="Walls/RightWall3Invis" method="_on_left_area_entered"]
-[connection signal="area_entered" from="Ball" to="Ball" method="_on_area_entered"]
-[connection signal="area_exited" from="Ball" to="Ball" method="_on_area_exited"]
 [connection signal="timeout" from="Ball/XBounceDeltaTimer" to="Ball" method="_on_x_bounce_delta_timer_timeout"]
 [connection signal="timeout" from="Ball/YBounceDeltaTimer" to="Ball" method="_on_y_bounce_delta_timer_timeout"]
 [connection signal="area_entered" from="Walls/RightWall3Invis/UP" to="Walls/RightWall3Invis" method="_on_up_area_entered"]

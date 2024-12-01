@@ -1,34 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bb0vlrhpg536j"]
+[gd_scene load_steps=4 format=3 uid="uid://bb0vlrhpg536j"]
 
 [ext_resource type="Script" path="res://scripts/button.gd" id="1_plwsj"]
-[ext_resource type="Texture2D" uid="uid://cr4xiyhlf6vkb" path="res://import_pngs/play_button/IMG_2244.PNG" id="1_s0wd8"]
-[ext_resource type="Texture2D" uid="uid://dt42im7a78g6n" path="res://import_pngs/play_button/IMG_2245.PNG" id="2_jtnpm"]
-[ext_resource type="Texture2D" uid="uid://bkjgpti1c6hvn" path="res://import_pngs/play_button/IMG_2246.PNG" id="3_ocipx"]
-[ext_resource type="Texture2D" uid="uid://cmicqgofhftpl" path="res://import_pngs/play_button/IMG_2247.PNG" id="4_c77k4"]
-[ext_resource type="Texture2D" uid="uid://bsbtxslnfcrhs" path="res://import_pngs/play_button/IMG_2248.PNG" id="5_s6gk1"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_idptj"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_s0wd8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_jtnpm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_ocipx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_c77k4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_s6gk1")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://bor5xs0ucv54u" path="res://import_pngs/buttons/play_button/play_button.tres" id="2_kldim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iuhb0"]
 size = Vector2(1026, 233)
@@ -38,7 +11,7 @@ script = ExtResource("1_plwsj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-4, 284)
-sprite_frames = SubResource("SpriteFrames_idptj")
+sprite_frames = ExtResource("2_kldim")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_iuhb0")

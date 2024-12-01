@@ -1,26 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bq58ywmehf0i4"]
+[gd_scene load_steps=4 format=3 uid="uid://bq58ywmehf0i4"]
 
 [ext_resource type="Script" path="res://scripts/button.gd" id="1_otcv8"]
-[ext_resource type="Texture2D" uid="uid://kopkxlewfw0a" path="res://import_pngs/play_btn_kor/IMG_2258.PNG" id="1_rw20e"]
-[ext_resource type="Texture2D" uid="uid://cuva671wiytpu" path="res://import_pngs/play_btn_kor/IMG_2259.PNG" id="2_y0xt5"]
-[ext_resource type="Texture2D" uid="uid://cf3rud6xw8hrq" path="res://import_pngs/play_btn_kor/IMG_2260.PNG" id="3_xspm0"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5vym1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_rw20e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_y0xt5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_xspm0")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://buctggrf3uuvj" path="res://import_pngs/buttons/play_btn_kor/play_btn_korean.tres" id="2_7udml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ytxjh"]
 size = Vector2(1025, 228)
@@ -30,7 +11,7 @@ script = ExtResource("1_otcv8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-6, 287)
-sprite_frames = SubResource("SpriteFrames_5vym1")
+sprite_frames = ExtResource("2_7udml")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ytxjh")

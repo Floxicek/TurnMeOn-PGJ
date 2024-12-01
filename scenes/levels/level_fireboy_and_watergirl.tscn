@@ -185,6 +185,7 @@ type = 2
 
 [node name="MoveHereOnLoad" type="Marker2D" parent="PondGroup"]
 position = Vector2(0, 904)
+script = ExtResource("7_jh4wc")
 
 [node name="RectHalf" parent="." instance=ExtResource("18_kb8bp")]
 position = Vector2(318, 766)
@@ -194,6 +195,7 @@ position = Vector2(-284, 978)
 
 [node name="MoveHereOnLoad" type="Marker2D" parent="RectHalf2"]
 position = Vector2(902, 0)
+script = ExtResource("7_jh4wc")
 
 [connection signal="body_entered" from="PlayButtonCharacter/PlayDetection" to="PlayButtonCharacter/PlayDetection" method="_on_body_entered"]
 [connection signal="body_exited" from="PlayButtonCharacter/PlayDetection" to="PlayButtonCharacter/PlayDetection" method="_on_body_exited"]

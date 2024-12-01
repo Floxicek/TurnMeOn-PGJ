@@ -23,11 +23,11 @@ size = Vector2(228, 232)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jc4yk"]
 size = Vector2(325, 228)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuhb0"]
-size = Vector2(1026, 233)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnjmu"]
 size = Vector2(1020, 302)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuhb0"]
+size = Vector2(1026, 233)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwcgt"]
 size = Vector2(234.75, 233)
@@ -86,16 +86,6 @@ shape = SubResource("RectangleShape2D_jc4yk")
 [node name="PlayButtonCharacter" type="StaticBody2D" parent="."]
 position = Vector2(1100, 582)
 
-[node name="PlayButton" parent="PlayButtonCharacter" instance=ExtResource("5_frh4n")]
-react_on_cursor = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayButtonCharacter"]
-shape = SubResource("RectangleShape2D_iuhb0")
-
-[node name="MoveHereOnLoad" type="Marker2D" parent="PlayButtonCharacter"]
-position = Vector2(1010, -188)
-script = ExtResource("7_ti10t")
-
 [node name="PlayDetection" type="Area2D" parent="PlayButtonCharacter"]
 position = Vector2(0, -272)
 collision_layer = 2
@@ -105,6 +95,27 @@ script = ExtResource("8_yeunv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayButtonCharacter/PlayDetection"]
 shape = SubResource("RectangleShape2D_dnjmu")
 debug_color = Color(0, 0.651198, 0.0237737, 0.42)
+
+[node name="RedRect" type="ColorRect" parent="PlayButtonCharacter/PlayDetection"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -500.0
+offset_top = 166.0
+offset_bottom = 372.0
+
+[node name="BlueRect" type="ColorRect" parent="PlayButtonCharacter/PlayDetection"]
+offset_top = 168.0
+offset_right = 495.0
+offset_bottom = 367.0
+
+[node name="PlayButton" parent="PlayButtonCharacter" instance=ExtResource("5_frh4n")]
+react_on_cursor = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayButtonCharacter"]
+shape = SubResource("RectangleShape2D_iuhb0")
+
+[node name="MoveHereOnLoad" type="Marker2D" parent="PlayButtonCharacter"]
+position = Vector2(1010, -188)
+script = ExtResource("7_ti10t")
 
 [node name="SettingsButtonCharacter" type="StaticBody2D" parent="."]
 position = Vector2(2400, 1282)
@@ -187,9 +198,9 @@ position = Vector2(-284, 978)
 position = Vector2(902, 0)
 script = ExtResource("7_ti10t")
 
-[connection signal="pressed" from="PlayButtonCharacter/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="body_entered" from="PlayButtonCharacter/PlayDetection" to="PlayButtonCharacter/PlayDetection" method="_on_body_entered"]
 [connection signal="body_exited" from="PlayButtonCharacter/PlayDetection" to="PlayButtonCharacter/PlayDetection" method="_on_body_exited"]
+[connection signal="pressed" from="PlayButtonCharacter/PlayButton" to="." method="_on_play_button_pressed"]
 
 [editable path="EscapeButtonCharacter/EscapeButton"]
 [editable path="LanguageBtnCharacter/LanguageBtnKorean"]

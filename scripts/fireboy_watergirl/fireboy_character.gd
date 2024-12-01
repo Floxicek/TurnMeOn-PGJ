@@ -10,6 +10,7 @@ extends CharacterBody2D
 @export var watergirl_color = Color(0.299927, 0.579225, 0.875175, 1)
 
 var coyote_timer = 0.0
+var finished = false
 
 func _ready() -> void:
 	if fireboy:
@@ -47,4 +48,10 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	SceneManager.reload_level("Where are you going?")
+	if not finished:
+		$VisibleOnScreenNotifier2D/Timer.start()
+
+
+func _on_visible_timeout() -> void:
+	if not $VisibleOnScreenNotifier2D.is_on_screen():
+		SceneManager.reload_level("Where are you going?")

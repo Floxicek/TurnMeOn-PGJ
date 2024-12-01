@@ -364,7 +364,6 @@ z_index = 1
 position = Vector2(1280, 720)
 sprite_frames = SubResource("SpriteFrames_qfybm")
 animation = &"transition"
-frame = 60
 speed_scale = 10.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

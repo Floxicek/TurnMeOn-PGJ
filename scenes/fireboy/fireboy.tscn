@@ -22,8 +22,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6u57u"]
-radius = 281.603
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbdcs"]
+radius = 245.305
+height = 709.346
 
 [node name="Fireboy" type="CharacterBody2D"]
 z_index = 1
@@ -40,10 +41,17 @@ sprite_frames = SubResource("SpriteFrames_4ya76")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6, -12)
+rotation = -0.857789
 scale = Vector2(0.1, 0.1)
-shape = SubResource("CircleShape2D_6u57u")
+shape = SubResource("CapsuleShape2D_cbdcs")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-8, -8)
+position = Vector2(-5.99999, -17)
+scale = Vector2(2.9, 3.5)
+
+[node name="Timer" type="Timer" parent="VisibleOnScreenNotifier2D"]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="VisibleOnScreenNotifier2D/Timer" to="." method="_on_visible_timeout"]

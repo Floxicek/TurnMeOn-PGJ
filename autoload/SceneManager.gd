@@ -2,6 +2,7 @@ extends Node
 
 const transition_scene = preload("res://autoload/transition/transition.tscn")
 
+var game_started:=false
 
 var _current_level_index := -1
 var levels: Array = [
@@ -59,6 +60,9 @@ func _ready() -> void:
 	await get_tree().create_timer(.5).timeout
 	transition_done.emit()
 
+func start_game():
+	game_started = true
+	next_level()
 
 func change_scene(target_scene_path, animation := ANIMATIONS.NONE) -> void:
 	_in_progress = true
@@ -110,6 +114,9 @@ func next_level(message: String = "", animation: ANIMATIONS = ANIMATIONS.NONE):
 
 func reload_level(message: String = ""):
 	if _in_progress: return #Don't restart if transition is already in progress
+	if not game_started:
+		push_warning("Can't reload before intro ends")
+		return
 	if _current_level_index == -1:
 		push_error("RELOADING WILL NOT WORK WHEN TESTING LOCAL SCENES")
 	transition_message = message

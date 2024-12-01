@@ -4,7 +4,7 @@ const transition_scene = preload("res://autoload/transition/transition.tscn")
 
 
 var _current_level_index := -1
-var levels : Array = [
+var levels: Array = [
 	"res://scenes/levels/air_hockey.tscn",
 	"res://scenes/levels/level_fireboy_and_watergirl_again.tscn",
 	"res://scenes/levels/level1.tscn",
@@ -20,6 +20,22 @@ var levels : Array = [
 	"res://scenes/levels/level_periodic.tscn",
 	"res://scenes/credits.tscn"
 ]
+
+
+enum ANIMATIONS {
+	CAT,
+	FIREBOY,
+	WATERGIRL,
+	HOCKEY,
+	EATING
+}
+var animation_names = {
+	ANIMATIONS.CAT: "cat",
+	ANIMATIONS.FIREBOY: "fireboy",
+	ANIMATIONS.WATERGIRL: "watergirl",
+	ANIMATIONS.HOCKEY: "hockey",
+	ANIMATIONS.EATING: "eating"
+}
 
 
 var _target_scene_path

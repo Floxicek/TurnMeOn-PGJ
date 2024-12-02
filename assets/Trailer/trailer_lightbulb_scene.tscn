@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0flhtu44nc4p"]
+
+[ext_resource type="Texture2D" uid="uid://ctuj1co1r5g2i" path="res://import_pngs/lightbulb/IMG_2352.PNG" id="1_4hsmk"]
+[ext_resource type="SpriteFrames" uid="uid://dqgfx78px0uj7" path="res://import_pngs/lightbulb/Lights_out.tres" id="2_yh5xp"]
+[ext_resource type="PackedScene" uid="uid://exy7jj4nb5t0" path="res://scenes/levels/level1.tscn" id="3_yx0hi"]
+
+[sub_resource type="Animation" id="Animation_j7lo7"]
+resource_name = "lighbulb_click_lv1"
+length = 25.0
+step = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("trailer_lightbulb/Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-111, -0.25, 0, 0.25, 0, -111, -0.25, 0, 0.25, 0, -111, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(18, 18.5, 19)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("trailer_lightbulb/Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(276, -0.25, 0, 0.25, 0, 391, -0.25, 0, 0.25, 0, 276, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(18, 18.5, 19)
+}
+
+[sub_resource type="Animation" id="Animation_ghnqy"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("trailer_lightbulb/Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-111, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("trailer_lightbulb/Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(276, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_as4lf"]
+_data = {
+"RESET": SubResource("Animation_ghnqy"),
+"lighbulb_click_lv1": SubResource("Animation_j7lo7")
+}
+
+[node name="TrailerLightbulbScene" type="Node2D"]
+
+[node name="trailer_lightbulb" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="trailer_lightbulb"]
+position = Vector2(-111, 276)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_4hsmk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="trailer_lightbulb"]
+position = Vector2(1718, 327)
+scale = Vector2(0.7, 0.7)
+sprite_frames = ExtResource("2_yh5xp")
+flip_h = true
+
+[node name="Level1" parent="." instance=ExtResource("3_yx0hi")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_as4lf")
+}
+autoplay = "lighbulb_click_lv1"
